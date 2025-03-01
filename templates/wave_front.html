@@ -1,0 +1,15 @@
+{% extends "base_layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to My Website</h1>
+<p>This is the wave front page.</p>
+
+<!-- The p5.js canvas will be rendered inside this div -->
+<div id="p5-container"></div>
+
+<!-- Include your p5.js sketch file -->
+<script src="{{ url_for('static', filename='wave_front.js') }}"></script>
+
+{% endblock %}
