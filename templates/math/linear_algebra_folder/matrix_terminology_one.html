@@ -47,7 +47,7 @@ b_{31} & b_{32}
                         </p>
                         
                         <!-- RESULT: Show the result of the example -->
-                        <p>The result is:</p>
+                        <p>The answer is:</p>
                         <p>
                             So A is 2 columns by 3 rows and B is 3 columns by 2 rows.
                         </p>
@@ -61,7 +61,7 @@ b_{31} & b_{32}
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>A row vector is a matrix that has 1 row n columns.
+                        <p>A row vector is a matrix that has 1 row and n columns.
                             A colmn vector is a matrix that has a m rows and 1 column.
                         </p>
                         
@@ -69,16 +69,16 @@ b_{31} & b_{32}
                         <p>
                             $$
                             
-A =
-\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-\end{bmatrix}, \quad
-B =
-\begin{bmatrix}
-b_{11} \\
-b_{21} \\
-b_{31} 
-\end{bmatrix}
+                            A =
+                            \begin{bmatrix}
+                            a_{11} & a_{12} & a_{13} \\
+                            \end{bmatrix}, \quad
+                            B =
+                            \begin{bmatrix}
+                            b_{11} \\
+                            b_{21} \\
+                            b_{31} 
+                            \end{bmatrix}
 
                             $$
                         </p>
@@ -88,55 +88,6 @@ b_{31}
                         <p>
                             The elements of a row or column vector are called the components of the vector;
                         </p>
-                    </div>
-                </div>
-
-                                <!-- First Matrix Operation Section -->
-                <div class="card mb-4" id="operation-1">
-                    <div class="card-header">
-                        <h5>What is a row and column vector?</h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>A row vector is a matrix that has 1 row n columns.
-                            A colmn vector is a matrix that has a m rows and 1 column.
-                        </p>
-                        
-                        <!-- FORMULA: Add LaTeX formula representation -->
-                        <p>
-                            $$
-                            
-A =
-\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-\end{bmatrix}, \quad
-B =
-\begin{bmatrix}
-b_{11} \\
-b_{21} \\
-b_{31} 
-\end{bmatrix}
-
-                            $$
-                        </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>Side note: </p>
-                        <p>
-                            The elements of a row or column vector are called the components of the vector;
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
-                <div class="card mb-4" id="operation-2">
-                    <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- Same structure as above - replace content as needed -->
-                        <p>Description of the second matrix operation goes here.</p>
-                        <!-- Formula, example, and result sections follow the same pattern -->
                     </div>
                 </div>
                 
@@ -153,19 +104,26 @@ b_{31}
                         </p>
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
-                        <p>
+                        <p>  
                             $$
                             
-A =
-\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-\end{bmatrix}, \quad
-B =
-\begin{bmatrix}
-b_{11} \\
-b_{21} \\
-b_{31} 
-\end{bmatrix}
+                            \text{If} \quad 
+
+                            A =
+                            \begin{bmatrix}
+                            2 & 8 & 12 \\
+                            4 & 1 & 5 \\
+                            9 & 0 & 13 \\
+                            \end{bmatrix} \quad
+                        
+                            \text{Then} \quad 
+
+                            A^T =
+                            \begin{bmatrix}
+                            2 & 4 & 9 \\
+                            8 & 1 & 0 \\
+                            12 & 5 & 13 \\
+                            \end{bmatrix} \quad
 
                             $$
                         </p>
@@ -173,7 +131,7 @@ b_{31}
                         <!-- RESULT: Show the result of the example -->
                         <p>Side note: </p>
                         <p>
-                            The elements of a row or column vector are called the components of the vector;
+                            Notice that the element along the diagonal don't change!
                         </p>
                     </div>
                 </div>
@@ -186,26 +144,36 @@ b_{31}
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>A row vector is a matrix that has 1 row n columns.
-                            A colmn vector is a matrix that has a m rows and 1 column.
+                        <p>A square matrix is any matrix that is m x m in size, that is 
+                            that that they have the same number of rows as they do columns.
+
+                            Below is an example of a 3 by 3 square matrix.
                         </p>
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
+                            $$     
+                            A =
+                            \begin{bmatrix}
+                            5 & 0 & -2 \\
+                            0 & 1 & 2 \\
+                            2 & -4 & 4 \\
+                            \end{bmatrix} \quad
                             $$
-                            
-A =
-\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-\end{bmatrix}, \quad
-B =
-\begin{bmatrix}
-b_{11} \\
-b_{21} \\
-b_{31} 
-\end{bmatrix}
+                        </p>
+                        
+                        <!-- FORMULA: Add LaTeX formula representation -->
+                        <p>
+                            $$     
+                            A =
+                            \begin{bmatrix}
+                            \mathbf{5} & 0 & -2 \\
+                            0 & \mathbf{1} & 2 \\
+                            2 & -4 & \mathbf{4} \\
+                            \end{bmatrix} \quad
+                            $$
 
-                            $$
+                            The leading diagonal of this matrix is the set {5,1,4}. 
                         </p>
                         
                         <!-- RESULT: Show the result of the example -->
@@ -232,26 +200,45 @@ b_{31}
                         <p>
                             $$
                             
-A =
-\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-\end{bmatrix}, \quad
-B =
-\begin{bmatrix}
-b_{11} \\
-b_{21} \\
-b_{31} 
-\end{bmatrix}
+                                 
+                            A =
+                            \begin{bmatrix}
+                            3 & 1 & -9 \\
+                            0 & 2 & 7 \\
+                            0 & 0 & 1 \\
+                            \end{bmatrix} \quad 
+                            
+
+                                
+                            B =
+                            \begin{bmatrix}
+                            3 & 0 & 0 \\
+                            1 & 2 & 0 \\
+                            3 & -4 & 4 \\
+                            \end{bmatrix} \quad
+                            
 
                             $$
+
+                            <p>Matrix A is a Upper triangualar Matrix</p>
+                            <p>Matrix B is a Lower triangular Matrix</p>
+                            
+                            $$     
+                            C =
+                            \begin{bmatrix}
+                            1 & 0 & 0 \\
+                            0 & 1 & 0 \\
+                            0 & 0 & 1 \\
+                            \end{bmatrix} \quad
+                            $$
+                            
                         </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>Side note: </p>
-                        <p>
-                            The elements of a row or column vector are called the components of the vector;
-                        </p>
-                    </div>
+                
+                         <!-- EXAMPLE: Add an example calculation -->
+                         <p>Is Matrix C Upper, Lower, or both? Neither? </p>
+                         <p>
+                            C is both!
+                         </p>
                 </div>
 
 
@@ -262,33 +249,39 @@ b_{31}
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>A row vector is a matrix that has 1 row n columns.
-                            A colmn vector is a matrix that has a m rows and 1 column.
+                        <p>When the transpose of a matrix is equal to the original matrix
+                            we call it Symmetric
                         </p>
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
+                            $$     
+                            A =
+                            \begin{bmatrix}
+                            3 & 4 & 6 \\
+                            4 & 9 & 3 \\
+                            6 & 3 & -1 \\
+                            \end{bmatrix} \quad
                             $$
-                            
-A =
-\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-\end{bmatrix}, \quad
-B =
-\begin{bmatrix}
-b_{11} \\
-b_{21} \\
-b_{31} 
-\end{bmatrix}
+                        </p>
+                        <p>$$ A^t = A $$ </p>
 
+                        <p>When the transpose of a matrix is equal to the negative of the original matrix 
+                            we call it Skew
+                        </p>
+
+                         <!-- FORMULA: Add LaTeX formula representation -->
+                         <p>
+                            $$     
+                            B =
+                            \begin{bmatrix}
+                            0 & -2 & 5 \\
+                            2 & 1 & -4 \\
+                            -5 & 4 & 0 \\
+                            \end{bmatrix} \quad
                             $$
                         </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>Side note: </p>
-                        <p>
-                            The elements of a row or column vector are called the components of the vector;
-                        </p>
+                        <p>$$ A^t = -A $$ </p>
                     </div>
                 </div>
 
@@ -434,38 +427,41 @@ b_{31}
                     </div>
                 </div>
             </div>
-            
-            <!-- Sidebar -->
-            <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-primary text-white">
-                        <h5>Table of Contents</h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- NAVIGATION: Update links to match your section IDs -->
-                        <ul>
-                            <li><a href="/math/linear_algebra">Linear Algebra</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_addition">Matrix Addition</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_multiplication">Matrix Multiplication</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_terminology_one">Matrix Terminology One</a></li>
-                        </ul>
-                    </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5>Table of Contents</h5>
                 </div>
-                
-                <!-- Related Topics Sidebar Section -->
-                <div class="card shadow-sm mt-4">
-                    <div class="card-header bg-secondary text-white">
-                        <h5>Related Topics</h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- RELATED: Update with related topic links -->
-                        <ul>
-                            <li><a href="/math/linear_algebra/matrix_addition">Matrix Addition</a></li>
-                            <li><a href="/math/linear_algebra/matrix_multiplication">Matrix Multiplication</a></li>
-                            <li><a href="/math/linear_algebra/determinants">Determinants</a></li>
-                            <li><a href="/math/linear_algebra/eigenvalues">Eigenvalues and Eigenvectors</a></li>
-                        </ul>
-                    </div>
+                <div class="card-body">
+                    <!-- NAVIGATION: Update links to match your section IDs -->
+                    <ul>
+                        <li><a href="/math/linear_algebra">Linear Algebra</a></li>
+                        <li><a href="/math/linear_algebra_folder/matrix_terminology_one">Matrix Terminology One</a></li>
+                        <li><a href="/math/linear_algebra_folder/matrix_addition">Matrix Addition</a></li>
+                        <li><a href="/math/linear_algebra_folder/matrix_multiplication">Matrix Multiplication</a></li>
+                        <li><a href="/math/linear_algebra_folder/matrix_row_operations">Basic Row Operations</a></li>
+                        <li><a href="/math/linear_algebra_folder/matrix_row_echelon">Row Echelon Form</a></li>
+                        <li><a href="/math/linear_algebra_folder/matrix_gaussian_elemination">Gaussian Elemination</a></li>
+                        <li><a href="/math/linear_algebra_folder/matrix_inverse">Inverse of a Matrix</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Related Topics Sidebar Section -->
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-secondary text-white">
+                    <h5>Related Topics</h5>
+                </div>
+                <div class="card-body">
+                    <!-- RELATED: Update with related topic links -->
+                    <ul>
+                        <li><a href="/math/linear_algebra/matrix_addition">Matrix Addition</a></li>
+                        <li><a href="/math/linear_algebra/matrix_multiplication">Matrix Multiplication</a></li>
+                        <li><a href="/math/linear_algebra/determinants">Determinants</a></li>
+                        <li><a href="/math/linear_algebra/eigenvalues">Eigenvalues and Eigenvectors</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

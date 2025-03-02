@@ -1,59 +1,130 @@
 {% extends "base_layout.html" %}
-
 {% block title %}
-Matrix Addition - Linear Algebra
+Matrix Operations - Linear Algebra
 {% endblock %}
-
 {% block content %}
     <div class="container mt-4">
         <div class="row">
+            <!-- Main Content Area -->
             <div class="col-md-8">
                 <h1>Matrix Addition</h1>
-
-                <p>Matrix addition is the operation of adding two matrices by adding the corresponding elements together. The two matrices must have the same dimensions to be added together.</p>
-
-                <div class="card mb-4" id="matrix-addition">
+                <p>This page has some basic explanations and examples for matrix addition</p>
+                
+                <!-- First Matrix Operation Section -->
+                <div class="card mb-4" id="operation-1">
                     <div class="card-header">
-                        <h5>Example of Matrix Addition</h5>
+                        <h5>When can we add?</h5>
                     </div>
                     <div class="card-body">
-                        <p>Consider the following two matrices:</p>
+                        <!-- DESCRIPTION: Add description of the operation here -->
+                        <p>We can add when two matricies have the same dimensions.</p>
+                        
+                        <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
-                            $$ 
-                            A = \left[ \begin{matrix} 1 & 2 \\ 3 & 4 \end{matrix} \right], \quad
-                            B = \left[ \begin{matrix} 5 & 6 \\ 7 & 8 \end{matrix} \right]
-                            $$ 
+                            $$
+
+                            A = 
+                            \begin{bmatrix}
+                            1 & 2 \\
+                            3 & 4 \\
+                            5 & 6 \\
+                            \end{bmatrix} \quad
+
+                            B = 
+                            \begin{bmatrix}
+                            1 & 0 \\
+                            -2 & 3 \\
+                            -4 & 9 \\ 
+                            \end{bmatrix} \quad
+
+                            $$
+                            
+
+                            <p>Here A and B are the same m x n dimentions, that is they are both 3 x 2 in size.
+                                So we can add them!
+                            </p>
                         </p>
-                        <p>To add them, simply add the corresponding elements:</p>
+
                         <p>
-                            $$ 
-                            A + B = \left[ \begin{matrix} 1+5 & 2+6 \\ 3+7 & 4+8 \end{matrix} \right] = \left[ \begin{matrix} 6 & 8 \\ 10 & 12 \end{matrix} \right]
-                            $$ 
+                            $$
+
+                            A = 
+                            \begin{bmatrix}
+                            1 & 2 \\
+                            3 & 4 \\
+                            5 & 6 \\
+                            \end{bmatrix} \quad
+
+                            C = 
+                            \begin{bmatrix}
+                            1 & 2 & 8\\
+                            3 & 4 & 9\\
+                            5 & 6 & 7\\ 
+                            \end{bmatrix} \quad
+
+                            $$
+
+                            <p>Here A and C are not the same m x n dimentions. A is 3 x 2 in size and C is 3 x 3.
+                                So we can't add them.
+                            </p>
                         </p>
-                        <p>The result of the addition is:</p>
+                        
+                        <!-- EXAMPLE: Add an example calculation -->
+                        <p>Example of adding A + B:</p>
+                        <p> Given: 
+                            $$ A + B = D $$
+
+                            $$
+
+                            D = 
+                            \begin{bmatrix}
+                            1+1 & 2+0 \\
+                            3-2 & 4+3 \\
+                            5-4 & 6+9 \\
+                            \end{bmatrix} \quad
+
+
+                            $$
+                        </p>
+                        
+                        <!-- RESULT: Show the result of the example -->
+                        <p>The result is:</p>
                         <p>
-                            $$ 
-                            C = \left[ \begin{matrix} 6 & 8 \\ 10 & 12 \end{matrix} \right]
-                            $$ 
+                            $$
+
+                            D = 
+                            \begin{bmatrix}
+                            2 & 2 \\
+                            1 & 7 \\
+                            1 & 15 \\
+                            \end{bmatrix} \quad
+
+                            
+                            $$
                         </p>
                     </div>
                 </div>
-
-                <!-- Additional Sections -->
-                <div class="card mb-4" id="steps">
+                
+                <!-- Additional Information Section -->
+                <div class="card mb-4" id="additional-info">
                     <div class="card-header">
-                        <h5>Steps for Matrix Addition</h5>
+                        <h5><!-- TITLE: Additional information title --></h5>
                     </div>
                     <div class="card-body">
+                        <!-- CONTENT: Add additional explanations, properties, or notes -->
+                        <p>Additional information about matrices or the operations can go here.</p>
+                        
+                        <!-- Optional: Add a list of steps or properties -->
                         <ol>
-                            <li>Ensure that both matrices are the same size (same number of rows and columns).</li>
-                            <li>Add the corresponding elements from both matrices.</li>
-                            <li>Write the resulting matrix by combining the summed elements.</li>
+                            <li>First point</li>
+                            <li>Second point</li>
+                            <li>Third point</li>
                         </ol>
                     </div>
                 </div>
+                
             </div>
-
+            
             <!-- Sidebar -->
             <div class="col-md-4">
                 <div class="card shadow-sm">
@@ -61,10 +132,32 @@ Matrix Addition - Linear Algebra
                         <h5>Table of Contents</h5>
                     </div>
                     <div class="card-body">
+                        <!-- NAVIGATION: Update links to match your section IDs -->
                         <ul>
                             <li><a href="/math/linear_algebra">Linear Algebra</a></li>
-                            <li><a href="#matrix-addition">Matrix Addition</a></li>
-                            <li><a href="#steps">Steps for Matrix Addition</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_terminology_one">Matrix Terminology One</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_addition">Matrix Addition</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_multiplication">Matrix Multiplication</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_row_operations">Basic Row Operations</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_row_echelon">Row Echelon Form</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_gaussian_elemination">Gaussian Elemination</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_inverse">Inverse of a Matrix</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Related Topics Sidebar Section -->
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-secondary text-white">
+                        <h5>Related Topics</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- RELATED: Update with related topic links -->
+                        <ul>
+                            <li><a href="/math/linear_algebra/matrix_addition">Matrix Addition</a></li>
+                            <li><a href="/math/linear_algebra/matrix_multiplication">Matrix Multiplication</a></li>
+                            <li><a href="/math/linear_algebra/determinants">Determinants</a></li>
+                            <li><a href="/math/linear_algebra/eigenvalues">Eigenvalues and Eigenvectors</a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,6 +166,3 @@ Matrix Addition - Linear Algebra
     </div>
 {% endblock %}
 
-{% block scripts %}
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <!-- MathJax -->
-{% endblock %}
