@@ -15,7 +15,9 @@ let secondaryWaves = [];
 let disturbances = [];
 
 function setup(){
-    createCanvas(400,400);
+    let canvas = createCanvas(400,400);
+    canvas.parent('p5-container');
+    
     angleMode(DEGREES)
     centerY = height / 3;
     lineX = width / 5 - 50;

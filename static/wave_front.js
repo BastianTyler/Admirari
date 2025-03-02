@@ -5,7 +5,8 @@ let nD = 6 //Number of disturbances
 let theta = 0;
 
 function setup() {
-    createCanvas(400, 400);
+    let canvas = createCanvas(400,400);
+    canvas.parent('p5-container');
     cx = width / 2;
     cy = height / 2;
 }

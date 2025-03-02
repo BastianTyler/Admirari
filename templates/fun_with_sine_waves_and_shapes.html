@@ -1,15 +1,39 @@
 {% extends "base_layout.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Sine Wave Fun{% endblock %}
 
 {% block content %}
-<h1>Welcome to My Website</h1>
-<p>This is the sine wave page.</p>
+<div class="container mt-5">
+    <div class="row">
+        <!-- p5.js Canvas -->
+        <div class="col-md-8">
+            <div id="p5-container" class="border p-3 bg-light"></div>
+        </div>
 
-<!-- The p5.js canvas will be rendered inside this div -->
-<div id="p5-container"></div>
+        <!-- Info Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5>Sine Wave Fun</h5>
+                </div>
+                <div class="card-body">
+                    <p>
+                        This page visualizes sine waves and various shapes using p5.js. It showcases how sine functions can be used in graphics to create interesting effects.
+                    </p>
+                    <h6>Contributions / Inspirations</h6>
+                    <ul>
+                        <li>Inspired by trigonometric functions in computer graphics.</li>
+                        <li>Contributed by various open-source contributors to p5.js.</li>
+                        <li>Project based on simple wave visualizations and animations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Include your p5.js sketch file -->
 <script src="{{ url_for('static', filename='fun_with_sine_waves_and_shapes.js') }}"></script>
 
 {% endblock %}
+

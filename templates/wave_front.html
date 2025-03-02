@@ -3,11 +3,34 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Welcome to My Website</h1>
-<p>This is the wave front page.</p>
+<div class="container mt-5">
+    <div class="row">
+        <!-- p5.js Canvas -->
+        <div class="col-md-8">
+            <div id="p5-container" class="border p-3 bg-light"></div>
+        </div>
 
-<!-- The p5.js canvas will be rendered inside this div -->
-<div id="p5-container"></div>
+        <!-- Info Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5>Wave Front</h5>
+                </div>
+                <div class="card-body">
+                    <p>
+                        This page visualizes wave front propagation using p5.js. It showcases how wave behaviors can be simulated and visualized with computer graphics.
+                    </p>
+                    <h6>Contributions / Inspirations</h6>
+                    <ul>
+                        <li>Inspired by wave theory in physics and computer graphics simulations.</li>
+                        <li>Contributed by various open-source contributors to p5.js.</li>
+                        <li>Project based on simulating wavefront propagation and behavior.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Include your p5.js sketch file -->
 <script src="{{ url_for('static', filename='wave_front.js') }}"></script>

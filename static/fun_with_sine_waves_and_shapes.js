@@ -1,6 +1,7 @@
 function setup() {
-    createCanvas(400, 400, WEBGL)
+    let canvas = createCanvas(400, 400, WEBGL)
     angleMode(DEGREES)
+    canvas.parent('p5-container');
 }
 
 function resetBackground(count){
