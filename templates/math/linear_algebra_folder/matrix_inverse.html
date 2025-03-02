@@ -1,0 +1,127 @@
+{% extends "base_layout.html" %}
+{% block title %}
+Matrix Operations - Linear Algebra
+{% endblock %}
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Main Content Area -->
+            <div class="col-md-8">
+                <h1>Matrix Operations</h1>
+                <p>This page covers various operations that can be performed on matrices in linear algebra.</p>
+                
+                <!-- First Matrix Operation Section -->
+                <div class="card mb-4" id="operation-1">
+                    <div class="card-header">
+                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- DESCRIPTION: Add description of the operation here -->
+                        <p>Description of the matrix operation goes here.</p>
+                        
+                        <!-- FORMULA: Add LaTeX formula representation -->
+                        <p>
+                            $$
+                            <!-- Add your LaTeX matrix formula here -->
+                            $$
+                        </p>
+                        
+                        <!-- EXAMPLE: Add an example calculation -->
+                        <p>Example:</p>
+                        <p>
+                            $$
+                            <!-- Add your example matrices and calculation here -->
+                            $$
+                        </p>
+                        
+                        <!-- RESULT: Show the result of the example -->
+                        <p>The result is:</p>
+                        <p>
+                            $$
+                            <!-- Add result matrix here -->
+                            $$
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
+                <div class="card mb-4" id="operation-2">
+                    <div class="card-header">
+                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Same structure as above - replace content as needed -->
+                        <p>Description of the second matrix operation goes here.</p>
+                        <!-- Formula, example, and result sections follow the same pattern -->
+                    </div>
+                </div>
+                
+                <!-- Additional Information Section -->
+                <div class="card mb-4" id="additional-info">
+                    <div class="card-header">
+                        <h5><!-- TITLE: Additional information title --></h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- CONTENT: Add additional explanations, properties, or notes -->
+                        <p>Additional information about matrices or the operations can go here.</p>
+                        
+                        <!-- Optional: Add a list of steps or properties -->
+                        <ol>
+                            <li>First point</li>
+                            <li>Second point</li>
+                            <li>Third point</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Interactive Section (if you want to add p5.js visualization) -->
+                <div class="card mb-4" id="interactive">
+                    <div class="card-header">
+                        <h5>Interactive Visualization</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- P5.JS: Container for p5.js sketch -->
+                        <div id="matrix-visualization"></div>
+                        <p>This visualization demonstrates the concept interactively.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Table of Contents</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- NAVIGATION: Update links to match your section IDs -->
+                        <ul>
+                            <li><a href="/math/linear_algebra">Linear Algebra</a></li>
+                            <li><a href="#operation-1"><!-- Name of operation 1 --></a></li>
+                            <li><a href="#operation-2"><!-- Name of operation 2 --></a></li>
+                            <li><a href="#additional-info"><!-- Name of additional info section --></a></li>
+                            <li><a href="#interactive">Interactive Visualization</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Related Topics Sidebar Section -->
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-secondary text-white">
+                        <h5>Related Topics</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- RELATED: Update with related topic links -->
+                        <ul>
+                            <li><a href="/math/linear_algebra/matrix_addition">Matrix Addition</a></li>
+                            <li><a href="/math/linear_algebra/matrix_multiplication">Matrix Multiplication</a></li>
+                            <li><a href="/math/linear_algebra/determinants">Determinants</a></li>
+                            <li><a href="/math/linear_algebra/eigenvalues">Eigenvalues and Eigenvectors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

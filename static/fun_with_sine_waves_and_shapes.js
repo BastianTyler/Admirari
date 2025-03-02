@@ -28,7 +28,7 @@ for(var i = 0; i < 50; i++){
     rotate(frameCount/12)
 
     beginShape()
-    for(var j = 0; j < 90; j+= 60){
+    for(var j = 0; j < 360; j+= 180){
 
         var rad = i * 5
         var x = -rad * cos(j)

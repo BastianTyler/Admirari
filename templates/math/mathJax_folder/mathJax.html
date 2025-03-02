@@ -1,0 +1,108 @@
+{% extends "base_layout.html" %}
+
+{% block title %}
+LaTeX and MathJax Tutorial
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>LaTeX and MathJax Tutorial</h1>
+                <p>This tutorial will guide you through using LaTeX and MathJax to render mathematical formulas and expressions on a web page.</p>
+
+                <!-- LaTeX Symbols and Environments Repo -->
+                <div class="card mb-4" id="latex-repo">
+                    <div class="card-header">
+                        <h5>Summary of Key LaTeX Symbols and Environments for MathJax</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Symbol or Command</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>$ and $$</code></td>
+                                    <td>Inline and block math delimiters</td>
+                                </tr>
+                                <tr>
+                                    <td><code>^ and _</code></td>
+                                    <td>Exponentiation and subscripts</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\frac{numerator}{denominator}</code></td>
+                                    <td>Fraction representation</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\sqrt{expression}</code></td>
+                                    <td>Square root</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\sum, \int</code></td>
+                                    <td>Sum and integral operators</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\alpha, \beta</code></td>
+                                    <td>Greek letters</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\begin{bmatrix} ... \end{bmatrix}</code></td>
+                                    <td>Matrix with square brackets</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\begin{pmatrix} ... \end{pmatrix}</code></td>
+                                    <td>Matrix with parentheses</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\begin{Bmatrix} ... \end{Bmatrix}</code></td>
+                                    <td>Matrix with curly brackets</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\begin{vmatrix} ... \end{vmatrix}</code></td>
+                                    <td>Matrix with vertical bars (determinant)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\cdot</code></td>
+                                    <td>Multiplication dot</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\text{}</code></td>
+                                    <td>Text inside math mode (for explanations)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>\quad, \;, \,</code></td>
+                                    <td>Spacing for improved readability</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>With these tools, you should be able to create rich mathematical content for your website, especially when working with matrices.</p>
+                    </div>
+                </div>
+
+                <!-- Matrices and Systems of Equations -->
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Links and Resources</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Explore more resources to deepen your knowledge on LaTeX and MathJax:</p>
+                        <ul>
+                            <li><a href="/math/mathJax_folder/mathJax">MathJax Main</a></li>
+                            <li><a href="https://www.latex-project.org/" target="_blank">Official LaTeX Project</a></li>
+                            <li><a href="https://www.mathjax.org/" target="_blank">MathJax</a></li>
+                            <li><a href="/math/mathJax_folder/mathJax_matrices">MathJax Matrices</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

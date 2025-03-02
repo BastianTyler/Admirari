@@ -1,0 +1,78 @@
+{% extends "base_layout.html" %}
+
+{% block title %}
+Matrix Addition - Linear Algebra
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Matrix Addition</h1>
+
+                <p>Matrix addition is the operation of adding two matrices by adding the corresponding elements together. The two matrices must have the same dimensions to be added together.</p>
+
+                <div class="card mb-4" id="matrix-addition">
+                    <div class="card-header">
+                        <h5>Example of Matrix Addition</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Consider the following two matrices:</p>
+                        <p>
+                            $$ 
+                            A = \left[ \begin{matrix} 1 & 2 \\ 3 & 4 \end{matrix} \right], \quad
+                            B = \left[ \begin{matrix} 5 & 6 \\ 7 & 8 \end{matrix} \right]
+                            $$ 
+                        </p>
+                        <p>To add them, simply add the corresponding elements:</p>
+                        <p>
+                            $$ 
+                            A + B = \left[ \begin{matrix} 1+5 & 2+6 \\ 3+7 & 4+8 \end{matrix} \right] = \left[ \begin{matrix} 6 & 8 \\ 10 & 12 \end{matrix} \right]
+                            $$ 
+                        </p>
+                        <p>The result of the addition is:</p>
+                        <p>
+                            $$ 
+                            C = \left[ \begin{matrix} 6 & 8 \\ 10 & 12 \end{matrix} \right]
+                            $$ 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Additional Sections -->
+                <div class="card mb-4" id="steps">
+                    <div class="card-header">
+                        <h5>Steps for Matrix Addition</h5>
+                    </div>
+                    <div class="card-body">
+                        <ol>
+                            <li>Ensure that both matrices are the same size (same number of rows and columns).</li>
+                            <li>Add the corresponding elements from both matrices.</li>
+                            <li>Write the resulting matrix by combining the summed elements.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Table of Contents</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="/math/linear_algebra">Linear Algebra</a></li>
+                            <li><a href="#matrix-addition">Matrix Addition</a></li>
+                            <li><a href="#steps">Steps for Matrix Addition</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <!-- MathJax -->
+{% endblock %}
