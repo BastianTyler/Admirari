@@ -7,54 +7,138 @@ Matrix Operations - Linear Algebra
         <div class="row">
             <!-- Main Content Area -->
             <div class="col-md-8">
-                <h1>Matrix Operations</h1>
-                <p>This page covers various operations that can be performed on matrices in linear algebra.</p>
+                <h1>Matrix Multiplication</h1>
+                <p>This page covers the basics of matric multiplication</p>
                 
                 <!-- First Matrix Operation Section -->
                 <div class="card mb-4" id="operation-1">
                     <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                        <h5>Scalar Multiplication</h5>
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>Description of the matrix operation goes here.</p>
+                        <p>Multiplication by a scalar is easy, just distribute it in.</p>
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
                             $$
-                            <!-- Add your LaTeX matrix formula here -->
+    
+                            A = 
+                            \begin{bmatrix}
+                            1 & 2 & 8\\
+                            3 & 4 & 9\\
+                            5 & 6 & 7\\ 
+                            \end{bmatrix} \quad
+
                             $$
-                        </p>
-                        
-                        <!-- EXAMPLE: Add an example calculation -->
-                        <p>Example:</p>
-                        <p>
-                            $$
-                            <!-- Add your example matrices and calculation here -->
-                            $$
-                        </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>The result is:</p>
-                        <p>
-                            $$
-                            <!-- Add result matrix here -->
-                            $$
+
+                            $$ 
+                            
+                            5A =
+                            \begin{bmatrix}
+                            1*5 & 2*5 & 8*5\\
+                            3*5 & 4*5 & 9*5\\
+                            5*5 & 6*5 & 7*5\\ 
+                            \end{bmatrix} \quad
+
+                            = \quad
+                            \begin{bmatrix}
+                            5 & 10 & 40\\
+                            15 & 20 & 45\\
+                            25 & 30 & 35\\ 
+                            \end{bmatrix} \quad
+
                         </p>
                     </div>
                 </div>
-                
-                <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
-                <div class="card mb-4" id="operation-2">
+
+                <!-- First Matrix Operation Section -->
+                <div class="card mb-4" id="operation-1">
                     <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                        <h5>Matrix x Matrix Multiplication</h5>
                     </div>
                     <div class="card-body">
-                        <!-- Same structure as above - replace content as needed -->
-                        <p>Description of the second matrix operation goes here.</p>
-                        <!-- Formula, example, and result sections follow the same pattern -->
+                        <!-- DESCRIPTION: Add description of the operation here -->
+                        <p>This gets a bit more tricky.</p>
+                        <p>The rule for when we can multiply is when the 
+                            the leading matrix's column number matches the following matrix's row number.
+                        </p>
+                        <p>The result will be a matrix that is the same dimentions as the leading matrix's row number
+                            and the following matrix's column number.
+                        </p>
+                        
+                        <!-- FORMULA: Add LaTeX formula representation -->
+                        <p>
+                            $$
+    
+                            A = 
+                            \begin{bmatrix}
+                            1 & 2 & 8\\
+                            3 & 4 & 9\\
+                            5 & 6 & 7\\ 
+                            \end{bmatrix} \quad
+
+                            B = 
+                            \begin{bmatrix}
+                            1 & 0\\
+                            0 & 3\\
+                            2 & -1\\ 
+                            \end{bmatrix} \quad
+
+                            $$
+
+                            <p>Notice matrix A is 3 rows x 3 columns and matrix B is 3 rows x 2 columns. 
+                                A's column number and B's row number match, thus we can multiply them! </p>
+
+                                <p>What do you expect the resulting matrix to be? Well 3 x 2 of course.
+                                    As corresponding to A's column number and B's row number
+                                </p>
+                        </p>
                     </div>
                 </div>
+
+                <!-- First Matrix Operation Section -->
+                <div class="card mb-4" id="operation-1">
+                    <div class="card-header">
+                        <h5>But How Do We Multiply?</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- DESCRIPTION: Add description of the operation here -->
+                         <p>
+                            <p>The algorithm is as follows: </p>
+                            <p>Starting with the first row of A, take each element and multiply it 
+                                by the corresponding element of the first column of B 
+                            </p>Then sum each of those
+                                products together to get the first entry in the new AB matrix.</p>
+                            <p>Repeat with the same row of A for every column of B</p>
+                            <p>Once finished with each column of B for that row, go the next row in A an redo the process</p>
+                            <p>Once all of A's rows have been processed you are done</p>
+                            
+                            $$
+                            
+                            AB = 
+                            \begin{bmatrix}
+                            ( 1*1 + 2*0 + 8*2 ) & ( 1*0 + 2*3 + 8*-1 )\\
+                            ( 3*1 + 4*0 + 9*2 ) & ( 3*0 + 4*3 + 9*-1 )\\
+                            ( 5*1 + 6*0 + 7*2 ) & ( 5*0 + 6*3 + 7*-1 )\\
+                            \end{bmatrix}\quad
+                            
+                            $$
+
+                            $$
+                            
+                            AB = 
+                            \begin{bmatrix}
+                            17 & -2\\
+                            21 & 3\\
+                            19 & 11\\
+                            \end{bmatrix}\quad
+
+                            $$
+                        </p>
+                    </div>
+                </div>
+        
                 
                 <!-- Additional Information Section -->
                 <div class="card mb-4" id="additional-info">
