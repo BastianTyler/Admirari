@@ -21,3 +21,7 @@ def wave_front():
 @main_bp.route('/wave_front_line')
 def wave_front_line():
     return render_template('wave_front_line.html')
+
+@main_bp.route('/play_box')
+def play_box():
+    return render_template('play_box.html')

@@ -7,8 +7,8 @@ Matrix Operations - Linear Algebra
         <div class="row">
             <!-- Main Content Area -->
             <div class="col-md-8">
-                <h1>Matrix Operations</h1>
-                <p>This page covers various operations that can be performed on matrices in linear algebra.</p>
+                <h1>Matrix Terminology Two</h1>
+                <p>More terms! Yay! </p>
                 
                 <!-- First Matrix Operation Section -->
                 <div class="card mb-4" id="operation-1">
@@ -17,60 +17,183 @@ Matrix Operations - Linear Algebra
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>Description of the matrix operation goes here.</p>
+                        <p>General m x n system of linear equations</p>
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
                             $$
-                            <!-- Add your LaTeX matrix formula here -->
+                            \begin{aligned}
+                                a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &= b_1 \\
+                                a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &= b_2 \\
+                                \vdots \quad &\vdots \\
+                                a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n &= b_m
+                            \end{aligned}
                             $$
+                            
                         </p>
-                        
+                                            <!-- Bullet Point List -->
+                        <ul class="list-unstyled">
+                            <li><strong>System Coefficients:</strong>The a terms</li>
+                            <li><strong>System Constants:</strong>The b terms </li>
+                            <li><strong>Homogeneous:</strong> If all b terms are 0 then the system is homogeneos </li>
+                            <li><strong>Non-Homogeneous</strong> If it isn't homogeneous it is non-homogeneous </li>
+                            <li><strong>Tuple</strong> An ordered list of numbers that can represent a vector or a row or column of a matrix </li>
+                            <li><strong>Solution:</strong> The values for which the \( x_n \)  terms are found to be equal to when the system is solved</li>
+                            <li><strong>Solution Set:</strong> The set of the solutions </li>
+                        </ul>
                         <!-- EXAMPLE: Add an example calculation -->
                         <p>Example:</p>
                         <p>
                             $$
-                            <!-- Add your example matrices and calculation here -->
+                            \begin{aligned}
+                                2x_1 + 3x_2 + 4x_3 &= 5 \\
+                                4x_1 + 6x_2 + 2x_3 &= 7 \\
+                                3x_1 + 5x_2 + 8x_3 &= 9
+                            \end{aligned}
                             $$
-                        </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>The result is:</p>
-                        <p>
-                            $$
-                            <!-- Add result matrix here -->
-                            $$
+
                         </p>
                     </div>
                 </div>
                 
-                <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
+                <!-- Explantion one -->
                 <div class="card mb-4" id="operation-2">
                     <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                        <h5>But What Does It Mean?</h5>
                     </div>
                     <div class="card-body">
                         <!-- Same structure as above - replace content as needed -->
-                        <p>Description of the second matrix operation goes here.</p>
+                        <p>These can represent for us a system of plane equations.</p>
+                        <p>Solutions to these are only solutions because they correspond to coordinates 
+                            of a point of intersection of the three planes.</p>
+                        <p>There aer only four possible states this can end up in</p>
+
+                        <ul class="list-unstyled">
+                            <li><strong>(1)</strong> The planes have no intersection point, and no solution</li>
+                            <li><strong>(2)</strong> The planes intersect in just one point, and so only one solution</li>
+                            <li><strong>(3)</strong> The planes intersect in a line and thus have infinite solutions on the line</li>
+                            <li><strong>(4)</strong> The planes are all identical, and so every point on the plane is a solution</li>
+                        </ul>
+
+                        <p>A few more terms...</p>
+                        <ul class="list-unstyled">
+                            <li><strong>Consistent</strong> The planes have no intersection point, and no solution</li>
+                            <li><strong>In-Consistent</strong> The planes intersect in just one point, and so only one solution</li>
+                        </ul>
+                        
                         <!-- Formula, example, and result sections follow the same pattern -->
+                    </div>
+                </div>
+
+                <!-- Explantion Two -->
+                <div class="card mb-4" id="operation-2">
+                    <div class="card-header">
+                        <h5>Augmented Matrix</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Same structure as above - replace content as needed -->
+                        <p>General augmented matrix</p>
+
+                        <p>
+                            $$
+                            \begin{pmatrix}
+                            a_{11} & a_{12} & \dots & a_{1n} & | & b_1 \\
+                            a_{21} & a_{22} & \dots & a_{2n} & | & b_2 \\
+                            \vdots & \vdots & \ddots & \vdots & | & \vdots \\
+                            a_{m1} & a_{m2} & \dots & a_{mn} & | & b_m
+                            \end{pmatrix}
+                            $$
+                        </p>
+
+                        <p>Lets look through this</p>
+                        <p>We start with some general systems of equations</p>
+                        <p>
+                            $$
+                            \begin{aligned}
+                                2x_1 + 3x_2 + 4x_3 &= 5 \\
+                                4x_1 + 6x_2 + 2x_3 &= 7 \\
+                                3x_1 + 5x_2 + 8x_3 &= 9
+                            \end{aligned}
+                            $$
+
+                            <p>How about we break it into parts</p>
+
+                            $$
+                            \begin{pmatrix}
+                            2 & 3 & 4 \\
+                            4 & 6 & 2 \\
+                            3 & 5 & 8
+                            \end{pmatrix}
+                            \begin{pmatrix}
+                            x_1 \\
+                            x_2 \\
+                            x_3
+                            \end{pmatrix}
+                            =
+                            \begin{pmatrix}
+                            5 \\
+                            7 \\
+                            9
+                            \end{pmatrix}
+                            $$
+
+                            <p>Finally, the augmented form</p>
+
+                            $$
+                            \begin{pmatrix}
+                            2 & 3 & 4 & | & 5 \\
+                            4 & 6 & 2 & | & 7 \\
+                            3 & 5 & 8 & | & 9
+                            \end{pmatrix}
+                            $$
+
+                        </p>
                     </div>
                 </div>
                 
                 <!-- Additional Information Section -->
                 <div class="card mb-4" id="additional-info">
                     <div class="card-header">
-                        <h5><!-- TITLE: Additional information title --></h5>
+                        <h5>Vectors?!?</h5>
                     </div>
                     <div class="card-body">
                         <!-- CONTENT: Add additional explanations, properties, or notes -->
-                        <p>Additional information about matrices or the operations can go here.</p>
-                        
-                        <!-- Optional: Add a list of steps or properties -->
-                        <ol>
-                            <li>First point</li>
-                            <li>Second point</li>
-                            <li>Third point</li>
-                        </ol>
+                        <p>We can write the general m x n system of linear equations as a vector equation!</p>
+
+                        $$
+                        Ax = b
+                        $$
+
+                        <p>\(A\) is the m x n matrix.</p>
+                        <p>\(x\) </p>
+                        <ul class="list-unstyled">
+                            <li><strong>\(A\) ~ </strong> Represents the m x n matrix</li>
+                            <li><strong>\(x\) ~ Vector of Unknowns</strong> We can view \(x \in \mathbb{R}^n \)</li>
+                                <p>
+                                    $$ 
+
+                                    \mathbf{x} = 
+                                    \begin{bmatrix} x_1 \\ 
+                                    x_2 \\ 
+                                    \vdots \\ 
+                                    x_n \end{bmatrix} 
+
+                                    $$  
+
+                                </p>
+                            <li><strong>\(b\) ~ right-hand side vector</strong>We can view \(b \in \mathbb{R}^m \)</li>
+                                <p>
+                                    $$ 
+
+                                    \mathbf{b} = 
+                                    \begin{bmatrix} b_1 \\ 
+                                    b_2 \\ 
+                                    \vdots \\ 
+                                    b_n \end{bmatrix} 
+                                    
+                                    $$  
+                                </p>
+                        </ul>
                     </div>
                 </div>
                 
