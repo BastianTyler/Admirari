@@ -141,45 +141,7 @@ Matrix Operations - Linear Algebra
             </div>
             
             <!-- Sidebar -->
-            <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-primary text-white">
-                        <h5>Table of Contents</h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- NAVIGATION: Update links to match your section IDs -->
-                        <ul>
-                            <li><a href="/math/linear_algebra">Linear Algebra</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_terminology_one">Matrix Terminology One</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_addition">Matrix Addition</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_multiplication">Matrix Multiplication</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_row_operations">Basic Row Operations</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_row_echelon">Row Echelon Form</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_gaussian_elemination">Gaussian Elemination</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_inverse">Inverse of a Matrix</a></li>
-                            <li><a href="/math/linear_algebra_folder/determinant_overview">Determinatant Overview</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_cramers_rule">Cramers Rule</a></li>
-                            <li><a href="/math/linear_algebra_folder/matrix_adjoint">Adjoint</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Related Topics Sidebar Section -->
-                <div class="card shadow-sm mt-4">
-                    <div class="card-header bg-secondary text-white">
-                        <h5>Related Topics</h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- RELATED: Update with related topic links -->
-                        <ul>
-                            <li><a href="/math/linear_algebra/matrix_addition">Matrix Addition</a></li>
-                            <li><a href="/math/linear_algebra/matrix_multiplication">Matrix Multiplication</a></li>
-                            <li><a href="/math/linear_algebra/determinants">Determinants</a></li>
-                            <li><a href="/math/linear_algebra/eigenvalues">Eigenvalues and Eigenvectors</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            {% include "math/sidebar.html" %}
         </div>
     </div>
 {% endblock %}

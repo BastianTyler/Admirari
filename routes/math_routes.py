@@ -29,7 +29,9 @@ LINEAR_ALGEBRA_RELATED_TOPICS = [
 
 @math_bp.route('/linear_algebra')
 def linear_algebra():
-    return render_template('math/linear_algebra.html')
+    return render_template('math/linear_algebra.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 # Latex chart
 @math_bp.route('/mathJax_folder/mathJax')
 def mathJax():
@@ -41,15 +43,21 @@ def mathJax_matrices():
 # Matrix Addition
 @math_bp.route('/linear_algebra_folder/matrix_addition')
 def matrix_addition():
-    return render_template('math/linear_algebra_folder/matrix_addition.html')
+    return render_template('math/linear_algebra_folder/matrix_addition.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 # Matrix Terminology One
 @math_bp.route('/linear_algebra_folder/matrix_terminology_one')
 def show_matrix_terminology():
-    return render_template('math/linear_algebra_folder/matrix_terminology_one.html')
+    return render_template('math/linear_algebra_folder/matrix_terminology_one.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 # Multiplication
 @math_bp.route('/linear_algebra_folder/matrix_multiplication')
 def matrix_multiplication():
-    return render_template('math/linear_algebra_folder/matrix_multiplication.html')
+    return render_template('math/linear_algebra_folder/matrix_multiplication.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 # Row Echelon
 @math_bp.route('/linear_algebra_folder/matrix_row_echelon')
 def matrix_row_echelon():
@@ -59,11 +67,15 @@ def matrix_row_echelon():
 # Row operations
 @math_bp.route('/linear_algebra_folder/matrix_row_operations')
 def matrix_row_operations():
-    return render_template('math/linear_algebra_folder/matrix_row_operations.html')
+    return render_template('math/linear_algebra_folder/matrix_row_operations.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 # Inverse
 @math_bp.route('/linear_algebra_folder/matrix_inverse')
 def matrix_inverse():
-    return render_template('math/linear_algebra_folder/matrix_inverse.html')
+    return render_template('math/linear_algebra_folder/matrix_inverse.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 # Gaussian Elemination
 @math_bp.route('/linear_algebra_folder/matrix_gaussian_elemination')
 def matrix_gaussian_elemination():
@@ -74,14 +86,20 @@ def matrix_gaussian_elemination():
 # Determinant Overview
 @math_bp.route('/linear_algebra_folder/determinant_overview')
 def determinant_overview():
-    return render_template('math/linear_algebra_folder/determinant_overview.html')
+    return render_template('math/linear_algebra_folder/determinant_overview.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 
-# Gaussian Elemination
+# Cramers Elemination
 @math_bp.route('/linear_algebra_folder/matrix_cramers_rule')
 def cramers_rule():
-    return render_template('math/linear_algebra_folder/matrix_cramers_rule.html')
+    return render_template('math/linear_algebra_folder/matrix_cramers_rule.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
 
-# Gaussian Elemination
+# Adjoint Elemination
 @math_bp.route('/linear_algebra_folder/matrix_adjoint')
 def adjoint():
-    return render_template('math/linear_algebra_folder/matrix_adjoint.html')
+    return render_template('math/linear_algebra_folder/matrix_adjoint.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
