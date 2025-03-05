@@ -7,39 +7,76 @@ Matrix Operations - Linear Algebra
         <div class="row">
             <!-- Main Content Area -->
             <div class="col-md-8">
-                <h1>Matrix Operations</h1>
-                <p>This page covers various operations that can be performed on matrices in linear algebra.</p>
+                <h1>Intro to the Inverse</h1>
+                <p>This page will describe the basic properties of Inverse matricies
+                    and how to calculate them using the identity matrix
+                </p>
                 
                 <!-- First Matrix Operation Section -->
                 <div class="card mb-4" id="operation-1">
                     <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                        <h5>What is the Inverse?</h5>
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>Description of the matrix operation goes here.</p>
+                        <p>The inverse is simply what brings a matrix to the identity matrix.</p>
+                        <p>Not every matrix has an inverse. If it does, then we say that the matrix is
+                            invertable. 
+                        </p>
+                        <p>Think if this as how we can essentially divide out a matrix</p>
+                        
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
                             $$
-                            <!-- Add your LaTeX matrix formula here -->
+                            A =
+                            \begin{bmatrix}
+                            1 & -1 & 2  \\
+                            2 & -3 & 3  \\
+                            1 & -1 & 1   
+                            \end{bmatrix} \quad
+                            
+
+                            
+                            B =
+                            \begin{bmatrix}
+                            0 & -1 & 3  \\
+                            1 & 0 & 0  \\
+                            1 & 0 & -1  \\
+                            \end{bmatrix}
                             $$
-                        </p>
-                        
-                        <!-- EXAMPLE: Add an example calculation -->
-                        <p>Example:</p>
-                        <p>
+
+                            <p>Matrix B is the inverse of matrix A. To check lets multiply them!</p>
+
                             $$
-                            <!-- Add your example matrices and calculation here -->
+                            AB =                             
+                            \begin{bmatrix}
+                            1 & -1 & 2  \\
+                            2 & -3 & 3  \\
+                            1 & -1 & 1   
+                            \end{bmatrix} 
+                            
+                            \begin{bmatrix}
+                            0 & -1 & 3  \\
+                            1 & 0 & 0  \\
+                            1 & 0 & -1  \\
+                            \end{bmatrix} \quad
                             $$
-                        </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>The result is:</p>
-                        <p>
+
                             $$
-                            <!-- Add result matrix here -->
+                            =
+                            \begin{bmatrix}
+                            1 & 0 & 0  \\
+                            0 & 1 & 0  \\
+                            0 & 0 & 1  \\
+                            \end{bmatrix}
+<!--I should make something to auto insert zero and identity using numpy or something-->
                             $$
+
+                            <p>Wow! We got the identiy. We should also check BA to be sure, but 
+                                I leave that up to you... good luck!
+                            </p>
+
                         </p>
                     </div>
                 </div>
@@ -47,11 +84,27 @@ Matrix Operations - Linear Algebra
                 <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
                 <div class="card mb-4" id="operation-2">
                     <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                        <h5>Finding the inverse with the identity matrix</h5>
                     </div>
                     <div class="card-body">
                         <!-- Same structure as above - replace content as needed -->
-                        <p>Description of the second matrix operation goes here.</p>
+                        <p>So how do we find the inverse? Well, if there is one, we can
+                            make an augmented matrix of the matrix we want the inverse of
+                            and of the identity. 
+                        </p>
+                        <p>
+                            <p>We start with matrix A</p>
+
+                            <p>Our goal is to transform Matrix A into the identity matrix.
+                                Each row operation we perform on A should occur on the identiy.
+                                We augment A to make this obvious.
+                            </p>
+
+                            <p>And the resulting matrix should be A inverse!
+                                We can check this by multiplying the original A by
+                                the inverse of A. 
+                            </p>
+                        </p>
                         <!-- Formula, example, and result sections follow the same pattern -->
                     </div>
                 </div>
@@ -104,6 +157,9 @@ Matrix Operations - Linear Algebra
                             <li><a href="/math/linear_algebra_folder/matrix_row_echelon">Row Echelon Form</a></li>
                             <li><a href="/math/linear_algebra_folder/matrix_gaussian_elemination">Gaussian Elemination</a></li>
                             <li><a href="/math/linear_algebra_folder/matrix_inverse">Inverse of a Matrix</a></li>
+                            <li><a href="/math/linear_algebra_folder/determinant_overview">Determinatant Overview</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_cramers_rule">Cramers Rule</a></li>
+                            <li><a href="/math/linear_algebra_folder/matrix_adjoint">Adjoint</a></li>
                         </ul>
                     </div>
                 </div>

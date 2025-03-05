@@ -7,51 +7,270 @@ Matrix Operations - Linear Algebra
         <div class="row">
             <!-- Main Content Area -->
             <div class="col-md-8">
-                <h1>Matrix Operations</h1>
-                <p>This page covers various operations that can be performed on matrices in linear algebra.</p>
+                <h1>Guassian Elemination</h1>
+                <p>Basics on Gaussian and Guass-Jordan Elemination.</p>
                 
                 <!-- First Matrix Operation Section -->
                 <div class="card mb-4" id="operation-1">
                     <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                        <h5>Reduced Row Echelon Form</h5>
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>Description of the matrix operation goes here.</p>
+                        <p>Reduced row-echelon form adds just one more requirement to row-echelon form:</p>
+                        <p>Any column with a leading one must have all zero entries except for that one</p>
+                        <p>We call these leading ones pivots.</p>
+                        <p>Some people say the pivots don't have to be one in row-echelon, only in reduced</p>
+                        <p>All reduced row-echelon forms are unique to the matrix, unlike the row-echelon</p>
+                        <p></p>
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
                             $$
-                            <!-- Add your LaTeX matrix formula here -->
+                            A =
+                            \begin{bmatrix}
+                            1 & 0 & 0 & 0 \\
+                            0 & 1 & 0 & 0 \\
+                            0 & 0 & 1 & 0 \\
+                            0 & 0 & 0 & 1
+                            \end{bmatrix}
+                           
+
+                            B =
+                            \begin{bmatrix}
+                            1 & 2 & 0 & 0 \\
+                            0 & 0 & 0 & 0 \\
+                            0 & 0 & 1 & 0 \\
+                            0 & 0 & 0 & 1
+                            \end{bmatrix}
+
                             $$
                         </p>
-                        
-                        <!-- EXAMPLE: Add an example calculation -->
-                        <p>Example:</p>
+
+                        <p>Matrix A is in reduced row-echelon form, and so is matrix B.
+                            For B, the second column has no pivot, so the two does not break the form.
+                        </p>
+
                         <p>
                             $$
-                            <!-- Add your example matrices and calculation here -->
+                            C =
+                            \begin{bmatrix}
+                            1 & 2 & 0 & 0 \\
+                            0 & 1 & 0 & 0 \\
+                            0 & 0 & 0 & 0 \\
+                            0 & 0 & 0 & 1
+                            \end{bmatrix}
+                           
+
+                            D =
+                            \begin{bmatrix}
+                            1 & 0 & 3 \\
+                            0 & 1 & 0 \\
+                            0 & 0 & 0 
+                            \end{bmatrix}
+
                             $$
                         </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>The result is:</p>
-                        <p>
-                            $$
-                            <!-- Add result matrix here -->
-                            $$
+
+                        <p>Matrix C is not in reduced form as there is a two about the pivot in column 2, but D is in reduced form..
                         </p>
+                
+
+
                     </div>
                 </div>
                 
-                <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
+                <!--  -->
                 <div class="card mb-4" id="operation-2">
                     <div class="card-header">
-                        <h5><!-- TITLE: Replace with specific operation name --></h5>
+                        <h5>Gaussian or  Guass-Jordan elimiantion</h5>
                     </div>
                     <div class="card-body">
                         <!-- Same structure as above - replace content as needed -->
-                        <p>Description of the second matrix operation goes here.</p>
+                        <p>This is the tool we aim to use to get the solutions for our matricies</p>
+                        <!-- Formula, example, and result sections follow the same pattern -->
+                        <p>
+                            $$
+                            \begin{aligned}
+                                4x_1 + -3x_2 + 6x_3 &= 2 \\
+                                1x_1 + -3x_2 + 6x_3 &= 5 \\
+                                -2x_1 + 3x_2 + -8x_3 &= -6
+                            \end{aligned}
+                            $$
+
+                            <p>We want to find the solutions to this system of linear equations.
+                                Lets reduce it to row-echelon form!
+                            </p>
+
+                            $$
+                            A =
+                            \begin{bmatrix}
+                            4 & -3 & 6 & | \quad 2\\
+                            1 & -3 & 6 & | \quad 5\\
+                            -2 & 3 & -8 & | -6
+                            \end{bmatrix}
+                            $$
+                            <p>...</p>
+                            $$
+                            A =
+                            \begin{bmatrix}
+                            1 & -3 & 6 & | \quad 5\\
+                            0 & 1 & -2 & | -2\\
+                            0 & 0 & 1 & | \quad 1
+                            \end{bmatrix}
+                            $$
+
+                            <p>The resulting system of equations is thus:</p>
+
+                            $$
+                            \begin{aligned}
+                                x_1  -   3x_2 + 6x_3 &= 5 \\
+                                          x_2 - 2x_3 &= -2 \\
+                                                x_3 &= 1
+                            \end{aligned}
+                            $$
+                            <p>We have gotten a simple system of linear equations.
+                                Notice, we directly get one of the unknowns variables,cool!
+                                Now we will use <super>back supbstitution</super> to plug in 
+                                \(x_3\) into eqation 2, and that result into equation 1.
+                            </p>
+
+                            <p>The solution set would be \(S = {(-1,0,1)}\)</p>
+                        </p>
+                    </div>
+                </div>
+
+                <!--Three-->
+                <div class="card mb-4" id="operation-2">
+                    <div class="card-header">
+                        <h5>Example of a Inconsistent System </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Same structure as above - replace content as needed -->
+                        <p>
+                            What does it look like when we end up with something illegla?
+                        </p>
+                        <p>
+
+                            <p>We start with this system of equations and work it into reduced form</p>
+                            $$
+                            \begin{aligned}
+                                x_1 + x_2  - x_3  + x_4 &= 1 \\
+                                2x_1 + 3x_2 + 1x_3 + 0x_4  &= 4 \\
+                                3x_1 + 5x_2 + 3x_3 - x_4 &= 5
+                            \end{aligned}
+                            $$
+
+                            $$
+                            A =
+                            \begin{bmatrix}
+                            1 & 1 & -1 & 1| \quad 1\\
+                            2 & 3 & 1  &  0| \quad 4\\
+                            3 & 5 & 3  & -1| \quad 5
+                            \end{bmatrix}
+                            $$
+
+                            <p>...</p>
+
+                            $$
+                            A =
+                            \begin{bmatrix}
+                            1 & 1 & -1 & 1| \quad 1\\
+                            0 & 1 & 3  & -2| \quad 2\\
+                            0 & 0 & 0  & 0| \quad -2
+                            \end{bmatrix}
+                            $$
+
+                            <p>Notice that the bottom row is all 0's except for -2.
+                                But -2 can't = 0! So there is no solution.
+                            </p>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-4" id="operation-2">
+                    <div class="card-header">
+                        <h5>Free Variables</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Same structure as above - replace content as needed -->
+                        <p>What is a free variable and how do we get them?</p>
+                        <!-- Formula, example, and result sections follow the same pattern -->
+                         <p>
+                            <p>We start with this system of equations</p>
+
+                            $$
+                            \begin{aligned}
+                                5x_1 - 6x_2 + x_3 &= 4 \\
+                                2x_1 - 3x_2 + x_3 &= 1 \\
+                                4x_1 - 3x_2 + x_3 &= 5
+                            \end{aligned}
+                            $$
+                            <p>After some row operations we end up with</p>
+                            $$
+                            A =
+                            \begin{bmatrix}
+                            1 & -3 & 2 & | \quad -1\\
+                            0 & 1 & -1 & | \quad 1\\
+                            0 & 0 & 0 & | 0
+                            \end{bmatrix}
+                            $$
+
+                            <p>The resulting system looks like:</p>
+
+                            $$
+                            \begin{aligned}
+                                x_1 - 3x_2 + 2x_3 &= -1 \\
+                                       x_2 - x_3 &= 1 \\
+                            \end{aligned}
+                            $$
+
+                            <p>Notice that the bottom row is entierly 0!
+                                Also noteice that we have more variables then equations. 
+                                For each of these we will make a free variable. 
+                            </p>
+
+                            <p>But what about when there is more then one free variable?</p>
+
+                            $$
+                            \begin{aligned}
+                                x_1  - 2x_2 + 2x_3  - x_4  &= 3 \\
+                                3x_1 + x_2 + 6x_3 + 11x_4 &= 16 \\
+                                2x_1 - x_2 + 4x_3 + 4x_4  &= 9
+                            \end{aligned}
+                            $$
+
+                            $$
+                            A =
+                            \begin{bmatrix}
+                            1 & -2 & 2 & -1| \quad 3\\
+                            0 & 1  & 0  & 2| \quad 1\\
+                            0 & 0 & 0  & 0| \quad 0
+                            \end{bmatrix}
+                            $$
+                            
+                            $$
+                            \begin{aligned}
+                                x_1  - 2x_2 + 2x_3  - x_4  &= 3 \\
+                                        x_2 +        2x_4 &= 1 \\
+                            \end{aligned}
+                            $$
+
+                            <p>Notive we have 4 variables for 2 equations, this means
+                                we get two free variables. We do have to backsub in our 
+                                values to get our solution set. 
+                            </p>
+                         </p>
+                    </div>
+                </div>
+
+                <div class="card mb-4" id="operation-2">
+                    <div class="card-header">
+                        <h5>Homogeneous Linear System</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Same structure as above - replace content as needed -->
+                        <p>This is the tool we aim to use to get the solutions for our matricies</p>
                         <!-- Formula, example, and result sections follow the same pattern -->
                     </div>
                 </div>
@@ -85,46 +304,9 @@ Matrix Operations - Linear Algebra
                         <p>This visualization demonstrates the concept interactively.</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Sidebar -->
-            <div class="col-md-4">
-                <div class="position-sticky" style="top: 80px;">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-primary text-white">
-                            <h5>Table of Contents</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li><a href="/math/linear_algebra">Linear Algebra</a></li>
-                                <li><a href="/math/linear_algebra_folder/matrix_terminology_one">Matrix Terminology One</a></li>
-                                <li><a href="/math/linear_algebra_folder/matrix_addition">Matrix Addition</a></li>
-                                <li><a href="/math/linear_algebra_folder/matrix_multiplication">Matrix Multiplication</a></li>
-                                <li><a href="/math/linear_algebra_folder/matrix_row_operations">Basic Row Operations</a></li>
-                                <li><a href="/math/linear_algebra_folder/matrix_row_echelon">Row Echelon Form</a></li>
-                                <li><a href="/math/linear_algebra_folder/matrix_gaussian_elemination">Gaussian Elimination</a></li>
-                                <li><a href="/math/linear_algebra_folder/matrix_inverse">Inverse of a Matrix</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Related Topics Sidebar Section -->
-                    <div class="card shadow-sm mt-4">
-                        <div class="card-header bg-secondary text-white">
-                            <h5>Related Topics</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li><a href="/math/linear_algebra/matrix_addition">Matrix Addition</a></li>
-                                <li><a href="/math/linear_algebra/matrix_multiplication">Matrix Multiplication</a></li>
-                                <li><a href="/math/linear_algebra/determinants">Determinants</a></li>
-                                <li><a href="/math/linear_algebra/eigenvalues">Eigenvalues and Eigenvectors</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>{% include "math/sidebar.html" %}
         </div>
     </div>
+    
 {% endblock %}
 

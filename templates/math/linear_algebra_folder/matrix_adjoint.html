@@ -7,100 +7,105 @@ Matrix Operations - Linear Algebra
         <div class="row">
             <!-- Main Content Area -->
             <div class="col-md-8">
-                <h1>Matrix Addition</h1>
-                <p>This page has some basic explanations and examples for matrix addition</p>
+                <h1>Intro to the Inverse</h1>
+                <p>This page will describe the basic properties of Inverse matricies
+                    and how to calculate them using the identity matrix
+                </p>
                 
                 <!-- First Matrix Operation Section -->
                 <div class="card mb-4" id="operation-1">
                     <div class="card-header">
-                        <h5>When can we add?</h5>
+                        <h5>What is the Inverse?</h5>
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>We can add when two matricies have the same dimensions.</p>
+                        <p>The inverse is simply what brings a matrix to the identity matrix.</p>
+                        <p>Not every matrix has an inverse. If it does, then we say that the matrix is
+                            invertable. 
+                        </p>
+                        <p>Think if this as how we can essentially divide out a matrix</p>
+                        
                         
                         <!-- FORMULA: Add LaTeX formula representation -->
                         <p>
                             $$
-
-                            A = 
+                            A =
                             \begin{bmatrix}
-                            1 & 2 \\
-                            3 & 4 \\
-                            5 & 6 \\
+                            1 & -1 & 2  \\
+                            2 & -3 & 3  \\
+                            1 & -1 & 1   
                             \end{bmatrix} \quad
-
-                            B = 
-                            \begin{bmatrix}
-                            1 & 0 \\
-                            -2 & 3 \\
-                            -4 & 9 \\ 
-                            \end{bmatrix} \quad
-
-                            $$
                             
 
-                            <p>Here A and B are the same m x n dimentions, that is they are both 3 x 2 in size.
-                                So we can add them!
+                            
+                            B =
+                            \begin{bmatrix}
+                            0 & -1 & 3  \\
+                            1 & 0 & 0  \\
+                            1 & 0 & -1  \\
+                            \end{bmatrix}
+                            $$
+
+                            <p>Matrix B is the inverse of matrix A. To check lets multiply them!</p>
+
+                            $$
+                            AB =                             
+                            \begin{bmatrix}
+                            1 & -1 & 2  \\
+                            2 & -3 & 3  \\
+                            1 & -1 & 1   
+                            \end{bmatrix} 
+                            
+                            \begin{bmatrix}
+                            0 & -1 & 3  \\
+                            1 & 0 & 0  \\
+                            1 & 0 & -1  \\
+                            \end{bmatrix} \quad
+                            $$
+
+                            $$
+                            =
+                            \begin{bmatrix}
+                            1 & 0 & 0  \\
+                            0 & 1 & 0  \\
+                            0 & 0 & 1  \\
+                            \end{bmatrix}
+<!--I should make something to auto insert zero and identity using numpy or something-->
+                            $$
+
+                            <p>Wow! We got the identiy. We should also check BA to be sure, but 
+                                I leave that up to you... good luck!
+                            </p>
+
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
+                <div class="card mb-4" id="operation-2">
+                    <div class="card-header">
+                        <h5>Finding the inverse with the identity matrix</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Same structure as above - replace content as needed -->
+                        <p>So how do we find the inverse? Well, if there is one, we can
+                            make an augmented matrix of the matrix we want the inverse of
+                            and of the identity. 
+                        </p>
+                        <p>
+                            <p>We start with matrix A</p>
+
+                            <p>Our goal is to transform Matrix A into the identity matrix.
+                                Each row operation we perform on A should occur on the identiy.
+                                We augment A to make this obvious.
+                            </p>
+
+                            <p>And the resulting matrix should be A inverse!
+                                We can check this by multiplying the original A by
+                                the inverse of A. 
                             </p>
                         </p>
-
-                        <p>
-                            $$
-
-                            A = 
-                            \begin{bmatrix}
-                            1 & 2 \\
-                            3 & 4 \\
-                            5 & 6 \\
-                            \end{bmatrix} \quad
-
-                            C = 
-                            \begin{bmatrix}
-                            1 & 2 & 8\\
-                            3 & 4 & 9\\
-                            5 & 6 & 7\\ 
-                            \end{bmatrix} \quad
-
-                            $$
-
-                            <p>Here A and C are not the same m x n dimentions. A is 3 x 2 in size and C is 3 x 3.
-                                So we can't add them.
-                            </p>
-                        </p>
-                        
-                        <!-- EXAMPLE: Add an example calculation -->
-                        <p>Example of adding A + B:</p>
-                        <p> Given: 
-                            $$ A + B = D $$
-
-                            $$
-
-                            D = 
-                            \begin{bmatrix}
-                            1+1 & 2+0 \\
-                            3-2 & 4+3 \\
-                            5-4 & 6+9 \\
-                            \end{bmatrix} \quad
-
-
-                            $$
-                        </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>The result is:</p>
-                        <p>
-                            $$
-
-                            D = 
-                            \begin{bmatrix}
-                            2 & 2 \\
-                            1 & 7 \\
-                            1 & 15 \\
-                            \end{bmatrix} \quad
-
-                            $$
-                        </p>
+                        <!-- Formula, example, and result sections follow the same pattern -->
                     </div>
                 </div>
                 
@@ -122,6 +127,17 @@ Matrix Operations - Linear Algebra
                     </div>
                 </div>
                 
+                <!-- Interactive Section (if you want to add p5.js visualization) -->
+                <div class="card mb-4" id="interactive">
+                    <div class="card-header">
+                        <h5>Interactive Visualization</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- P5.JS: Container for p5.js sketch -->
+                        <div id="matrix-visualization"></div>
+                        <p>This visualization demonstrates the concept interactively.</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Sidebar -->
@@ -167,4 +183,3 @@ Matrix Operations - Linear Algebra
         </div>
     </div>
 {% endblock %}
-

@@ -1,0 +1,33 @@
+{% block body_title %}
+ <!-- Sidebar -->
+ <div class="col-md-4">
+    <div class="position-sticky" style="top: 80px; max-height: 80vh; overflow-y: auto;">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5>Table of Contents</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for link in table_of_contents %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Related Topics Sidebar Section -->
+        <div class="card shadow-sm mt-4">
+            <div class="card-header bg-secondary text-white">
+                <h5>Related Topics</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for link in related_topics %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

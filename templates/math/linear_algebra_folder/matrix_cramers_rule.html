@@ -7,100 +7,57 @@ Matrix Operations - Linear Algebra
         <div class="row">
             <!-- Main Content Area -->
             <div class="col-md-8">
-                <h1>Matrix Addition</h1>
-                <p>This page has some basic explanations and examples for matrix addition</p>
+                <h1>Cramers Rule</h1>
+                <p>The page will walk through Cramers Rule.</p>
                 
                 <!-- First Matrix Operation Section -->
                 <div class="card mb-4" id="operation-1">
                     <div class="card-header">
-                        <h5>When can we add?</h5>
+                        <h5>What is Cramers Rule?</h5>
                     </div>
                     <div class="card-body">
                         <!-- DESCRIPTION: Add description of the operation here -->
-                        <p>We can add when two matricies have the same dimensions.</p>
-                        
+                        <p>Cramers Rule is a technqiue for finding the solutions of 
+                            a system of linear equations using the power of the 
+                            determinant.
+                        </p>                        
                         <!-- FORMULA: Add LaTeX formula representation -->
+                        <p>The rule states:</p>
+                        <p>If \(det(A)\neq 0\), then the unqie solution to \(A\) is replaced by \(b\) is \(x = (x_1,x_2,...x_n)\), where</p>
                         <p>
                             $$
-
-                            A = 
-                            \begin{bmatrix}
-                            1 & 2 \\
-                            3 & 4 \\
-                            5 & 6 \\
-                            \end{bmatrix} \quad
-
-                            B = 
-                            \begin{bmatrix}
-                            1 & 0 \\
-                            -2 & 3 \\
-                            -4 & 9 \\ 
-                            \end{bmatrix} \quad
-
+                            x_k = det(B_k)/det()
                             $$
-                            
+                        </p>
 
-                            <p>Here A and B are the same m x n dimentions, that is they are both 3 x 2 in size.
-                                So we can add them!
+                    </div>
+                </div>
+                
+                <!-- Second Matrix Operation Section (can be duplicated for more operations) -->
+                <div class="card mb-4" id="operation-2">
+                    <div class="card-header">
+                        <h5>Finding the inverse with the identity matrix</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Same structure as above - replace content as needed -->
+                        <p>So how do we find the inverse? Well, if there is one, we can
+                            make an augmented matrix of the matrix we want the inverse of
+                            and of the identity. 
+                        </p>
+                        <p>
+                            <p>We start with matrix A</p>
+
+                            <p>Our goal is to transform Matrix A into the identity matrix.
+                                Each row operation we perform on A should occur on the identiy.
+                                We augment A to make this obvious.
+                            </p>
+
+                            <p>And the resulting matrix should be A inverse!
+                                We can check this by multiplying the original A by
+                                the inverse of A. 
                             </p>
                         </p>
-
-                        <p>
-                            $$
-
-                            A = 
-                            \begin{bmatrix}
-                            1 & 2 \\
-                            3 & 4 \\
-                            5 & 6 \\
-                            \end{bmatrix} \quad
-
-                            C = 
-                            \begin{bmatrix}
-                            1 & 2 & 8\\
-                            3 & 4 & 9\\
-                            5 & 6 & 7\\ 
-                            \end{bmatrix} \quad
-
-                            $$
-
-                            <p>Here A and C are not the same m x n dimentions. A is 3 x 2 in size and C is 3 x 3.
-                                So we can't add them.
-                            </p>
-                        </p>
-                        
-                        <!-- EXAMPLE: Add an example calculation -->
-                        <p>Example of adding A + B:</p>
-                        <p> Given: 
-                            $$ A + B = D $$
-
-                            $$
-
-                            D = 
-                            \begin{bmatrix}
-                            1+1 & 2+0 \\
-                            3-2 & 4+3 \\
-                            5-4 & 6+9 \\
-                            \end{bmatrix} \quad
-
-
-                            $$
-                        </p>
-                        
-                        <!-- RESULT: Show the result of the example -->
-                        <p>The result is:</p>
-                        <p>
-                            $$
-
-                            D = 
-                            \begin{bmatrix}
-                            2 & 2 \\
-                            1 & 7 \\
-                            1 & 15 \\
-                            \end{bmatrix} \quad
-
-                            $$
-                        </p>
+                        <!-- Formula, example, and result sections follow the same pattern -->
                     </div>
                 </div>
                 
@@ -122,6 +79,17 @@ Matrix Operations - Linear Algebra
                     </div>
                 </div>
                 
+                <!-- Interactive Section (if you want to add p5.js visualization) -->
+                <div class="card mb-4" id="interactive">
+                    <div class="card-header">
+                        <h5>Interactive Visualization</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- P5.JS: Container for p5.js sketch -->
+                        <div id="matrix-visualization"></div>
+                        <p>This visualization demonstrates the concept interactively.</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Sidebar -->
@@ -167,4 +135,3 @@ Matrix Operations - Linear Algebra
         </div>
     </div>
 {% endblock %}
-
