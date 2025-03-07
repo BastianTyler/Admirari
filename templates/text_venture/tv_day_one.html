@@ -1,0 +1,403 @@
+{% extends "base_layout.html" %} {% block title %}About{% endblock %} {% block
+content %}
+<div class="container mt-4">
+  <!-- Tutorial Content -->
+  <div class="row">
+    <!-- Main Content Column -->
+    <div class="col-12">
+      <div class="tutorial-header text-center">
+        <h1>Text Venture: Day One</h1>
+        <p>Learn Java by building a text-based RPG game!</p>
+      </div>
+
+      <!-- Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">Intro</h2>
+
+        <p class="section-content">
+          Your introductory text goes here. Explain the concept you're about to
+          teach.
+        </p>
+
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public class Player { /* Your code will go here */ }</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Version Control Section -->
+      <div class="content-container">
+        <h2 class="section-title">Version Control</h2>
+
+        <p class="section-content">
+          Your introductory text goes here. Explain the concept you're about to
+          teach.
+        </p>
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public class Player { /* Your code will go here */ }</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Main Section -->
+      <div class="content-container">
+        <h2 class="section-title">Main</h2>
+
+        <p class="section-content">
+          Your introductory text goes here. Explain the concept you're about to
+          teach.
+        </p>
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public class Main {
+
+    public static void main(String[] args) {
+        // Create an instance of GameLogic 
+        GameLogic gameLogic = new GameLogic();
+        
+        // Retrieve the player object information
+        Player player = gameLogic.newGame();
+
+        // Print the player's information to the screen
+        System.out.println("Player Name: " + player.getName());
+        System.out.println("Player Gender: " + (player.getGender() == 'M' ? "Man" : "Woman"));
+    }
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Player Section -->
+      <div class="content-container">
+        <h2 class="section-title">Player</h2>
+
+        <p class="section-content">
+          Your introductory text goes here. Explain the concept you're about to
+          teach.
+        </p>
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public class Player {
+        private String name;
+        private char gender;
+        private int age;
+        private int health;
+
+        public Player(String name, char gender, int age){
+            this.name = name;
+            this.gender = gender;
+            this.age = age;
+            this.health = 100;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public char getGender() {
+            return gender;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public int getHealth() {
+            return health;
+        }
+}
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Helper Section -->
+      <div class="content-container">
+        <h2 class="section-title">Intro</h2>
+
+        <p class="section-content">
+          Your introductory text goes here. Explain the concept you're about to
+          teach.
+        </p>
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">import java.io.IOException;
+import java.util.Scanner;
+
+public class HelperMethods {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void printDecorations(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("~");
+        }
+        System.out.println();
+    }
+
+    public static void defaultHeaderGenerator(String title) {
+        printDecorations(30);
+        System.out.println(title);
+        printDecorations(30);
+    }
+
+    public static void headerGenerator(String title, int decorationCount) {
+        printDecorations(decorationCount);
+        System.out.println(title);
+        printDecorations(decorationCount);
+    }
+
+    public static void printTwoChoices(String choice1, String choice2) {
+        System.out.print("(1) " + choice1 + "\n(2) " + choice2 + "\n");
+    }
+
+    public static String getStringInput() {
+        return scanner.nextLine();
+    }
+
+    public static int getIntInput(String prompt, int userChoices) {
+        int input;
+        do {
+            System.out.println(prompt);
+            try {
+                input = Integer.parseInt(scanner.next());
+            } catch (Exception e) {
+                input = -1;
+                System.out.println("Must enter an integer!");
+            }
+        } while (input < 1 || input > userChoices);
+        return input;
+    }
+
+    public static void anythingToContinue() {
+        System.out.println("Press Enter to continue");
+        try {
+            System.in.read();  // Wait for user input
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Game Logic Section -->
+      <div class="content-container">
+        <h2 class="section-title">Intro</h2>
+
+        <p class="section-content">
+          Your introductory text goes here. Explain the concept you're about to
+          teach.
+        </p>
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public class GameLogic {
+    private boolean isRunning = true;
+
+    public String setPlayerName() {
+        boolean nameSet = false;
+        String playerName;
+
+        do {
+            HelperMethods.defaultHeaderGenerator("Pick a name");
+            playerName = HelperMethods.getStringInput();
+            HelperMethods.headerGenerator("Is " + playerName + " truly your name?", 75);
+            HelperMethods.printTwoChoices("Yes", "No");
+            int input = HelperMethods.getIntInput(" ---> ", 2);
+            if (input == 1)
+                nameSet = true;
+        } while (!nameSet);
+
+        return playerName;
+    }
+
+    public char setPlayerGender() {
+        boolean genderSet = false;
+        String genderString = "";
+        char genderChar = '?';
+
+        do {
+            HelperMethods.defaultHeaderGenerator("What is your gender?");
+            HelperMethods.printTwoChoices("Man", "Woman");
+            int genderInput = HelperMethods.getIntInput("--->", 2);
+
+            if (genderInput == 1) {
+                genderString = "Man";
+                genderChar = 'M';
+            } else {
+                genderString = "Woman";
+                genderChar = 'W';
+            }
+
+            HelperMethods.headerGenerator("You are a " + genderString, 40);
+            HelperMethods.printTwoChoices("Yes", "No");
+            int input = HelperMethods.getIntInput(" ---> ", 2);
+            if (input == 1)
+                genderSet = true;
+        } while (!genderSet);
+
+        return genderChar;
+    }
+
+    public Player newGame() {
+        String playerName = setPlayerName();
+        char playerGender = setPlayerGender();
+        Player player = new Player(playerName, playerGender, 10);  // Setting default age as 10
+        // Here we can print out player's information to confirm
+        HelperMethods.headerGenerator("Character Created!", 30);
+        System.out.println("Name: " + player.getName());
+        System.out.println("Gender: " + player.getGender());
+        System.out.println("Age: " + player.getAge());
+        System.out.println("Health: " + player.getHealth());
+        HelperMethods.anythingToContinue();
+
+        return player;
+    }
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Practice Section -->
+      <div class="practice-section">
+        <h3>Try It Yourself</h3>
+        <p>Instructions for student practice:</p>
+        <ul>
+          <li>Task 1</li>
+          <li>Task 2</li>
+          <li>Task 3</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
