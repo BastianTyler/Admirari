@@ -1,27 +1,26 @@
 {% block body_title %}
  <!-- Sidebar -->
  <div class="col-md-4">
-    <div class="position-sticky" style="top: 80px; max-height: 80vh; overflow-y: auto;">
+    <div class="position-sticky sidebar-sticky">
         <div class="card shadow-sm">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header table-of-contents-header">
                 <h5>Table of Contents</h5>
             </div>
             <div class="card-body">
-                <ul>
+                <ul class="sidebar-links">
                     {% for link in table_of_contents %}
                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
-
         <!-- Related Topics Sidebar Section -->
         <div class="card shadow-sm mt-4">
-            <div class="card-header bg-secondary text-white">
+            <div class="card-header table-of-contents-header">
                 <h5>Related Topics</h5>
             </div>
             <div class="card-body">
-                <ul>
+                <ul class="sidebar-links">
                     {% for link in related_topics %}
                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                     {% endfor %}
