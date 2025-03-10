@@ -1,0 +1,114 @@
+{% extends "base_layout.html" %} {% block title %}Temperature Scales{% endblock
+%} {% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Temperature Scales</h1>
+      <p>General idea of thermo</p>
+      <!--Content card-->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Different Scales</h5>
+        </div>
+        <div class="card-body">
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!--Content card-->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Celsius</h5>
+        </div>
+        <div class="card-body">
+          <p>Quick Facts:</p>
+          <ul>
+            <li>Water boils at __ assuming standard atmospheric pressure</li>
+            <li>Water freezes at __ assuming standard atmospheric pressure</li>
+          </ul>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!--Content card-->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Kelvin</h5>
+        </div>
+        <div class="card-body">
+          <p>Quick Facts:</p>
+          <ul>
+            <li>Water boils at __ K assuming standard atmospheric pressure</li>
+            <li>
+              Water freezes at __ K assuming standard atmospheric pressure
+            </li>
+          </ul>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!--Content card-->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Fahrenheit</h5>
+        </div>
+        <div class="card-body">
+          <p>Quick Facts:</p>
+          <ul>
+            <li>Water boils at __ __ assuming standard atmospheric pressure</li>
+            <li>
+              Water freezes at __ __ assuming standard atmospheric pressure
+            </li>
+          </ul>
+
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!--Content card-->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Converting Between Scales</h5>
+        </div>
+        <div class="card-body">
+          <p>Do you remember the old equation : $$ y = mx + b $$ $$?$$</p>
+          <p>
+            So long as the temperature scales are both linear we can use this
+            formula and two data points to convert between any two scales!
+            Suppose we wanted to a machine that output celsius values when we
+            input degree values. A function like: $$ T_c = mT_f + b$$ would
+            serve to act like such a machine. Lets build it from what we know!
+          </p>
+
+          <p>
+            <strong>Think:</strong> do we have data about medium at two points?
+            We do, we know when water freezes and boild for both celsius and
+            fahrenheit scales! Lets start with when water freezes, because 0 is
+            a nice starting point. $$ 0^\circ C = m32^\circ F + b $$ $$ b =
+            -m32^\circ F $$ Now we can plut this into another linear formula for
+            the boiling point. $$100^\circ C = m212^\circ F - m32^\circ F $$
+            $$100^\circ C = m180^\circ F$$ $$m = \frac{5^\circ C}{9^\circ F}$$
+            We found our slope! Now lets find b's value. $$ b = -(\frac{5^\circ
+            C}{9^\circ F})32^\circ F = -17.78^\circ C $$ Lastly we form our
+            machine for getting celsius values from fahrenheit values. $$ T_c =
+            \frac{5^\circ C}{9^\circ F}T_f - 17.78^\circ C $$
+          </p>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

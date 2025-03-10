@@ -1,60 +1,29 @@
-{% extends "base_layout.html" %}
-
-{% block title %}
-Linear Algebra - Matrix Multiplication and Eigenvalues
-{% endblock %}
-
-{% block content %}
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-8">
-                <h1>Introduction to Linear Algebra</h1>
-                <p>Linear algebra is the branch of mathematics concerning linear equations, linear functions, and their representations through matrices and vector spaces. Here's an example:</p>
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5>Matrix Multiplication</h5>
-                    </div>
-                    <div class="card-body">
-                        <p>To multiply two matrices, we perform the following operation:</p>
-                        <p>
-                            $$ 
-                            \mathbf{A} \cdot \mathbf{B} = \left[ \begin{matrix} 
-                            a_{11} & a_{12} \\ 
-                            a_{21} & a_{22} 
-                            \end{matrix} \right] \cdot \left[ \begin{matrix} 
-                            b_{11} & b_{12} \\ 
-                            b_{21} & b_{22} 
-                            \end{matrix} \right]
-                            $$ 
-                        </p>
-                        <p>Where \( \mathbf{A} \) and \( \mathbf{B} \) are matrices, and the result of multiplication is another matrix.</p>
-                    </div>
-                </div>
-
-                <!-- Additional Sections -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5>Eigenvectors and Eigenvalues</h5>
-                    </div>
-                    <div class="card-body">
-                        <p>The eigenvalue equation is given by:</p>
-                        <p>
-                            $$ 
-                            \mathbf{A} \cdot \mathbf{v} = \lambda \cdot \mathbf{v}
-                            $$ 
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sidebar -->
-            {% include "math/sidebar.html" %}
+{% extends "base_layout.html" %} {% block title %} Linear Algebra - Matrix
+Multiplication and Eigenvalues {% endblock %} {% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Introduction to Linear Algebra</h1>
+      <p>
+        Linear algebra is the branch of mathematics concerning linear equations,
+        linear functions, and their representations through matrices and vector
+        spaces. Here's an example:
+      </p>
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>The hope of these pages</h5>
         </div>
+        <div class="card-body">
+          <p></p>
+        </div>
+      </div>
     </div>
+
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MathJax -->
 {% endblock %}
-
-{% block scripts %}
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <!-- MathJax -->
-{% endblock %}
-
-

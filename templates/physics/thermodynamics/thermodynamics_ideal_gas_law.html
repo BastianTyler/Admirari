@@ -1,0 +1,92 @@
+{% extends "base_layout.html" %} {% block title %}Thermodynamics{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Intro to the Ideal Gas Law</h1>
+      <p>General idea of thermo</p>
+
+      <!-- Content card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>The Ideal Gas Law</h5>
+        </div>
+        <div class="card-body">
+          <p>Formula: $$ PV = nRT \text{ or } PV = Nk_bT $$ where:
+           <ul>
+            <li><strong>P</strong>- Absolute Pressure in units \(Pa\) = \(\frac{N}{m^2}\)</li>
+            <li><strong>V</strong>- in units \(m^3\)</li>
+            <li><strong>T</strong>- Temperature in units \(K\), dont't use \(^\circ C\)</li>
+            <li><strong>n</strong>- Number of moles. No units.</li>
+            <li><strong>N</strong>- Number of molecules. Often a very large number. No units.</li>
+            <li><strong>R</strong>-  in units \(\frac{J}{molK}\)</li>
+            <li><strong>\(k_b\)</strong>- Boltzmann Constant = \(\frac{R}{N_A}\) = 1.381 x 10^-23 \(\frac{J}{K}\)</li>
+           </ul>
+          </p>
+          <p><strong>Key Assumptions</strong></p>
+          <ol>
+            <li>Huge number of molecules.</li>
+            <li>Molecules move in random directions with random speeds.</li>
+            <li>
+              Molecules spend most of that time far apart from one another.
+            </li>
+            <li>Colisions are elastic, thus energy is conserved.</li>
+            <li>
+              Intermolecular forces are negligible except durring collisions.
+            </li>
+            <li>Molecules use up negligible volume of container</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Content card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Moles and Molar Mass</h5>
+        </div>
+        <div class="card-body">
+          <p>A mole is matches the atomic weight of an atom. 1 mole = 1 mol = \(N_a\) elementary units</p>
+          <p>There are two formulas too worry about: 
+           $$ n = \frac{N}{N_A} \text{ or } n = \frac{m}{\mathcal{M}} $$
+           where \(m\) mass of material is and \(\mathcal{M}\) stands for molar mass. 
+          </p>
+        </div>
+      </div>
+
+      <!-- Content card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Molar Specific Heat</h5>
+        </div>
+        <div class="card-body">
+          <p>Affected by conditions, so specific types of molar heat are specified for each problem with subscripts</p>
+          <p><strong>Constant Volume Process</strong> $$Q = nC_v\Delta T$$ where: 
+          <ul>
+           <li>Q is the heat required to rais the temperature of 1 mole of material by 1 K = 1^\circ C and assumes gas does not change volume while heated</li>
+           <li>\(C_v\) is the molar specific heat at constant volume in units of \(\frac{J}{molK}\)</li>
+          </ul>
+          </p>
+          <p><strong>Constant Pressure Process</strong> $$Q = nC_p\Delta T$$ where: 
+          <ul>
+           <li>Q is the heat required to rais the temperature of 1 mole of material by 1 K = 1^\circ C and assumes gas does not change pressure while heated</li>
+           <li>\(C_p\) is the molar specific heat at constant pressure in units of \(\frac{J}{molK}\)</li>
+          </ul></p>
+
+        </div>
+      </div>
+
+      <!-- Content card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Things about thermo</h5>
+        </div>
+        <div class="card-body">
+          <p>Thermo!</p>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

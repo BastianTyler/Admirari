@@ -9,11 +9,13 @@ from routes.main_routes import main_bp
 from routes.math_routes import math_bp
 from routes.physics_routes import physics_bp
 from routes.text_venture_routes import tv_bp
+from routes.programming_routes import programming_bp
 
 app.register_blueprint(main_bp)
 app.register_blueprint(math_bp)
 app.register_blueprint(physics_bp)
 app.register_blueprint(tv_bp)
+app.register_blueprint(programming_bp)
 
 @app.route('/fun_with_sine_waves_and_shapes') 
 def fun_with_sine_waves_and_shapes():

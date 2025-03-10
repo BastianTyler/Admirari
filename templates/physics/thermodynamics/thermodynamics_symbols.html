@@ -1,34 +1,29 @@
-
-{% extends "base_layout.html" %}
-
-{% block title %}Thermodynamics{% endblock %}
-
-
-{% block content %}
+{% extends "base_layout.html" %} {% block title %}Thermodynamics: Symbols{%
+endblock %} {% block content %}
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Physics Symbols and Units</h2>
-    
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered text-center">
-            <thead class="table-dark">
-                <tr>
-                    <th>Symbol</th>
-                    <th>Name</th>
-                    <th>Unit</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in symbols %}
-                <tr>
-                    <td>$$ {{ item.symbol }} $$</td>
-                    <td>{{ item.name }}</td>
-                    <td>$$ {{ item.unit }} $$</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+  <h2 class="text-center mb-4">Physics Symbols and Units</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th>Unit</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in symbols %}
+        <tr>
+          <td>$$ {{ item.symbol }} $$</td>
+          <td>{{ item.name }}</td>
+          <td>$$ {{ item.unit }} $$</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 
 {% endblock %}

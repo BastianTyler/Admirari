@@ -1,0 +1,130 @@
+{% extends "base_layout.html" %} {% block title %}Thermodynamics{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Thermodynamics: Thermal Expansion</h1>
+      <p>General idea of thermo</p>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>
+            How does the dimensions of an object change under a change in
+            temperature?
+          </h5>
+        </div>
+        <div class="card-body">
+          <p>
+            The expansion of an object is classified into several catagories.
+          </p>
+          <ul>
+            <li>Linear Expansion</li>
+            <li>Area Expansion</li>
+            <li>Volumetric Expansion</li>
+          </ul>
+          <div>
+            <p>
+              Note that an object will expand in all dimensions at the same rate
+              when undergoing thermal expansion
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Linear Expansion</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Linear expansion occurs in respect to single dimensions of an
+            object, but occurs equally in all directions. This could be the
+            linear length of a rod, or it's height, or even be a spheres
+            diameter!
+          </p>
+          <p>
+            The formula for the change in length due to linear expansion,
+            \(\Delta L\), is estimated by: $$\Delta L = L_o\alpha\Delta T$$
+            where
+          </p>
+
+          <ul>
+            <li>\(\alpha\) <i>Coeffiecient of Linear Expansion</i></li>
+            <li>\(L_o\) <i>Initial Length, this could be diameter. </i></li>
+            <li>\(\Delta T\) <i>Change in temperature</i></li>
+          </ul>
+          <p>
+            After expansion we should expect: $$L_f = L_o + L_o\alpha\Delta T$$
+            $$L_f = L_o(1 + \alpha\Delta T)$$
+          </p>
+
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Volumetric Expansion</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Volumetric, or volume expansion, behaves similarly to linear
+            expansion. The formula modeling it is $$\Delta V = V_0\beta\Delta
+            T$$ where
+          </p>
+
+          <ul>
+            <li>\(\beta\) <i>Coeffiecient of Volume Expansion</i></li>
+            <li>\(V_o\) <i>Initial Volume </i></li>
+            <li>\(\Delta T\) <i>Change in temperature</i></li>
+          </ul>
+
+          <p>For Solids we will use: $$\beta = 3\alpha$$</p>
+
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Area Expansion</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Area expansion is given by the formula $$\Delta A = A_02\alpha\Delta
+            T$$ where
+          </p>
+
+          <ul>
+            <li>\(\alpha\) <i>Coeffiecient of Linear Expansion</i></li>
+            <li>\(A_o\) <i>Initial Area </i></li>
+            <li>\(\Delta T\) <i>Change in temperature</i></li>
+          </ul>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Worked example: The Metal Sphere and Ring</h5>
+        </div>
+        <div class="card-body">
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

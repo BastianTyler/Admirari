@@ -17,6 +17,7 @@ LINEAR_ALGEBRA_TABLE_OF_CONTENTS = [
     {"title": "Determinant Overview", "url": "/math/linear_algebra_folder/determinant_overview"},
     {"title": "Cramers Rule", "url": "/math/linear_algebra_folder/matrix_cramers_rule"},
     {"title": "Adjoint", "url": "/math/linear_algebra_folder/matrix_adjoint"},
+    {"title": "Vector Spaces", "url": "/math/linear_algebra_folder/vector_spaces"},
 ]
 
 LINEAR_ALGEBRA_RELATED_TOPICS = [
@@ -101,5 +102,12 @@ def cramers_rule():
 @math_bp.route('/linear_algebra_folder/matrix_adjoint')
 def adjoint():
     return render_template('math/linear_algebra_folder/matrix_adjoint.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
+                           related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)
+
+# Vector Spaces
+@math_bp.route('/linear_algebra_folder/vector_spaces')
+def vector_spaces():
+    return render_template('math/linear_algebra_folder/vector_spaces.html', 
                            table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS,
                            related_topics=LINEAR_ALGEBRA_RELATED_TOPICS)

@@ -1,0 +1,157 @@
+{% extends "base_layout.html" %} {% block title %}Thermodynamics: Heat{%
+endblock %} {% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Heat</h1>
+      <p>Is it getting hot in here, or is it specifically me?</p>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Heat can be a frustruating</h5>
+        </div>
+        <div class="card-body">
+          <p>Remember a few things:</p>
+          <ul>
+            <li>
+              A lot of these terms <strong>relate</strong> to heat, but they are
+              <strong>not</strong> in the same units of heat
+            </li>
+            <li>
+              Heat can be positive or negative. Positive corresponds to a
+              temperature increase. Negative corresponds to a temperature
+              decrease. This means in the following equations negative heat
+              implies \(\Delta T < 0\), and similar for positive.
+            </li>
+            <li>Check units</li>
+          </ul>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Specific Heat</h5>
+        </div>
+        <div class="card-body">
+          <p>Formula: $$ c = (\frac{1}{m})(\frac{dQ}{dT}) $$</p>
+          <p>
+            This is the heat required to raise the tempature of
+            <strong>1 kg of material</strong> by 1K = 1\(^\circ C\)
+          </p>
+          <p>Units: \( \frac{J}{kg K}\) or \(\frac{J}{kg^\circ C}\)</p>
+
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Heat Capacity</h5>
+        </div>
+        <div class="card-body">
+          <p>Formula: $$ C = mc $$</p>
+          <p>
+            This is the heat required to raise the tempature of an
+            <strong>object</strong> by 1K = 1\(^\circ C\)
+          </p>
+          <p>Units: \(\frac{J}{K}\) or \(\frac{J}{^\circ C}\)</p>
+
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Specific Latent Heat</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            This is the energy per unit mass required to cause a
+            <strong>phase change.</strong> The idea is that there wont be a
+            measureable \(\Delta T\) durring the transition of, say solid ice to
+            liquid water, so the energy is hidden or 'latent'.
+          </p>
+          <p>Units: \(\frac{J}{kg}\) or \(\frac{J}{mol}\)</p>
+          <p>Use subscripts of L to denote type of phase change.</p>
+          <ul>
+            <li>
+              \(L_f\) for latent heat of fusion. Use for melting/freezing
+              problems
+            </li>
+            <li>
+              \(L_v\) for latent heat of vaporization. Use for
+              boiling/condensing problems
+            </li>
+          </ul>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>
+            From what we just covered we can define two equations for heat
+          </h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>During temperature changes</strong>
+            $$ Q = mc \Delta T = C\Delta T $$
+          </p>
+          <p>
+            <strong>During phase changes</strong>
+            $$ Q = \begin{matrix} + \\ - \end{matrix}mL $$ Sign is determined by
+            type of change. Melting ice means \(Q = +m_{ice}L_f\)
+          </p>
+
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Specific Heats of Gases</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Specific heat for gasses differs if done at constant pressure
+            \(v_p\) or at constant volume \(c_v\)
+          </p>
+          <p>Thigns to note</p>
+          <ul>
+            <li>Regions with zero slope indicate phase changes</li>
+            <li>Regions with non-zero slopes indicate temerature changes</li>
+            <li>
+              Smaller values of c casue steeper slopes, thus small c indicates
+              an easy to change T
+            </li>
+            <li>Objects that are cooled should expect Q < 0</li>
+          </ul>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}
