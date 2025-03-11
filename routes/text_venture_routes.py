@@ -13,3 +13,11 @@ def tv_about():
 @tv_bp.route('/tv_day_one')
 def tv_day_one():
     return render_template('text_venture/tv_day_one.html')
+
+@tv_bp.route('/tv_day_two')
+def tv_day_two():
+    return render_template('text_venture/tv_day_two.html')
+
+@tv_bp.route('/github_workshop')
+def github_workshop():
+    return render_template('text_venture/github_workshop.html')

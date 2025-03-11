@@ -1,0 +1,155 @@
+{% extends "base_layout.html" %} {% block title %}Mass Lifter Heat Engine{%
+endblock %} {% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Mass Lifter Heat Engine</h1>
+      <p>Analysis and algebraic solutions for the experiment.</p>
+
+      <!-- 1 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Process Identification</h5>
+        </div>
+        <div class="card-body">
+          <p>A → B: Isothermal compression (cold gas, adding mass)</p>
+          <p>B → C: Isobaric expansion (hot gas, mass present)</p>
+          <p>C → D: Isothermal expansion (hot gas, removing mass)</p>
+          <p>D → A: Isobaric compression (cold gas, mass removed)</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Pressure Inside the Piston</h5>
+        </div>
+        <div class="card-body">
+          <p>Using Newton’s Second Law:</p>
+          $$ P_{\text{inside}} A = mg + P_0 A $$
+          <p>Solving for \( P_{\text{inside}} \):</p>
+          $$ P_{\text{inside}} = P_0 + \frac{mg}{A} $$
+          <p>With cross-sectional area \( A \):</p>
+          $$ A = \frac{\pi D^2}{4} $$ $$ P_{\text{inside}} = P_0 +
+          \frac{4mg}{\pi D^2} $$
+        </div>
+        <div>
+          <img
+            src="{{ url_for('static', filename='images/engine_lab_FBD.jpg') }}"
+            class="img-fluid d-block mx-auto"
+            style="max-width: 200px; max-height: 400px"
+            alt="Description"
+          />
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Total Volume of Air</h5>
+        </div>
+        <div class="card-body">
+          <p>Total volume includes the can and piston air:</p>
+          $$ V_{\text{total}} = V_{\text{can}} + V_{\text{piston}} $$
+          <p>Where:</p>
+          $$ V_{\text{can}} = \frac{\pi D_1^2}{4} h_1 $$ $$ V_{\text{piston}} =
+          \frac{\pi D_2^2}{4} h_2 $$
+          <p>Final expression:</p>
+          $$ V_{\text{total}} = \frac{\pi}{4} \left( D_1^2 h_1 + D_2^2 h_2
+          \right) $$
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Work to Lift 150g</h5>
+        </div>
+        <div class="card-body">
+          <p>Work to lift mass:</p>
+          $$ W = mgh $$
+          <p>Where \( m = 0.150 \) kg and \( g = 9.81 \text{ m/s}^2 \).</p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>PV Diagram Work</h5>
+        </div>
+        <div class="card-body">
+          <p>Approximated as a parallelogram:</p>
+          $$ W_{\text{gas}} = \text{width} \times \text{height} $$
+          <p>
+            Convert volume to L and pressure to kPa: \( 1 \) kPa·L \( = 1 \) J.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Percent Difference</h5>
+        </div>
+        <div class="card-body">
+          $$ \% \text{Difference} = \frac{|W_{\text{gas}} -
+          W_{\text{lift}}|}{W_{\text{gas}}} \times 100 $$
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Adiabatic Process Check</h5>
+        </div>
+        <div class="card-body">
+          $$ P_1 V_1^\gamma = P_2 V_2^\gamma $$
+          <p>Solving for \( V_2 \):</p>
+          $$ V_2 = V_1 \left( \frac{P_1}{P_2} \right)^{\frac{1}{\gamma}} $$
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Isothermal Process Check</h5>
+        </div>
+        <div class="card-body">
+          $$ \frac{P_A V_A}{P_B V_B} = \frac{n_A R T_A}{n_B R T_B} $$
+          <p>
+            Since the process is isothermal, \( T_A = T_B \) and \( R \) cancels
+            out:
+          </p>
+          $$ \frac{P_A V_A}{P_B V_B} = \frac{n_A}{n_B} $$
+          <p>Solving for \( V_B \):</p>
+          $$ V_B = V_A \left( \frac{P_A}{P_B} \right) \left( \frac{n_A}{n_B}
+          \right) $$
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Efficiency of the Heat Engine</h5>
+        </div>
+        <div class="card-body">
+          $$ \eta = \frac{|W_{\text{net}}|}{|Q_{\text{hot}}|} $$
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Power Output</h5>
+        </div>
+        <div class="card-body">
+          $$ P = \frac{W_{\text{net}}}{t} $$
+          <p>where \( t = 30 \) s.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

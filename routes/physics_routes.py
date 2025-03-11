@@ -7,6 +7,7 @@ physics_bp = Blueprint('physics', __name__, url_prefix='/physics')
 LINEAR_ALGEBRA_TABLE_OF_CONTENTS = [
     {"title": "Thermodynamics: Formulas", "url": "/physics/thermodynamics/thermodynamics_main"},
     {"title": "Thermodynamics: Symbols and Units", "url": "/physics/thermodynamics/thermodynamics_symbols"},
+    {"title": "Thermodynamics: Engine Lab", "url": "/physics/thermodynamics/thermodynamics_lab_engine"},
     {"title": "Thermodynamics: Intro", "url": "/physics/thermodynamics/thermodynamics_intro_heat_temp"},
     {"title": "Thermodynamics: Temperature Scales", "url": "/physics/thermodynamics/thermodynamics_temperature_scales"},
     {"title": "Thermodynamics: Thermal Expansion", "url": "/physics/thermodynamics/thermodynamics_thermal_expansion"},
@@ -66,3 +67,12 @@ def thermodynamics_ideal_gas_law():
 def thermodynamics_boltzmann_distribution():
     return render_template('physics/thermodynamics/thermodynamics_boltzmann_distribution.html', 
                            table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+
+
+@physics_bp.route('/thermodynamics/thermodynamics_lab_engine')
+def thermodynamics_lab_engine():
+    return render_template('physics/thermodynamics/thermodynamics_lab_engine.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+
+
+
