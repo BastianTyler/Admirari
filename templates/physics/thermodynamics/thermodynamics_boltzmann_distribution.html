@@ -1,0 +1,111 @@
+{% extends "base_layout.html" %} {% block title %}Thermodynamics{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Probability and Boltzmann Distributions</h1>
+      <p>Things are gonna get fast</p>
+
+      <!-- Section Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>This section has a lot to it..</h5>
+        </div>
+        <div class="card-body">
+          <p>I think the best bet is going to be to define everything quickly and work through an example</p>
+
+          <h6>Boltzmann Distribution</h6>
+          <p>So, a while ago boltzmann discovered the meanss of finding the number of gas molecules per unit 
+            volume between energy states:</p>
+            $$n_v(E) = n_0 e^{-\frac{E}{k_bT}}$$
+            <p>where \(n_v(E)\) is the number of molecules per unit volume with energy beween 0 and dE. 
+                If we were to integrate over all possible energy values we could get total number of molecules in the gas! 
+                Remember, N represents the total number of molecules in a gas.
+                $$ N = \int_{E_i}^{E_f} n_0e^{-\frac{E}{k_bT}} \,dE$$
+            </p>
+            <p>In order to get a Probability Function out of this we could divide both values by N.</p>
+        </div>
+      </div>
+
+
+       <!-- Section Start -->
+       <div class="card mb-4">
+        <div class="card-header">
+          <h5>Maxwell-Boltzmann Speed Distribution Function</h5>
+        </div>
+        <div class="card-body">
+          <p>Supposing that the energy of molecules can be associated purely with kinetic energy,
+            such as in an ideal gas, we then can get a probability distribution for molecular speed.
+
+            $$ f(v)dv = (\frac{m}{2\pi k_bT}){^\frac{3}{2}}e^{-\frac{mv^2}{2k_bT}}4\pi v^2dv $$ where:
+            <ul>
+                <li><strong>m</strong> mass of molecule</li>
+                <li><strong>T</strong> temperature in kelvin</li>
+                <li><strong>v</strong> molecular speed</li>
+                <li><strong>\(4\pi v^2\)</strong> comes from converting from 3D Cartesian to 3D Sphereical coordinates.</li>
+                <li><strong>\((\frac{m}{2\pi k_bT}){^\frac{3}{2}}\)</strong> is a normalization constant required to ensure \(\int_{i}^{f} f(v)dv = 1\)</li>
+            </ul>
+          </p>
+          <p>The area under the distribution function in any inerval represents the probability of the gas having speeds in that range.</p>
+        </div>
+      </div>
+
+      <!-- Section Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Some helpfull integrals</h5>
+        </div>
+        <div class="card-body">
+          <p>These integrals should help for certain problems when calculating average speed. They are only valid for limits of \(x = 0\) to \(x = \infty \)</p>
+            <p>
+                $$ I_0 = \int_{0}^{\infty} e^{-ax^2}dx = \frac{1}{2} \sqrt{\frac{\pi }{a}} $$
+                $$ I_1 = \int_{0}^{\infty} xe^{-ax^2}dx = \frac{1}{2a} $$
+                $$ I_2 = \int_{0}^{\infty} x^2e^{-ax^2}dx = \frac{1}{4} \sqrt{\frac{\pi }{a^3}} $$
+                $$ I_3 = \int_{0}^{\infty} x^3e^{-ax^2}dx = \frac{1}{2a^2} $$
+                $$ I_4 = \int_{0}^{\infty} x^4e^{-ax^2}dx = \frac{3}{8} \sqrt{\frac{\pi }{a^5}} $$
+                $$ I_5 = \int_{0}^{\infty} x^5e^{-ax^2}dx = \frac{1}{a^3} $$
+                $$ I_{2n} = \int_{0}^{\infty} x^{2n}e^{-ax^2}dx = \frac{1}{2} \sqrt{\frac{\pi }{a}} $$
+                $$ I_{2n+1} = \int_{0}^{\infty} x^{2n+1}e^{-ax^2}dx = \frac{1}{2} \sqrt{\frac{\pi }{a}} $$
+            </p>
+        </div>
+      </div>
+
+      <!-- Section Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Some helpfull integrals</h5>
+        </div>
+        <div class="card-body">
+          <p>Use the Maxwell-Boltzmann speed distribution in 3D to complete the following</p>
+            <ol>
+                <li>Verify the 3D Maxwell-Boltzmann speed distribution is properly normalized</li>
+                <li>Determine the general result for the average speed</li>
+                <li>Determine the general result for \(v_{rms}\) squared using \(\sqrt vaverage^2\)</li>
+                <li>Determine a general result for the most probable speed \(v_{mp}\) by finding the max of f(v)</li>
+            </ol>
+
+            <div>
+                <p><strong>1</strong> We start with our Maxwell-Boltzmann function and then integrate over it
+                    $$ \int_{i}^{f}f(v)dv = \int_{i}^{f} (\frac{m}{2\pi k_bT}){^\frac{3}{2}}e^{-\frac{mv^2}{2k_bT}}4\pi v^2dv $$</p>
+                    <p>Next, we will declare a variable <i>a</i> as the common constants:
+                    $$ a = \frac{m}{2k_bT} $$
+                    Substituting a in and pulling out the remaining constants we end up with:
+                    $$ 4\pi (\frac{1}{\pi})^{\frac{3}{2}} a{^\frac{3}{2}} \int_{i}^{f}e^{-av^2}v^2dv $$
+                    Notice that our integral is in the form of \(I_2\)
+                    $$  \frac{1}{4} \sqrt{\frac{\pi }{a^3}} * 4\pi (\frac{1}{\pi})^{\frac{3}{2}} a{^\frac{3}{2}} = 1$$ so we are good!
+                </p>
+            </div>
+        </div>
+      </div>
+
+      
+
+
+      
+
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

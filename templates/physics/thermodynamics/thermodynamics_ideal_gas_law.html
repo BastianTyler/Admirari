@@ -19,7 +19,7 @@
             <li><strong>T</strong>- Temperature in units \(K\), dont't use \(^\circ C\)</li>
             <li><strong>n</strong>- Number of moles. No units.</li>
             <li><strong>N</strong>- Number of molecules. Often a very large number. No units.</li>
-            <li><strong>R</strong>-  in units \(\frac{J}{molK}\)</li>
+            <li><strong>R</strong>- 8.314 in units \(\frac{J}{molK}\)</li>
             <li><strong>\(k_b\)</strong>- Boltzmann Constant = \(\frac{R}{N_A}\) = 1.381 x 10^-23 \(\frac{J}{K}\)</li>
            </ul>
           </p>
@@ -78,10 +78,49 @@
       <!-- Content card -->
       <div class="card mb-4">
         <div class="card-header">
-          <h5>Things about thermo</h5>
+          <h5>Degrees of Freedom in Monatomic Versus Diatomic Gases</h5>
         </div>
         <div class="card-body">
-          <p>Thermo!</p>
+          <p>Before that, what is Monatomic and what is Diatomic?</p>
+          <ul>
+            <li><strong>Monatomic</strong>: Each molecule contains a single atom. (e.g., helium, neon, argon)</li>
+            <li><strong>Diatomic</strong>: Each molecule contains two atoms. (e.g., hydrogen, oxygen, nitrogen)</li>
+          </ul>
+
+          <p>So what about degrees of freedom? Well, in the last equations we didn't explain how we could
+            get \(C_v\) & \(C_p\). That is because the molar specific heats depend on the number of atoms
+            and the temperature range of the gas. 
+          </p>
+
+          <p><strong>All monatomic</strong> gases in 3D space have f = 3, where f is the degrees of freedom</p>
+          <p><strong>Diatomic</strong> gases will have f = 3, 5, or 7 depending on the temperature</p>
+          <ul>
+            <li> for\(\Delta T <= 80^\circ C\) the degrees of freedom, f, = 3. This is translational energy</li>
+            <li> for\(\Delta T >= 200^\circ C \text{ & } <= 1000^\circ C\) the degrees of freedom, f, = 5. This is translational and rotational energy.</li>
+            <li> for\(\Delta T >= 2000^\circ C\) the degrees of freedom, f, = 7. This is translational and rotational and vibrational enery.</li>
+          </ul>
+
+          <h6>So what are the Molar Specific Heats in Gases?</h6>
+          <li>Molar specific heat at constant <strong>Volume</strong>. This is the Equipartition Theorem
+          $$ C_v = \frac{f}{2}R $$
+          </li>
+
+          <li>Molar specific heat at constant <strong>Pressure</strong>.
+            $$ C_p = \frac{f + 2}{2}R $$
+          </li>
+
+          <li>Change to <strong>Internal Energy </strong> of the gas.
+            $$ E_{int} = \frac{f}{2}NK_bT = \frac{f}{2}nRT $$
+          </li>
+
+          <li><strong>Adiabatic Constant</strong> dont worry about it now, just take a look see.
+            $$ \gamma = \frac{C_p}{C_v} = \frac{f+2}{f} $$
+          </li>
+
+          <li>Molar specific heat is <i>defined</i> by the equation
+            $$ C = \frac{1}{n}\frac{dE_{int}}{dT} $$
+          </li>
+
         </div>
       </div>
     </div>

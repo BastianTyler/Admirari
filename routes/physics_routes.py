@@ -60,3 +60,9 @@ def thermodynamics_ideal_gas_law():
     return render_template('physics/thermodynamics/thermodynamics_ideal_gas_law.html', 
                            table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
 
+
+
+@physics_bp.route('/thermodynamics/thermodynamics_boltzmann_distribution')
+def thermodynamics_boltzmann_distribution():
+    return render_template('physics/thermodynamics/thermodynamics_boltzmann_distribution.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
