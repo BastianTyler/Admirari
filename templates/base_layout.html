@@ -23,6 +23,26 @@
       type="text/css"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <!-- Conditional section-specific stylesheets -->
+    {% if page_type == 'math' %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='math_styles.css') }}"
+    />
+    {% elif page_type == 'physics' %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/physics-styles.css') }}"
+    />
+    {% elif page_type == 'programming' %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/programming-styles.css') }}"
+    />
+    {% endif %}
     <!-- TV Style sheet-->
     <link
       rel="stylesheet"
@@ -35,7 +55,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="{{ page_type }}-page">
     <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">

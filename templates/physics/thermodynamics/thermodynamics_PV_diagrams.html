@@ -1,0 +1,141 @@
+{% extends "base_layout.html" %} {% block title %}Thermodynamics{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Thermodynamics</h1>
+      <p>General idea of thermo</p>
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Pv Diagram Intro</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            A PV diagram for a gass allows us to calculate the work of that gas
+            as some state variables change. Supposing we defiend two points A &
+            B to correspon to the state of the gas at two points in time we
+            could calculate the area under A to B to get the work by the gas.
+            This calculation is depending on the type of
+            <strong>Process</strong> the gas is undergoing. Note the graph does
+            have direction as indicated by arrows.
+          </p>
+          <div>
+            <p>
+              $$W_{\text{by gas}} = \int_{i}^{f}Pdv = area under the curve$$
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--Content End -->
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Isochoric</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            A straight vertical line. The area under any such line is 0, so the
+            work must be 0. Also reffered to as isovolumetric.
+          </p>
+          <p><strong>Process: V is constant</strong></p>
+          <div>
+            <h6>Condition</h6>
+            <p>$$W_{\text{by gas}} = \int_{i}^{f}Pdv = 0 $$</p>
+          </div>
+          <div>
+            <h6>First Law</h6>
+            <p>$$\Delta E_{\text{int}} = Q_{\text{in}}$$</p>
+          </div>
+        </div>
+      </div>
+      <!--Content End -->
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Isobaric</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            A horizonal line. Imagine the area as a box. Then the work is simply
+            the width x height, or for a PV diagram, Pressure x Change in
+            Volume.
+          </p>
+          <p>
+            Note the direction of volume change. If the volume shrinks, work by
+            gas is negative. If it expands, work by gas is positive.
+          </p>
+          <p><strong>Process: P is constant</strong></p>
+          <div>
+            <h6>Condition</h6>
+            <p>$$W_{\text{by gas}} = \int_{i}^{f}Pdv = P\Delta V $$</p>
+          </div>
+          <div>
+            <h6>First Law</h6>
+            <p>$$\Delta E_{\text{int}} = Q_{\text{in}} - W_{\text{by gas}}$$</p>
+          </div>
+        </div>
+      </div>
+      <!--Content End -->
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Isothermal</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Not straight, and occurs when there is constant temperature. This
+            can happen because heat is being exhanged with its surroundings
+            equally. The change in internal energy is 0 as T itself is a measure
+            of internal energy. No change in T no change in \(\Delta
+            E_{\text{int}}\)
+          </p>
+          <p><strong>Process: T is constant</strong></p>
+          <div>
+            <h6>Condition</h6>
+            <p>
+              $$W_{\text{by gas}} = \int_{i}^{f}Pdv = PVln\frac{V_f}{V_i} =
+              nRTln\frac{V_f}{V_i} $$
+            </p>
+          </div>
+          <div>
+            <h6>First Law</h6>
+            <p>$$\Delta E_{\text{int}} = 0 $$</p>
+          </div>
+        </div>
+      </div>
+      <!--Content End -->
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Adiabatic</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Similar to isothermal processes, but because there is no heat
+            exhange between the system and the surroundings we say Entropy, S,
+            is constant and that the process is Adiabatic. Because Q is missing,
+            the change in internal energy is just opposite of the work done by
+            the gas.
+          </p>
+          <p><strong>Process: S is constant</strong></p>
+          <div>
+            <h6>Condition</h6>
+            <p>
+              $$W_{\text{by gas}} = \frac{1}{1-\gamma}(P_fV_f - P_iV_i) $$
+              $$Q_{\text{in}} = 0 $$
+            </p>
+          </div>
+          <div>
+            <h6>First Law</h6>
+            <p>$$\Delta E_{\text{int}} = - W_{\text{by}}$$</p>
+          </div>
+        </div>
+      </div>
+      <!--Content End -->
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

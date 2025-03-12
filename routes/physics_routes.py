@@ -16,8 +16,8 @@ LINEAR_ALGEBRA_TABLE_OF_CONTENTS = [
     {"title": "Thermodynamics: Radiation", "url": "/physics/thermodynamics/thermodynamics_main"},
     {"title": "Thermodynamics: Ideal Gas Law", "url": "/physics/thermodynamics/thermodynamics_ideal_gas_law"},
     {"title": "Thermodynamics: Boltzmann Distributions", "url": "/physics/thermodynamics/thermodynamics_boltzmann_distribution"},
-    {"title": "Thermodynamics: First Law of Thermodynamics", "url": "/physics/thermodynamics/thermodynamics_main"},
-    {"title": "Thermodynamics: PV Diagrams", "url": "/physics/thermodynamics/thermodynamics_main"},
+    {"title": "Thermodynamics: First Law of Thermodynamics", "url": "/physics/thermodynamics/thermodynamics_first_law_of_thermodynamics"},
+    {"title": "Thermodynamics: PV Diagrams", "url": "/physics/thermodynamics/thermodynamics_PV_diagrams"},
     
 ]
 
@@ -74,5 +74,15 @@ def thermodynamics_lab_engine():
     return render_template('physics/thermodynamics/thermodynamics_lab_engine.html', 
                            table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
 
+
+@physics_bp.route('/thermodynamics/thermodynamics_first_law_of_thermodynamics')
+def thermodynamics_first_law_of_thermodynamics():
+    return render_template('physics/thermodynamics/thermodynamics_first_law_of_thermodynamics.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+
+@physics_bp.route('/thermodynamics/thermodynamics_PV_diagrams')
+def thermodynamics_PV_diagrams():
+    return render_template('physics/thermodynamics/thermodynamics_PV_diagrams.html', 
+                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
 
 

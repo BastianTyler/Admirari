@@ -1,0 +1,106 @@
+{% extends "base_layout.html" %} {% block title %}First Law of Thermodynamics{%
+endblock %} {% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>First Law of Thermodynamics</h1>
+      <p>
+        The first law of thermodynamics states in so few words that the total
+        energy of a closed system remains constant.
+      </p>
+
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>The first law in detail!</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            There is a lot surrounding the first law that we should discuss
+            prior to getting to the equation. When we are doing problems
+            involving thermodynamics we are attempting to model some thing in
+            the real world to our mathamatical models. In the case of gases,
+            trying to completly understand the movement of \(10^{23}\) gas
+            particles is unreasonable. Instead we try to look at averages. In
+            more scientific speech: we focus on a macrosscopic description of
+            the microscopic particles.
+          </p>
+          <div>
+            <p>Lets define some terms before moving on.</p>
+            <ul>
+              <li>
+                <strong>System: </strong> A quantity of matter around which we
+                can draw a boundary the matter will not cross. This implies a
+                closed system, where the number of molecules in the system is
+                constant.
+              </li>
+              <li>
+                <strong>Thermodynamic State & State Variables: </strong
+                >Measurable variables and properties that can be used to
+                determine other variables and properties. P,V, and T (Pressure,
+                Volume, and Temperature) are examples. An extensive property
+                depends on tt he total amount of a substance while and intensive
+                propertie does not depend on the total amount of the substance.
+              </li>
+              <li>
+                <strong>Equations of State: </strong> Connects state variables
+                together.
+              </li>
+              <li>
+                <strong>Thermodynamic Equilibrium: </strong>The state of the
+                system is unchanging.
+              </li>
+              <li>
+                <strong>Thermodynamic Processes: </strong>Changes the state of a
+                system. We will analyze processes changing at an infintesimal
+                rate. This means whils the gases are changing they are
+                essentially stuck in equallibrium. We can call this
+                quasi-equallibrium.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Lets look at the equations.</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            First we should discuss the work involved with the gas. When the
+            volume of the system the gas is inside expands then the gas will
+            have dont positive work, but if the gas is compressed it will have
+            done negative work. This is stated as work done
+            <strong>by</strong> gas on the piston. $$W_{\text{by gas on piston}}
+            = \int_{i}^{f}P dV$$
+          </p>
+          <ul>
+            <li><strong>P</strong> Pressure of the gas</li>
+            <li><strong>dV</strong> differential volume changes</li>
+            <li>
+              <strong>\(W_{\text{by gas on piston}}\)</strong> \(>0\) as
+              expands, \(>0\) as contracts. \(W_{\text{by gas on piston}} =
+              -W_{\text{on gas by piston}}\)
+            </li>
+          </ul>
+          <div>
+            <p>
+              The First Law of Thermodynamic is <p>$$\Delta E_{\text{internal of gas}} = Q_{\text{added to gas}} + W_{\text{on gas}}$$</p>
+              Or simply
+              <p>$$\Delta E_{\text{int}} = Q_{\text{in}} + W_{\text{on}}$$</p>
+
+              From this we can gather taht as you do work or add heat to a gas its internal energy will increase. Often we care about the power output of an engine. For these problems use: <p>$$\Delta E_{\text{int}} = Q_{\text{in}} - W_{\text{by}}$$</p>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--Content End -->
+      
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}
