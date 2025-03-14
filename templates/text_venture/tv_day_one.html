@@ -12,39 +12,14 @@ content %}
 
       <!-- Content Section -->
       <div class="content-container">
-        <h2 class="section-title">Intro</h2>
+        <h2 class="section-title">Settings the days goal</h2>
 
         <p class="section-content">
-          Your introductory text goes here. Explain the concept you're about to
-          teach.
+          We want to get up and running with something basic to start this
+          project off. Our goal for now then is to create a basic player class,
+          a class to handle some of our games logic, and a helper class to deal
+          with common situations.
         </p>
-
-        <!-- Code Sample -->
-        <h3>Code Implementation</h3>
-        <pre><code class="language-java">public class Player { /* Your code will go here */ }</code></pre>
-
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Code Breakdown</h4>
-          <p>Explanation of the code goes here.</p>
-          <ul>
-            <li><strong>Key point 1:</strong> Explanation</li>
-            <li><strong>Key point 2:</strong> Explanation</li>
-          </ul>
-        </div>
-
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Concept: Title</h4>
-          <p>
-            Explanation of an important programming concept related to this
-            section.
-          </p>
-        </div>
-
-        <!-- Console Output Example -->
-        <h3>Expected Output</h3>
-        <div class="output-example">Example console output goes here</div>
       </div>
 
       <!-- Version Control Section -->
@@ -55,19 +30,6 @@ content %}
           Your introductory text goes here. Explain the concept you're about to
           teach.
         </p>
-        <!-- Code Sample -->
-        <h3>Code Implementation</h3>
-        <pre><code class="language-java">public class Player { /* Your code will go here */ }</code></pre>
-
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Code Breakdown</h4>
-          <p>Explanation of the code goes here.</p>
-          <ul>
-            <li><strong>Key point 1:</strong> Explanation</li>
-            <li><strong>Key point 2:</strong> Explanation</li>
-          </ul>
-        </div>
 
         <!-- Key Concept Box -->
         <div class="key-concept">
@@ -77,15 +39,11 @@ content %}
             section.
           </p>
         </div>
-
-        <!-- Console Output Example -->
-        <h3>Expected Output</h3>
-        <div class="output-example">Example console output goes here</div>
       </div>
 
-      <!-- Main Section -->
+      <!-- Main Version One -->
       <div class="content-container">
-        <h2 class="section-title">Main</h2>
+        <h2 class="section-title">Main Version One</h2>
 
         <p class="section-content">
           Your introductory text goes here. Explain the concept you're about to
@@ -96,11 +54,8 @@ content %}
         <pre><code class="language-java">public class Main {
 
     public static void main(String[] args) {
-        // Create an instance of GameLogic 
-        GameLogic gameLogic = new GameLogic();
-        
-        // Retrieve the player object information
-        Player player = gameLogic.newGame();
+
+        Player player = new Player("Ron", 'M', 20);
 
         // Print the player's information to the screen
         System.out.println("Player Name: " + player.getName());
@@ -113,8 +68,15 @@ content %}
           <h4>Code Breakdown</h4>
           <p>Explanation of the code goes here.</p>
           <ul>
-            <li><strong>Key point 1:</strong> Explanation</li>
-            <li><strong>Key point 2:</strong> Explanation</li>
+            <li>
+              <strong>Key point 1:</strong> We are free to plan out what we want
+              our calls to look like and then find ways to implement those calls
+              later.
+            </li>
+            <li>
+              <strong>Key point 2:</strong> We will want a player class that at
+              least has a name and gender parameter.
+            </li>
           </ul>
         </div>
 
@@ -122,14 +84,15 @@ content %}
         <div class="key-concept">
           <h4>Key Concept: Title</h4>
           <p>
-            Explanation of an important programming concept related to this
-            section.
+            Be rough with the code if you don't already know the path forward.
+            We will carve away at our project until it is how we like it!
           </p>
         </div>
 
         <!-- Console Output Example -->
         <h3>Expected Output</h3>
-        <div class="output-example">Example console output goes here</div>
+        <div class="output-example">Player Name: Ron</div>
+        <div class="output-example">Player Gender: Man</div>
       </div>
 
       <!-- Player Section -->
@@ -261,6 +224,55 @@ public class HelperMethods {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Main Section -->
+      <div class="content-container">
+        <h2 class="section-title">Main</h2>
+
+        <p class="section-content">
+          Your introductory text goes here. Explain the concept you're about to
+          teach.
+        </p>
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public class Main {
+
+    public static void main(String[] args) {
+        // Create an instance of GameLogic 
+        GameLogic gameLogic = new GameLogic();
+        
+        // Retrieve the player object information
+        Player player = gameLogic.newGame();
+
+        // Print the player's information to the screen
+        System.out.println("Player Name: " + player.getName());
+        System.out.println("Player Gender: " + (player.getGender() == 'M' ? "Man" : "Woman"));
     }
 }</code></pre>
 
