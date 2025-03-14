@@ -1,0 +1,59 @@
+{% extends "base_layout.html" %} {% block title %}Java{% endblock %} {% block
+    content %}
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Java</h1>
+          <p>Java stuff</p>
+    
+           <!-- Content Section Start -->
+          <div class="content-container">
+            <h2 class="section-title">What is a linked list?</h2>
+    
+            <!-- Code Sample -->
+            <h3></h3>
+            <pre><code class="language-java">public void addFront(T data){
+            //First check if head is null
+            if(head == null){
+                head = new NodeTwo(data);
+            } else{
+                NodeTwo newNode = new NodeTwo(data);
+                newNode.next = head;
+                head = newNode;
+            }
+        }
+    </code></pre>
+    
+            <!-- Code Explanation -->
+            <div class="code-explanation">
+              <h4>Code Breakdown</h4>
+              <p>Explanation of the code goes here.</p>
+              <ul>
+                <li><strong>Key point 1:</strong> Explanation</li>
+                <li><strong>Key point 2:</strong> Explanation</li>
+              </ul>
+            </div>
+    
+            <!-- Key Concept Box -->
+            <div class="key-concept">
+              <h4>Key Concept: Title</h4>
+              <p>
+                Explanation of an important programming concept related to this
+                section.
+              </p>
+            </div>
+    
+            <!-- Console Output Example -->
+            <h3>Expected Output</h3>
+            <div class="output-example">Example console output goes here</div>
+          </div>
+    
+    
+    
+    
+        </div>
+        <!-- Sidebar -->
+        {% include "math/sidebar.html" %}
+      </div>
+    </div>
+    {% endblock %}
