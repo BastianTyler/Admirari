@@ -219,23 +219,56 @@ content %}
       </div>
       <!-- End of Content -->
 
-       <!-- Content Section -->
+       <!-- First Repo Content Section -->
        <div class="content-container">
-        <h2 class="section-title">What is VCS, git, Github, and Github Desktop?</h2>
+        <h2 class="section-title">Lets Make a Repo</h2>
 
         <p>
-          What are these things?
+          First step is creating our repo. There are several ways 
+            we could go about that. We could go to our dashboard online, we could use the command line,
+            but instead let's use Github Desktop. 
+            
+
         </p>
 
         <!-- Code Explanation -->
         <div class="code-explanation">
           <h4>Lets breakdown each of them</h4>
-          <ul>
-            <li><strong>VCS</strong> Explanation</li>
-            <li><strong>git</strong> Explanation</li>
-            <li><strong>Github</strong> Explanation</li>
-            <li><strong>Github Desktop</strong> Explanation</li>
-          </ul>
+          <ol>
+            <li>Click the File button in the top left. 
+              Click New Repository.
+              <div>
+                <img
+                  src="{{ url_for('static', filename='images/github-workshop-images/File-dropdown-blank.png') }}"
+                  class="img-fluid d-block mx-auto"
+                  style="max-width: 200px; max-height: 400px"
+                  alt="Description"
+                />
+              </div>
+            </li>
+            <li>We can give it any name we want, I'll go with Rocking-Repo. <div>
+              <img
+                src="{{ url_for('static', filename='images/github-workshop-images/File-dropdown-blank.png') }}"
+                class="img-fluid d-block mx-auto"
+                style="max-width: 200px; max-height: 400px"
+                alt="Description"
+              />
+            </div>
+          </li>
+            <li>We can initialize it with a README, or not, but this time I think I will. 
+              <div>
+                <img
+                  src="{{ url_for('static', filename='images/github-workshop-images/File-dropdown-blank.png') }}"
+                  class="img-fluid d-block mx-auto"
+                  style="max-width: 200px; max-height: 400px"
+                  alt="Description"
+                />
+              </div>
+            </li>
+            <li><strong>What is a README?</strong> Just a markdown file 
+              Github uses to display text under your project. It's a good way to introduce people to your project, but 
+              for this tutorial, we won't go into the ins-and-outs of them.</li>
+          </ol>
         </div>
 
         <!-- Key Concept Box -->
@@ -260,20 +293,41 @@ content %}
       </div>
       <!-- End of Content -->
 
-      <!-- Content Section -->
+      <!-- Finding Files Content Section -->
       <div class="content-container">
-        <h2 class="section-title">What is VCS, git, Github, and Github Desktop?</h2>
+        <h2 class="section-title">How the heck do I find these dang files in my system?</h2>
 
         <p>
-          What are these things?
+          We often want to get to the path of our files in our system. To do this on windows, 
+          we will open our files in the explorer(use your system alternatice). Now that we are inside our repo folder, 
+          let's right-click and make a new TXT file. Mine will be Song-One. Let's look at our repo in Github Desktop. Notice we can see that 
+            something changed! Our text file was added.
         </p>
 
         <!-- Code Explanation -->
         <div class="code-explanation">
           <h4>Lets breakdown each of them</h4>
           <ul>
-            <li><strong>VCS</strong> Explanation</li>
-            <li><strong>git</strong> Explanation</li>
+            <li><strong>First, </strong> Click file and new repository as shown
+              <div>
+              <img
+                src="{{ url_for('static', filename='images/github-workshop-images/File-dropdown-blank.png') }}"
+                class="img-fluid d-block mx-auto"
+                style="max-width: 200px; max-height: 400px"
+                alt="Description"
+              />
+            </div>
+          </li>
+          <li><strong>First, </strong> Click file and new repository as shown
+            <div>
+            <img
+              src="{{ url_for('static', filename='images/github-workshop-images/File-dropdown-blank.png') }}"
+              class="img-fluid d-block mx-auto"
+              style="max-width: 200px; max-height: 400px"
+              alt="Description"
+            />
+          </div>
+        </li>
             <li><strong>Github</strong> Explanation</li>
             <li><strong>Github Desktop</strong> Explanation</li>
           </ul>
