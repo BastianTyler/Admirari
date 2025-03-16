@@ -90,4 +90,6 @@ function drawMatrixPlane() {
       vel.y *= -1; // Reverse velocity on y-axis
     }
   }
+
+  
   
