@@ -4,7 +4,7 @@ physics_bp = Blueprint('physics', __name__, url_prefix='/physics')
 
 
 # Define Links for sidebar
-LINEAR_ALGEBRA_TABLE_OF_CONTENTS = [
+THERMODYNAMICS_TABLE_OF_CONTENTS = [
     {"title": "Thermodynamics: Formulas", "url": "/physics/thermodynamics/thermodynamics_main"},
     {"title": "Thermodynamics: Symbols and Units", "url": "/physics/thermodynamics/thermodynamics_symbols"},
     {"title": "Thermodynamics: Engine Lab", "url": "/physics/thermodynamics/thermodynamics_lab_engine"},
@@ -21,68 +21,75 @@ LINEAR_ALGEBRA_TABLE_OF_CONTENTS = [
     
 ]
 
+
+@physics_bp.context_processor
+def inject_physics_context():
+    return {
+        'page_type': 'physics',
+        'table_of_contents': THERMODYNAMICS_TABLE_OF_CONTENTS
+    }
+
 @physics_bp.route('/thermodynamics/thermodynamics_main')
 def thermodynamics_main():
-    return render_template('physics/thermodynamics/thermodynamics_main.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_main.html')
 
 @physics_bp.route('/thermodynamics/thermodynamics_intro_heat_temp')
 def thermodynamics_intro_heat_temp():
-    return render_template('physics/thermodynamics/thermodynamics_intro_heat_temp.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_intro_heat_temp.html')
+
 
 @physics_bp.route('/thermodynamics/thermodynamics_symbols')
 def thermodynamics_symbols():
-    return render_template('physics/thermodynamics/thermodynamics_symbols.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_symbols.html')
+
 
 @physics_bp.route('/thermodynamics/thermodynamics_formulas')
 def thermodynamics_formulas():
-    return render_template('physics/thermodynamics/thermodynamics_formulas.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_formulas.html')
+
 
 @physics_bp.route('/thermodynamics/thermodynamics_temperature_scales')
 def thermodynamics_temperature_scales():
-    return render_template('physics/thermodynamics/thermodynamics_temperature_scales.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_temperature_scales.html')
+
 
 @physics_bp.route('/thermodynamics/thermodynamics_thermal_expansion')
 def thermodynamics_thermal_expansion():
-    return render_template('physics/thermodynamics/thermodynamics_thermal_expansion.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_thermal_expansion.html')
+
 
 @physics_bp.route('/thermodynamics/thermodynamics_heat')
 def thermodynamics_heat():
-    return render_template('physics/thermodynamics/thermodynamics_heat.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_heat.html')
+
 
 @physics_bp.route('/thermodynamics/thermodynamics_ideal_gas_law')
 def thermodynamics_ideal_gas_law():
-    return render_template('physics/thermodynamics/thermodynamics_ideal_gas_law.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_ideal_gas_law.html')
+
 
 
 
 @physics_bp.route('/thermodynamics/thermodynamics_boltzmann_distribution')
 def thermodynamics_boltzmann_distribution():
-    return render_template('physics/thermodynamics/thermodynamics_boltzmann_distribution.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_boltzmann_distribution.html')
+
 
 
 @physics_bp.route('/thermodynamics/thermodynamics_lab_engine')
 def thermodynamics_lab_engine():
-    return render_template('physics/thermodynamics/thermodynamics_lab_engine.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_lab_engine.html')
+
 
 
 @physics_bp.route('/thermodynamics/thermodynamics_first_law_of_thermodynamics')
 def thermodynamics_first_law_of_thermodynamics():
-    return render_template('physics/thermodynamics/thermodynamics_first_law_of_thermodynamics.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_first_law_of_thermodynamics.html')
+
 
 @physics_bp.route('/thermodynamics/thermodynamics_PV_diagrams')
 def thermodynamics_PV_diagrams():
-    return render_template('physics/thermodynamics/thermodynamics_PV_diagrams.html', 
-                           table_of_contents=LINEAR_ALGEBRA_TABLE_OF_CONTENTS)
+    return render_template('physics/thermodynamics/thermodynamics_PV_diagrams.html')
+
 
 
