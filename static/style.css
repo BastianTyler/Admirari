@@ -7,6 +7,29 @@ body {
   background-color: #fff;
 }
 
+img {
+  border-radius: 5px;
+}
+
+/* Header Styles */
+h1 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h5 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 1.25rem;
+}
+
+/* List Styles */
+ul {
+  padding-left: 2rem;
+}
+
 /* Container Styles */
 .container {
   width: 100%;
@@ -129,25 +152,6 @@ body {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
-}
-
-/* Header Styles */
-h1 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-h5 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-  font-size: 1.25rem;
-}
-
-/* List Styles */
-ul {
-  padding-left: 2rem;
 }
 
 .list-unstyled {
