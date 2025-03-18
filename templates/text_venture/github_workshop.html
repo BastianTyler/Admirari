@@ -14,6 +14,8 @@ content %}
            workflow. Finally, we'll practice core Git operations like creating and cloning repositories, 
            making commits, pushing changes, branching, and merging with pull requests.
         </p>
+
+        <p class="header-description">Written by: <a href="https://github.com/newproph" target="_blank">Dylan Martin</a></p>
       </div>
 
       <!-- Content Section One-->
@@ -146,16 +148,17 @@ content %}
             />
 
             <br>
-            <li>Make sure to check the box seen above under the 'Local Path' section that says "Initialize this 
+            <li>
+              Make sure to check the box seen above under the 'Local Path' section that says "Initialize this 
               repository with a README."
+              <br><br>
+              <strong>What is a README?</strong> - A README is a plain text Markdown file that is used to provide essential
+              information about a project. It is commonly found in software repositories, containing information about a 
+              project. It's used to inform users and developers of the purpose of a project and how to interact with it.
+              <br>
+              We will discuss what exactly Markdown is a bit further down.
+              <br><br>
             </li>
-            <br>
-            <strong>What is a README?</strong> - A README is a plain text markdown file that is used to provide essential
-            information about a project. It is commonly found in software repositories, containing information about a 
-            project. It's used to inform users and developers of the purpose of a project and how to interact with it.
-            <br>
-            We will discuss what exactly markdown is a bit further down.
-            <br><br>
             <li>Click "Create Repository". GitHub desktop should now show you this screen:</li>
             <br>
 
@@ -163,16 +166,18 @@ content %}
               src="{{ url_for('static', filename='images/gitHub-workshop-images/new-repo-init-page.png') }}"
               class="img-fluid d-block mx-auto"
               style="max-height: 400px"
-              alt="Description"
+              alt="Page that displays after creating a new repo in GitHub Desktop."
             />
 
             <br>
-            <li>Publish the repository to GitHub by pressing the "Publish repository" button located in the
+            <li>
+              Publish the repository to GitHub by pressing the "Publish repository" button located in the
               main section of GitHub Desktop as seen in the above image. Alternatively you can publish by pressing
               Ctrl+P.
             </li>
             <br>
-            <li>You should now see this window. Make sure to uncheck the box that says "Keep this code private"
+            <li>
+              You should now see this window. Make sure to uncheck the box that says "Keep this code private"
               before publishing your repository.
             </li>
             <br>
@@ -181,7 +186,7 @@ content %}
               src="{{ url_for('static', filename='images/gitHub-workshop-images/publish-repo-window.png') }}"
               class="img-fluid d-block mx-auto"
               style="max-height: 400px"
-              alt="Description"
+              alt="Window with options for publishing a repository."
             />
 
           </ol>
@@ -189,8 +194,9 @@ content %}
 
          <!-- Practice Section -->
       <div class="practice-section">
-        <h3>Before moving on...</h3>
-        <p>If you followed the instructions correctly, you should now have published your repository on GitHub.
+        <h3>Where is My Repo?</h3>
+        <p>
+          If you followed the instructions correctly, you should now have published your repository on GitHub.
           If you want to view the files you created, or view the repository on GitHub itself, GitHub Desktop has buttons
           for these actions shown here:
         </p>
@@ -199,7 +205,7 @@ content %}
               src="{{ url_for('static', filename='images/gitHub-workshop-images/view-repository.png') }}"
               class="img-fluid d-block mx-auto"
               style="max-width: 400px"
-              alt="Description"
+              alt="Screenshot highlighting buttons with options for viewing repo files or viewing the repo on GitHub."
         />
 
         <br>
@@ -209,7 +215,7 @@ content %}
               src="{{ url_for('static', filename='images/gitHub-workshop-images/repo-menu-bar.png') }}"
               class="img-fluid d-block mx-auto"
               style="max-width: 400px"
-              alt="Description"
+              alt="Same options as above image, but in the menu bar."
         />
 
         <br>
@@ -220,62 +226,119 @@ content %}
 
       <!-- Finding Files Content Section -->
       <div class="content-container">
-        <h2 class="section-title">How the heck do I find these dang files in my system?</h2>
+        <h2 class="section-title">Making Our First Changes</h2>
 
         <p>
-          We often want to get to the path of our files in our system. To do this on windows, 
-          we will open our files in the explorer(use your system alternatice). Now that we are inside our repo folder, 
-          let's right-click and make a new TXT file. Mine will be Song-One. Let's look at our repo in GitHub Desktop. Notice we can see that 
-            something changed! Our text file was added.
+          In this section we will be creating a README file that will show up on our GitHub profile.
         </p>
 
         <!-- Code Explanation -->
         <div class="code-explanation">
-          <h4>Lets breakdown each of them</h4>
-          <ul>
-            <li><strong>First, </strong> Click file and new repository as shown
-              <div>
+          <ol>
+            <li>
+              <strong>Open the Repository</strong> - In order to make changes to files in our repository, we will 
+              need to open it with an IDE (Integrated Development Environment, i.e. Visual Studio Code, IntelliJ, PyCharm) 
+              or text editor. If you do not have a general IDE, Visual Studio Code is recommended for its ease of use.
+              It is also the IDE that will be used in this tutorial.
+
+              Here is a link to <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> for you to
+              download the IDE if you do not have one already.
+              <br><br>
+              <strong>Note:</strong> You may have noticed in some screenshots that I am actually using an IDE called VSCodium. 
+              This IDE is a freely-licensed binary distribution of Visual Studio Code. It works exactly the same, but 
+              is open source. If you are interested, you can find more information at the 
+              <a href="https://vscodium.com/" target="_blank">VSCodium website</a>.
+              <br><br>
+              Once you have your editor of choice, you should notice that GitHub Desktop gives you the option to open your
+              repository in your code editor. 
+              <br><br>
+
               <img
-                src="{{ url_for('static', filename='images/github-workshop-images/File-dropdown-blank.png') }}"
+                src="{{ url_for('static', filename='images/gitHub-workshop-images/open-repo-in.png') }}"
                 class="img-fluid d-block mx-auto"
-                style="max-width: 200px; max-height: 400px"
-                alt="Description"
+                style="max-width: 400px"
+                alt="GitHub Desktop open in editor button."
               />
-            </div>
-          </li>
-          <li><strong>First, </strong> Click file and new repository as shown
-            <div>
-            <img
-              src="{{ url_for('static', filename='images/GitHub-workshop-images/File-dropdown-blank.png') }}"
-              class="img-fluid d-block mx-auto"
-              style="max-width: 200px; max-height: 400px"
-              alt="Description"
-            />
-          </div>
-        </li>
-            <li><strong>GitHub</strong> Explanation</li>
-            <li><strong>GitHub Desktop</strong> Explanation</li>
-          </ul>
+
+              <br>
+              If your editor of choice is not named by the button shown, navigate to:
+              <br>
+              <strong>File > Options > Integrations > External Editor</strong>
+              <br>
+              From there, use the drop down list to select your editor of choice.
+            </li>
+            <br>
+
+            <li>
+              <strong>Editing Our README</strong> - Once we have our repository open in our code editor, we can start
+              making changes to our README. Go ahead and click on README.md in the explorer menu.
+              <br><br>
+
+              <img
+                src="{{ url_for('static', filename='images/gitHub-workshop-images/open-readme.png') }}"
+                class="img-fluid d-block mx-auto"
+                style="max-width: 400px"
+                alt="VSC with no tab open, arrow pointing to repository README."
+              />
+
+              <br>
+              <strong>I don't see a README in my repo!</strong>
+              <br>
+              You may have forgotten to create a README when creating your repo in a previous step. That's ok! You can
+              simply right click in the explorer menu of VSCode and select "New File." Make sure to name it "README.md".
+            </li>
+            <br>
+
+            <li>
+              <strong>Time to Make Introductions</strong> - Now it's time to talk about Markdown.
+              <br>
+              
+              <ul>
+                <li>
+                  <strong>What is Markdown?</strong>
+                  <br>
+                  Markdown is a markup language used for formatting text. It allows you to add heading, <strong>bold</strong>
+                  and <i>italic</i> text, list, links, and more - without the need for HTML or styling.
+                </li>
+                <li>
+                  <strong>Basic Markdown Syntax Examples</strong>
+                  <br>
+                  <ul>
+                    <li><strong>Bold</strong> → <code>**bold text**</code></li>
+                    <li><i>Italic</i> → <code>*italic text*</code></li>
+                    <li>Lists:</li>
+                    <ul>
+                      <li><code>- Item 1</code></li>
+                      <li><code>- Item 2</code></li>
+                    </ul>
+                    <li>Code block:</li>
+                    <code>```<br>print("Hello, Markdown!")<br>```</code>
+                  </ul>
+                </li>
+              </ul>
+
+              Now you can create your own introductory page. This section is open ended, so feel free to take your
+              time and create something that feels right for you. As an example, here is a screenshot of 
+              <a href="https://github.com/newproph" target="_blank">my GitHub profile</a> as it appears in my IDE.
+              <br><br>
+
+              <img
+                src="{{ url_for('static', filename='images/gitHub-workshop-images/newproph-github-intro.png') }}"
+                class="img-fluid d-block mx-auto"
+                style="max-width: 600px"
+                alt="GitHub profile 'NEWPROPH' with accompanying Markdown introduction."
+              />
+              <br>
+              For more information about Markdown syntax, see 
+              <a href="https://www.markdownguide.org/basic-syntax/" target="_blank">MarkdownGuide.org</a>
+            </li>
+            <br>
+            <li>
+              <strong>Save Your Work!</strong> - Don't forget to save your changes with Ctrl+S once you're finished.
+            </li>
+
+          </ol>
         </div>
-
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Takeaway</h4>
-          <p>
-            Explanation of stuff
-          </p>
-        </div>
-
-
-         <!-- Practice Section -->
-      <div class="practice-section">
-        <h3>Steps before moving on</h3>
-        <p>Be diligent!</p>
-        <ul>
-          <li>Take notes</li>
-          <li>Go to gollasry and read all terms once. Use as reference</li>
-        </ul>
-      </div>
 
       </div>
       <!-- End of Content -->
