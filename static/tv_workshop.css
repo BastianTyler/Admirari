@@ -89,3 +89,10 @@
 body:has(.tutorial-header) {
   background-color: #296b37; /* or whatever color you want */
 }
+
+.header-description {
+  text-align: left;
+  padding: 0 2rem;
+  color: gainsboro;
+}
+
