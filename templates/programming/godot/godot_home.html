@@ -1,0 +1,489 @@
+{% extends "base_layout.html" %} {% block title %}Godot Notes{% endblock %} {% block
+content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Godot</h1>
+      <p>Godot stuff!</p>
+
+      <!-- Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">Basics</h2>
+
+        <ul>
+          <li>shift + f to unlock free movement</li>
+          <li>
+            basic 3d editor controls
+          </li>
+          <li>you can subdivide meshinstance3d objects and view their wireframe by going to perspective dropdown</li>
+          <li>Physics process is typically faster for any physical transformation of an object</li>
+          <li>rotation_degrees can be used to rotate an object</li>
+          <li>Multiply by delta when changing by framerate to scale</li>
+          <li>Doubly Linked Lists point to next and previous element</li>
+        </ul>
+
+        <p>
+          Think of Linked Lists as a bunch of simple rooms connected by a single
+          doors. Each room leads to then next, like how each node points to the
+          next.
+        </p>
+        <p>
+          The head node points to the first node in the list and is the entry
+          point of the list.
+        </p>
+
+        <!-- Code Sample -->
+        <h3>Getting Started with the Node Class</h3>
+        <pre><code class="language-java">public class Node <T> {
+    //Two class level attributes
+    T data; //Generic data of any type
+    Node next; //reference to another node of same class
+
+    //Constructor
+    //When called the data will be set for this node and next will be set to null as it doesn't exist yet
+    public Node(T data){
+        this.data = data;
+        this.next = null;
+    }
+
+    public Node(T data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+
+}
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+       <!-- Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">Making our LinkedList Class</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java">public class LinkedList <T>{
+    private NodeTwo head;
+
+    //... are bar args for generic amount of entries
+    public LinkedList(T... data){
+        if(data.length < 1){ // If there is no data the list is made empty and head set null
+            head = null;
+        } else{
+            for(T item : data){
+                addFront(item); //add argument to front
+            }
+        }
+    }
+    
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+      </div>
+
+       <!-- Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">Implementing addFront</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java">public void addEnd(T data){
+        //First check if head is null
+        if(head == null){
+            head = new Node(data);
+        } else{
+            Node iterator = head;
+
+            while(iterator.next != null){ //iterate over linked list until you encounter a null value, at that point you are at the end. It is ok if the next become null, that means currently we are on the end.
+                iterator = iterator.next;
+            }
+
+            //Upon getting at the end
+            iterator.next = new Node(data);
+        }
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+      </div>
+
+
+       <!-- Content Section Start -->
+      <div class="content-container">
+        <h2 class="section-title">Implementing addEnd</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java">public void addFront(T data){
+        //First check if head is null
+        if(head == null){
+            head = new NodeTwo(data);
+        } else{
+            NodeTwo newNode = new NodeTwo(data);
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Content Section Start -->
+      <div class="content-container">
+        <h2 class="section-title">Implementing popFront</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java">public T popFront(){
+        if (head == null){
+            return  null;
+        }
+        Node returnValue = head;
+        head = head.next;
+        return (T) returnValue.data;
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+      </div>
+
+      <!-- Content Section Start -->
+      <div class="content-container">
+        <h2 class="section-title">Implementing remove</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java"> public void remove(T data){
+        if(head == null){
+            return;
+        }
+
+        if(head.data == data){
+            popFront();
+        } else{
+            Node iterator = head;
+            Node previous = null;
+
+            while(iterator.next != data && iterator.next != null){ //iterator until the next node is the data or no data is found and we get to the end
+                previous = iterator; //keep track of the iterator
+                iterator = iterator.next;
+            }
+
+            //Once finished with whlie we have either reached end or reached data we wana delete
+            if(iterator.next == null && iterator.data != data){
+                return; //Data is not found, does not exist
+            } else  if (iterator.next == null && iterator.data == data){
+                previous.next = null;
+            }
+            else{
+                previous.next = iterator.next;//We found the data. Now skip over the found data and point to the data after it, thus removing it from the list
+            }
+        }
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Content Section Start -->
+      <div class="content-container">
+        <h2 class="section-title">Implementing Print</h2>
+
+        <!-- Code Sample -->
+        <h3>Getting Started with the Node Class</h3>
+        <pre><code class="language-java"> public void print(){
+        if (head == null){
+            System.out.println("List empty");
+            return;
+        }
+
+        Node iterator = head;
+        System.out.println(iterator.data);
+
+        while(iterator.next!= null){
+            iterator = iterator.next;
+            System.out.println(iterator.data);
+
+        }
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+      </div>
+
+
+       <!-- Content Section Start -->
+      <div class="content-container">
+        <h2 class="section-title">Implementing Size</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java">public int size(){
+        int count = 0;
+
+        if (head == null){
+            return count;
+        }
+
+        Node iterator = head;
+        count++;
+        while(iterator.next != null){
+            iterator = iterator.next;
+            count++;
+        }
+
+        return count;
+
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+      </div>
+
+
+       <!-- Content Section Start -->
+      <div class="content-container">
+        <h2 class="section-title">Implementing Contains</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java">public boolean contains(T data){
+        if (head == null){
+            return false;
+        }
+
+        Node iterator = head;
+
+        if(iterator.data == data){
+            return true;
+        }
+        while(iterator.next != null){
+            iterator = iterator.next;
+
+            if(iterator.data == data){
+                return true;
+            }
+        }
+        return false;
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+      </div>
+
+
+       <!-- Content Section Start -->
+      <div class="content-container">
+        <h2 class="section-title">What is a linked list?</h2>
+
+        <!-- Code Sample -->
+        <h3></h3>
+        <pre><code class="language-java">public void addFront(T data){
+        //First check if head is null
+        if(head == null){
+            head = new NodeTwo(data);
+        } else{
+            NodeTwo newNode = new NodeTwo(data);
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+
+
+
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

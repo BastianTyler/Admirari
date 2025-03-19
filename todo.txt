@@ -1,0 +1,6 @@
+Update styles on programming, physics, maybe use the same method for workshop?
+Provide documentation for navigating project
+--Github Workhop--
+Add images to tutorial
+Reorder tutorial
+Sidebar?
