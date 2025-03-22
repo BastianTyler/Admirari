@@ -1,0 +1,157 @@
+{% extends "base_layout.html" %} {% block title %}Thermodynamics: Conduction{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Thermodynamics: Conduction</h1>
+      <p>Heat flow with objects in contact</p>
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>Conduction Intro</h5>
+        </div>
+        <div class="card-body">
+          <p>Conduction is the heat flow of two solid objects in contact. A steak and a hot pan, 
+            your feet and the cold floor, a can of chili warming up in a pot of boiling water; you 
+            get the idea.
+          </p>
+
+            <div>
+                <h5>Things to be aware about</h5>
+                <p>Conduction cares about the flow of heat through some object. As such
+                    it cares about the cross sectional area of an object. Towards the end of 
+                    this page there is a list of some common cross sectional areas you should know.
+                </p>
+                <p>Heat flows from HOT to COLD it does not flow from COLD to HOT.</p>
+                <p>What is thermal equallibrium? It is when heats <strong>balance</strong>,
+                so that is when heats sum to 0.</p>
+                <p>What does it mean to be in steady state? It implies that for the system in 
+                    question the rate of heat production has settled to a constant value. This will be
+                    the case in many problems.
+                </p>
+
+            </div>
+        </div>
+      </div>
+      <!-- Content End -->
+
+       <!-- Content Start -->
+       <div class="card mb-4">
+        <div class="card-header">
+          <h5>Formula for power over time</h5>
+        </div>
+        <div class="card-body">
+          <p>Remember this: we can always relate power to change in heat over change in time!</p>
+
+            <div>
+            <h5>Formula: </h5>
+            <p>
+                $$\mathcal{P} = \frac{dQ}{dt} = \frac{\Delta Q}{\Delta T}$$
+                Where: 
+            </p>
+            <ul>
+                <li><strong>\(\mathcal{P}\) </strong>is power</li>
+                <li><strong>\(\text{dQ} = \Delta Q\)</strong> is change in heat</li>
+                <li><strong>\(\text{dt} = \Delta t\)</strong> is change in time. Take note that this is NOT temperature</li>
+            </ul>
+
+            <p>Note on \(\Delta T\): Remeber that this is \(t_f - t_i\). Later we will see looking
+                at change in temperature like this helps find the junction of two bodies. 
+            </p>
+            </div>
+        </div>
+      </div>
+      <!-- Content End -->
+
+      <!-- Content Start -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5>General Formula For Conduction</h5>
+        </div>
+        <div class="card-body">
+          <p>When can we apply this? The bodies must be solid and in physical contact.</p>
+
+            <div>
+            <h5>Formula: </h5>
+            <p>
+                $$\mathcal{P} = \frac{k_bA_{cross-sectional-area}\Delta T}{L} $$
+                Where: 
+            </p>
+            <ul>
+                <li><strong>\(\mathcal{P}\) </strong>is power</li>
+                <li><strong>\(k\)</strong> is the thermal conductivity of the material. This changes for each material.</li>
+                <li><strong>\(A_{cross-sectional-area}\)</strong> is, risking being overly on the nose, the
+                cross sectional area of the object. We will discuss this in detail later on</li>
+                <li><strong>\(\Delta T\)</strong> is change in temperature. Note we can use Kelvin or Celsius</li>
+                <li><strong>\(L\)</strong> is the length of the material in question</li>
+            </ul>
+
+            <h5>R-Value</h5>
+            <p>The R value is the <strong>thermal resistance</strong> of a object. The formula for R is:
+            $$R = \frac{L}{k}$$
+            </p>
+            </div>
+        </div>
+      </div>
+      <!-- Content End -->
+
+
+       <!-- Content Start -->
+       <div class="card mb-4">
+        <div class="card-header">
+          <h5>Basic Problem Solving Strategy</h5>
+        </div>
+        <div class="card-body">
+            <p></p>
+            <ol>
+                <li>Write down values and their associated quantities. </li>
+                <li>Bring them into correct units.</li>
+                <li>Identify target value</li>
+                <li>Use power and heat formulas to get target values.</li>
+                <li></li>
+            </ol>
+        </div>
+      </div>
+      <!-- Content End -->
+
+       <!-- Content Start -->
+       <div class="card mb-4">
+        <div class="card-header">
+          <h5>Finding Junctions</h5>
+        </div>
+        <div class="card-body">
+          <p>
+          </p>
+
+            <div>
+                <h5>Things to be aware about</h5>
+            </div>
+        </div>
+      </div>
+      <!-- Content End -->
+
+       <!-- Content Start -->
+       <div class="card mb-4">
+        <div class="card-header">
+          <h5>Cross Sectional Areas To Know</h5>
+        </div>
+        <div class="card-body">
+          <p>
+          </p>
+
+            <div>
+                <h5>Things to be aware about</h5>
+            </div>
+        </div>
+      </div>
+      <!-- Content End -->
+
+      
+
+
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

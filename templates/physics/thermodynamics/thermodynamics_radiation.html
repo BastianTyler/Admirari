@@ -1,0 +1,90 @@
+{% extends "base_layout.html" %} {% block title %}Thermodynamics: Radiation{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Thermodynamics: Radiation</h1>
+      <p>Radiation is the rate at which energy is escaping the object through(I think)</p>
+        <!-- Content Start -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Radiation Intro</h5>
+            </div>
+            <div class="card-body">
+                <p>Radiation is essentially the rate at which any object will naturally emit energy.
+                    Like conduction, we discus radiation in terms of Power, \(mathcal{P}\). 
+                    As such we can again relate the power output to the equation:
+                    $$\mathcal{P} = \frac{dQ}{dt} = \frac{\Delta Q}{\Delta T}$$ 
+                    as discussed in Conduction.
+                </p>
+                <p>Some things we should note before going on: </p>
+                <ul>
+                    <li>Temperature for radiation should best be discussed in units of Kelvin.</li>
+                    <li>What surface do we care about? The 3d area between objects: that is the surface 
+                        area of the object. 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Content End -->
+
+        <!-- Content Start -->
+         <div class="card mb-4">
+            <div class="card-header">
+                <h5>Formulas For Radiation</h5>
+            </div>
+            <div class="card-body">
+                <p>There are three primary formlas to care about (but they are hardly different)</p>
+                <p>First: 
+                    $$\mathcal{P}_{radiated} = \sigma A_{surface-area}\epsilon T_{object-radiating}^4$$
+                </p>
+                <p>Second: 
+                    $$\mathcal{P}_{absorbed-from-enviorment} = \sigma A_{surface-area}\epsilon T_{enviorment}^4$$
+                </p>
+                <p>Third:
+                    $$\mathcal{P}_{net} = \sigma A_{surface-area}\epsilon (T_{enviorment}^4-T_{object-radiating}^4)$$
+                </p>
+                <p>Notice, the only thing changing is that final T value. All we are saying is that 
+                    the surface area of some 3D object is touched by the surface area of the enviorment it is in;
+                    therefore there is some sort of exchange going on. We descibe each, the object radiating power
+                    in question and the power the object feels thanks to the enviorment it is in in the first two 
+                    formulas. The third finds the net power, of say a person in an elevator, when taking the ambient
+                    power from the enviorment into account. 
+                </p>
+                <p>Cool, so what are all these symbols?</p>
+                <ul>
+                    <li><strong>\(\sigma\)</strong></li>
+                    <li><strong>\(A_{surface-area}\)</strong></li>
+                    <li><strong>\(\epsilon \)</strong></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Content End -->
+
+        <!-- Content Start -->
+         <div class="card mb-4">
+            <div class="card-header">
+                <h5>Problem Solving Strategy</h5>
+            </div>
+            <div class="card-body">
+                <p></p>
+            </div>
+        </div>
+        <!-- Content End -->
+
+        <!-- Content Start -->
+         <div class="card mb-4">
+            <div class="card-header">
+                <h5>Radiation Extras</h5>
+            </div>
+            <div class="card-body">
+                <p></p>
+            </div>
+        </div>
+        <!-- Content End -->
+    </div>
+    <!-- Sidebar -->
+    {% include "math/sidebar.html" %}
+  </div>
+</div>
+{% endblock %}

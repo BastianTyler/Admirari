@@ -12,8 +12,8 @@ THERMODYNAMICS_TABLE_OF_CONTENTS = [
     {"title": "Thermodynamics: Temperature Scales", "url": "/physics/thermodynamics/thermodynamics_temperature_scales"},
     {"title": "Thermodynamics: Thermal Expansion", "url": "/physics/thermodynamics/thermodynamics_thermal_expansion"},
     {"title": "Thermodynamics: Heat", "url": "/physics/thermodynamics/thermodynamics_heat"},
-    {"title": "Thermodynamics: Conduction", "url": "/physics/thermodynamics/thermodynamics_main"},
-    {"title": "Thermodynamics: Radiation", "url": "/physics/thermodynamics/thermodynamics_main"},
+    {"title": "Thermodynamics: Conduction", "url": "/physics/thermodynamics/thermodynamics_conduction"},
+    {"title": "Thermodynamics: Radiation", "url": "/physics/thermodynamics/thermodynamics_radiation"},
     {"title": "Thermodynamics: Ideal Gas Law", "url": "/physics/thermodynamics/thermodynamics_ideal_gas_law"},
     {"title": "Thermodynamics: Boltzmann Distributions", "url": "/physics/thermodynamics/thermodynamics_boltzmann_distribution"},
     {"title": "Thermodynamics: First Law of Thermodynamics", "url": "/physics/thermodynamics/thermodynamics_first_law_of_thermodynamics"},
@@ -91,5 +91,11 @@ def thermodynamics_first_law_of_thermodynamics():
 def thermodynamics_PV_diagrams():
     return render_template('physics/thermodynamics/thermodynamics_PV_diagrams.html')
 
+@physics_bp.route('/thermodynamics/thermodynamics_conduction')
+def thermodynamics_conduction():
+    return render_template('physics/thermodynamics/thermodynamics_conduction.html')
 
+@physics_bp.route('/thermodynamics/thermodynamics_radiation')
+def thermodynamics_radiation():
+    return render_template('physics/thermodynamics/thermodynamics_radiation.html')
 
