@@ -15,7 +15,9 @@ content %}
            making commits, pushing changes, branching, and merging with pull requests.
         </p>
 
-        <p class="header-description">Written by: <a href="https://github.com/newproph" target="_blank">Dylan Martin</a></p>
+        <p class="header-description">
+          Written by: <a href="https://github.com/newproph" target="_blank">Dylan Martin</a>
+        </p>
       </div>
 
       <!-- Content Section One-->
@@ -78,7 +80,7 @@ content %}
         <h2 class="section-title">Getting Started</h2>
 
         <p>
-          Time to make accounts, download, and set up our enviroment. Trust me, won't be to bad.
+          Time to make accounts, download, and set up our environment. Trust me, won't be to bad.
         </p>
 
         <!-- Code Explanation -->
@@ -114,15 +116,18 @@ content %}
        <div class="content-container">
         <h2 class="section-title">Making Your First Repository</h2>
 
-        <p>The first step to starting any project is to create a repository, or repo for short. 
+        <p>
+          The first step to starting any project is to create a repository, or repo for short. 
           While there are a number of ways to accomplish this, we will be creating our repository through GitHub Desktop.
-          We're going to start by making a page to display when users visit your GitHub profile.</p>
+          For this example, feel free to use any name you would like for your repository.
+        </p>
 
         <!-- Code Explanation -->
         <div class="code-explanation">
           <h4>Going step by step...</h4>
           <ol>
-            <li>In GitHub Desktop, navigate to the File section of the menu bar, shown below. Select "New repository...",
+            <li>
+              In GitHub Desktop, navigate to the File section of the menu bar, shown below. Select "New repository...",
               or simply press Ctrl+N.
             </li>
             <br>
@@ -135,8 +140,9 @@ content %}
             />
             
             <br>
-            <li>Typically when making a repo, we can give it any name we want. For the purposes of making a page that
-              displays on your profile, create a repo with the same name as your GitHub username.
+            <li>
+              Typically when making a repo, we can give it any name we want. For this example, I'll name it 
+              "admirari-github-workshop".
             </li>
             <br>
 
@@ -177,8 +183,7 @@ content %}
             </li>
             <br>
             <li>
-              You should now see this window. Make sure to uncheck the box that says "Keep this code private"
-              before publishing your repository.
+              You should now see this window. Go ahead and click the blue "Publish Repository" button.
             </li>
             <br>
 
@@ -229,7 +234,7 @@ content %}
         <h2 class="section-title">Making Our First Changes</h2>
 
         <p>
-          In this section we will be creating a README file that will show up on our GitHub profile.
+          In this section we will be making and publishing changes to the README file in the repo we just created above.
         </p>
 
         <!-- Code Explanation -->
@@ -242,7 +247,7 @@ content %}
               It is also the IDE that will be used in this tutorial.
 
               Here is a link to <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> for you to
-              download the IDE if you do not have one already.
+              download the IDE if you do not have one already. Further guides for TextVenture will be using Intellij.
               <br><br>
               <strong>Note:</strong> You may have noticed in some screenshots that I am actually using an IDE called VSCodium. 
               This IDE is a freely-licensed binary distribution of Visual Studio Code. It works exactly the same, but 
@@ -290,7 +295,7 @@ content %}
             <br>
 
             <li>
-              <strong>Time to Make Introductions</strong> - Now it's time to talk about Markdown.
+              <strong>Now it's time to talk about Markdown</strong>
               <br>
               
               <ul>
@@ -317,9 +322,10 @@ content %}
                 </li>
               </ul>
 
-              Now you can create your own introductory page. This section is open ended, so feel free to take your
-              time and create something that feels right for you. As an example, here is a screenshot of 
+              As an example, I have included a screenshot of the README that displays on 
               <a href="https://github.com/newproph" target="_blank">my GitHub profile</a> as it appears in my IDE.
+              <br>
+              <strong>Do not worry about copying anything in the following example.</strong>
               <br><br>
 
               <img
@@ -334,6 +340,18 @@ content %}
             </li>
             <br>
             <li>
+              <strong>Make a Simple Change</strong> - Now we are going to make a simple change to the README that
+              appears in the README of our project. For now, let's just make a header that say's "Hello, World!".
+            </li>
+            <br>
+            <img
+                src="{{ url_for('static', filename='images/gitHub-workshop-images/readme-hello-world.png') }}"
+                class="img-fluid d-block mx-auto"
+                style="max-width: 600px"
+                alt="Markdown headers for the project README"
+              />
+            <br>
+            <li>
               <strong>Save Your Work!</strong> - Don't forget to save your changes with Ctrl+S once you're finished.
             </li>
 
@@ -345,47 +363,47 @@ content %}
 
       <!-- Content Section -->
       <div class="content-container">
-        <h2 class="section-title">It's time to make our first commit!</h2>
+        <h2 class="section-title">Making Our First Commit</h2>
 
         <p>
-          To commit this, we will go to the bottom left of the GitHub Desktop 
-          UI. I'll call this first commit in the summary and say "Added first song" in the description.
-          Let's make another one! So I'll call the new text file Song-Two.txt. I'll commit this in the same
-          manner. Let's say I wasn't happy with Song-One. Let's go to the History. Notice we can see the things we 
-          did in the past here. Let's right-click on the first commit. Select "Revert this commit" (img here). If it worked, then you should notice
-          that the first file vanished! We just went back to a save point in our project. This can be a powerful and frustrating 
-          feature. Misuse can lead to merge conflicts, something we will not go into much detail about in this tutorial.
-          Be careful using this feature.
+          Now that we have made changes to our project, lets commit these changes to our published project on GitHub.
+          Doing this is a relatively simple process through GitHub Desktop. All you need to do is fill out the
+          information in this section in the bottom right. Since the automatically generated field is 
+          descriptive enough, I'm just going to go ahead and press "Commit to main". This will push the changes
+          we made to the README to the project as it is hosted on GitHub itself.
+          <br>
+          <strong>Be careful doing this in larger projects!</strong> 
+          <br>
+          You may want to create new branch of the repository for any minor changes.
+          We will discuss branches below.
+          <br><br>
+          <img
+            src="{{ url_for('static', filename='images/gitHub-workshop-images/gd-commit.png') }}"
+            class="img-fluid d-block mx-auto"
+            style="max-width: 600px"
+            alt="GitHub desktop commit interface."
+          />
         </p>
-
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Lets breakdown each of them</h4>
-          <ul>
-            <li><strong>VCS</strong> Explanation</li>
-            <li><strong>Git</strong> Explanation</li>
-            <li><strong>GitHub</strong> Explanation</li>
-            <li><strong>GitHub Desktop</strong> Explanation</li>
-          </ul>
-        </div>
-
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Takeaway</h4>
-          <p>
-            Explanation of stuff
-          </p>
-        </div>
-
 
          <!-- Practice Section -->
       <div class="practice-section">
-        <h3>Steps before moving on</h3>
-        <p>Be diligent!</p>
-        <ul>
-          <li>Take notes</li>
-          <li>Go to gollasry and read all terms once. Use as reference</li>
-        </ul>
+        <h3>What if someone else made changes to the project?</h3>
+        <p>
+          In order to make sure you have the most recent version of code for a project, make sure to regularly
+          fetch updates from the repository. You can do this in GitHub Desktop by clicking the following button:
+        </p>
+        
+        <img
+          src="{{ url_for('static', filename='images/gitHub-workshop-images/fetch-origin.png') }}"
+          class="img-fluid d-block mx-auto"
+          style="max-width: 600px"
+          alt="Fetch origin button."
+        />
+        <br>
+        <p>
+          <strong>It is good practice to fetch the latest updates to a repository before committing changes!</strong>
+        </p>
+
       </div>
 
       </div>
@@ -393,145 +411,7 @@ content %}
 
       <!-- Content Section -->
       <div class="content-container">
-        <h2 class="section-title">From Local to Online - Time to Push!</h2>
-
-        <p>
-          When we are happy with our changes, we can push to our online repository on
-            GitHub. You have a few options to get to this. There is the large button in the center. Or you can enter
-            the "Branch" dropdown and select "Push origin" (img here). You can also use the keyboard shortcut `Ctrl + P`. This will bring all of 
-            our local changes into our online space. Let's go check that out. Navigate to your online repo
-            and check it out—your project is online! Now you can access this project from any computer. 
-            Let's go over some of this UI.
-        </p>
-
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Lets breakdown each of them</h4>
-          <ul>
-            <li><strong>VCS</strong> Explanation</li>
-            <li><strong>Git</strong> Explanation</li>
-            <li><strong>GitHub</strong> Explanation</li>
-            <li><strong>GitHub Desktop</strong> Explanation</li>
-          </ul>
-        </div>
-
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Takeaway</h4>
-          <p>
-            Explanation of stuff
-          </p>
-        </div>
-
-
-         <!-- Practice Section -->
-      <div class="practice-section">
-        <h3>Steps before moving on</h3>
-        <p>Be diligent!</p>
-        <ul>
-          <li>Take notes</li>
-          <li>Go to gollasry and read all terms once. Use as reference</li>
-        </ul>
-      </div>
-
-      </div>
-      <!-- End of Content -->
-
-      <!-- Content Section -->
-      <div class="content-container">
-        <h2 class="section-title">From Online to Local - Time to Fetch!</h2>
-
-        <p>
-          Let's make a new file here now. Select the "New file" button as shown (img here).
-            I'm going to make a TXT file called Fav-Song.txt. I'll save this to my repo, and done. Now,
-            let's go back to GitHub Desktop. We have two options now: we could fetch from the main branch, or we could pull
-            from the main branch. When fetching, know that we are making a new commit of our project from the online repo. Pulling 
-            will not create a new commit. There are several ways to do this. You can click "Fetch origin" or "Pull origin" (img here) or use the shortcut `Ctrl + Shift + P`.
-            After we did our pull, notice we have the file we added to the project via the online repo!
-        </p>
-
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Lets breakdown each of them</h4>
-          <ul>
-            <li><strong>VCS</strong> Explanation</li>
-            <li><strong>Git</strong> Explanation</li>
-            <li><strong>GitHub</strong> Explanation</li>
-            <li><strong>GitHub Desktop</strong> Explanation</li>
-          </ul>
-        </div>
-
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Takeaway</h4>
-          <p>
-            Explanation of stuff
-          </p>
-        </div>
-
-
-         <!-- Practice Section -->
-      <div class="practice-section">
-        <h3>Steps before moving on</h3>
-        <p>Be diligent!</p>
-        <ul>
-          <li>Take notes</li>
-          <li>Go to gollasry and read all terms once. Use as reference</li>
-        </ul>
-      </div>
-
-      </div>
-      <!-- End of Content -->
-
-      <!-- Content Section -->
-      <div class="content-container">
-        <h2 class="section-title">Lets try this with something a bit more fun.</h2>
-
-        <p>
-          Let's open up IntelliJ. Now select "New Project" (img here) and make a new project. 
-          We are not going to initialize it with Git or version control. Give it a name and, if needed,
-          select Java for the type of project. Make sure to create it inside of your repo. To get the path to your
-          repo, go to GitHub Desktop, right-click your repo, and find it in Explorer. Select the link in the search 
-          bar at the top of the Explorer menu and copy the link. Create your project. Notice in GitHub Desktop there 
-          are a bunch of changes. If not, there is a problem! Redo steps again. Look at it as a chance to memorize it.
-        </p>
-
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Lets breakdown each of them</h4>
-          <ul>
-            <li><strong>VCS</strong> Explanation</li>
-            <li><strong>Git</strong> Explanation</li>
-            <li><strong>GitHub</strong> Explanation</li>
-            <li><strong>GitHub Desktop</strong> Explanation</li>
-          </ul>
-        </div>
-
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Takeaway</h4>
-          <p>
-            Explanation of stuff
-          </p>
-        </div>
-
-
-         <!-- Practice Section -->
-      <div class="practice-section">
-        <h3>Steps before moving on</h3>
-        <p>Be diligent!</p>
-        <ul>
-          <li>Take notes</li>
-          <li>Go to gollasry and read all terms once. Use as reference</li>
-        </ul>
-      </div>
-
-      </div>
-      <!-- End of Content -->
-
-      <!-- Content Section -->
-      <div class="content-container">
-        <h2 class="section-title">Making sure our Java enviorment is set up</h2>
+        <h2 class="section-title">Creating a New Branch</h2>
 
         <p>
           Let's create a new class in the `src` folder; I'll call it `MyClass`. Let's use the 
@@ -575,7 +455,7 @@ content %}
 
       <!-- Content Section -->
       <div class="content-container">
-        <h2 class="section-title">The final hurdel, lets make a new branch.</h2>
+        <h2 class="section-title">Forking an Existing Repository</h2>
 
         <p>
           Now we are going to make a new branch. This will let us have isolated development
