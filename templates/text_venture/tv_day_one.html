@@ -161,10 +161,24 @@ content %}
         <!-- Code Explanation -->
         <div class="code-explanation">
           <h4>Code Breakdown</h4>
-          <p>Explanation of the code goes here.</p>
+          <p>
+            The Player class for now has four attributes, a name to refer it by,
+            a gender to give the user something to determine, their age for
+            later events, and a health value so we can start thinking about
+            combat. We use a simple constructor that initializes the Player
+            objects attributes. Other then that there are some getters for each
+            of our attributes.
+          </p>
           <ul>
-            <li><strong>Key point 1:</strong> Explanation</li>
-            <li><strong>Key point 2:</strong> Explanation</li>
+            <li>
+              <strong>Key point focus on learning:</strong> We could add in more
+              information to our player that our game will probably need. Things
+              like attack and defense power, speed, maybe charisma, or who
+              weight. But not only will these likely get eaten up by more
+              general classes, it also makes learning what your trying to learn
+              more difficult by distracting you from understanding the function
+              of the code you are implementing.
+            </li>
           </ul>
         </div>
 
@@ -311,9 +325,9 @@ public static void headerGenerator(String title, int decorationCount) {
           <h3>Expected Output</h3>
           <div class="output-example">
             <pre>
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-            Battle Review
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Battle Review
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre
             >
           </div>
         </div>
@@ -412,51 +426,52 @@ Process finished with exit code 0
 </pre
             >
           </div>
-        </div>
-
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Code Breakdown</h4>
-          <p>Explanation of the code goes here.</p>
-          <ul>
-            <li><strong>Key point 1:</strong> Explanation</li>
-            <li><strong>Key point 2:</strong> Explanation</li>
-          </ul>
+          <h3>If the user enters something outside the range:</h3>
+          <div class="output-example">
+            <pre>
+(1) Run
+(2) Hide
+Choose: 
+4
+Choose: 
+f
+Must enter an integer!
+Choose: 
+</pre
+            >
+          </div>
         </div>
 
         <!-- Key Concept Box -->
         <div class="key-concept">
-          <h4>Key Concept: Title</h4>
-          <p>
-            Explanation of an important programming concept related to this
-            section.
-          </p>
+          <h4>Into the Method: anythingToContinue()</h4>
+          <p>We use another try/catch setup so that we can 'pause' our game.</p>
 
           <div>
             <pre><code class="language-java">
-public static void printDecorations(int n) {
-  for (int i = 0; i < n; i++) {
-    System.out.print("~");
-  }
-  System.out.println();
+public static void anythingToContinue() {
+        System.out.println("Press Enter to continue");
+        try {
+            System.in.read();  // Wait for user input
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 }
             </code></pre>
-
-            <h5>calling printDecoration(10)</h5>
           </div>
-
-          <!-- Console Output Example -->
-          <h3>Expected Output</h3>
-          <div class="output-example">~~~~~~~~~~</div>
         </div>
 
         <!-- Main Section -->
         <div class="content-container">
-          <h2 class="section-title">Main</h2>
+          <h2 class="section-title">Main Version 2</h2>
 
           <p class="section-content">
-            Your introductory text goes here. Explain the concept you're about
-            to teach.
+            Now we are going to try and upgrade our program to let the user
+            design their Player using the GameLogic class. Again, we can be
+            rough and write out how we want our code to look before we even
+            implement the methods or classes required. Use it as a way to plan
+            out what you will need and then comment out the errors until you get
+            it implemented.
           </p>
           <!-- Code Sample -->
           <h3>Code Implementation</h3>
@@ -480,8 +495,9 @@ public static void printDecorations(int n) {
             <h4>Code Breakdown</h4>
             <p>The</p>
             <ul>
-              <li><strong>Key point 1:</strong> Explanation</li>
-              <li><strong>Key point 2:</strong> Explanation</li>
+              <li>
+                <strong>Key point: Keep the scope small</strong>
+              </li>
             </ul>
           </div>
 
