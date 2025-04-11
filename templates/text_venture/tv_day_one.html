@@ -460,6 +460,7 @@ public static void anythingToContinue() {
             </code></pre>
           </div>
         </div>
+      </div>
 
         <!-- Main Section -->
         <div class="content-container">
@@ -493,35 +494,34 @@ public static void anythingToContinue() {
           <!-- Code Explanation -->
           <div class="code-explanation">
             <h4>Code Breakdown</h4>
-            <p>The</p>
-            <ul>
-              <li>
-                <strong>Key point: Keep the scope small</strong>
-              </li>
-            </ul>
+            <p>
+              The idea is to be using classes as tools. We don't want a lot of
+              logic in one place, so spreading it out in a way that is as
+              loosely coupled as possible is preferable. This tutorial iterates
+              through some examples that are good, bad, or questionable. The
+              main focus is to just get programming.
+            </p>
           </div>
 
           <!-- Key Concept Box -->
           <div class="key-concept">
-            <h4>Key Concept: Title</h4>
+            <h4>Key Concept: Get it working</h4>
             <p>
-              Explanation of an important programming concept related to this
-              section.
+              Learn along the way. Implement improvements as you learn/need
+              them.
             </p>
           </div>
-
-          <!-- Console Output Example -->
-          <h3>Expected Output</h3>
-          <div class="output-example">Example console output goes here</div>
         </div>
 
         <!-- Game Logic Section -->
         <div class="content-container">
-          <h2 class="section-title">Intro</h2>
+          <h2 class="section-title">GameLogic</h2>
 
           <p class="section-content">
-            Your introductory text goes here. Explain the concept you're about
-            to teach.
+            This is the the first class we will use to start breaking our logic
+            apart into different files. Each one is a tool responsible for
+            something we need our program to do. GameLogic will let us set up
+            our player via a newGame method.
           </p>
           <!-- Code Sample -->
           <h3>Code Implementation</h3>
@@ -601,16 +601,177 @@ public static void anythingToContinue() {
 
           <!-- Key Concept Box -->
           <div class="key-concept">
-            <h4>Key Concept: Title</h4>
+            <h4>Into the Method: setPlayerName</h4>
             <p>
-              Explanation of an important programming concept related to this
-              section.
+              printDecorations accepts a single int parameter that determines
+              how many 'decorations' you want to print. This is used to separate
+              text into readable sections.
             </p>
+
+            <div>
+              <pre><code class="language-java">
+public String setPlayerName() {
+        boolean nameSet = false;
+        String playerName;
+
+        do {
+            HelperMethods.defaultHeaderGenerator("Pick a name");
+            playerName = HelperMethods.getStringInput();
+            HelperMethods.headerGenerator("Is " + playerName + " truly your name?", 75);
+            HelperMethods.printTwoChoices("Yes", "No");
+            int input = HelperMethods.getIntInput(" ---> ", 2);
+            if (input == 1)
+                nameSet = true;
+        } while (!nameSet);
+
+        return playerName;
+    }
+            </code></pre>
+
+              <h5>calling setPlayerName()</h5>
+            </div>
+
+            <!-- Console Output Example -->
+            <h3>Expected Output</h3>
+            <div class="output-example"><pre>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pick a name
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ron
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Is Ron truly your name?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(1) Yes
+(2) No
+ ---> 
+1
+(continue running)</pre></div>
           </div>
 
-          <!-- Console Output Example -->
-          <h3>Expected Output</h3>
-          <div class="output-example">Example console output goes here</div>
+          <!-- Key Concept Box -->
+          <div class="key-concept">
+            <h4>Into the Method: setPlayerGender</h4>
+            <p>
+              setPlayerGender 
+            </p>
+
+            <div>
+              <pre><code class="language-java">
+public char setPlayerGender() {
+        boolean genderSet = false;
+        String genderString = "";
+        char genderChar = '?';
+
+        do {
+            HelperMethods.defaultHeaderGenerator("What is your gender?");
+            HelperMethods.printTwoChoices("Man", "Woman");
+            int genderInput = HelperMethods.getIntInput("--->", 2);
+
+            if (genderInput == 1) {
+                genderString = "Man";
+                genderChar = 'M';
+            } else {
+                genderString = "Woman";
+                genderChar = 'W';
+            }
+
+            HelperMethods.headerGenerator("You are a " + genderString, 40);
+            HelperMethods.printTwoChoices("Yes", "No");
+            int input = HelperMethods.getIntInput(" ---> ", 2);
+            if (input == 1)
+                genderSet = true;
+        } while (!genderSet);
+
+        return genderChar;
+    }
+            </code></pre>
+
+              <h5>calling setPlayerGender()</h5>
+            </div>
+
+            <!-- Console Output Example -->
+            <h3>Expected Output</h3>
+            <div class="output-example"><pre>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is your gender?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(1) Man
+(2) Woman
+--->
+1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You are a Man
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(1) Yes
+(2) No
+ ---> 
+1</pre>
+</div>
+          </div>
+
+          <!-- Key Concept Box -->
+          <div class="key-concept">
+            <h4>Into the Method: newGame()</h4>
+            <p>
+            </p>
+
+            <div>
+              <pre><code class="language-java">
+public Player newGame() {
+        String playerName = setPlayerName();
+        char playerGender = setPlayerGender();
+        Player player = new Player(playerName, playerGender, 10);  // Setting default age as 10
+        // Here we can print out player's information to confirm
+        HelperMethods.headerGenerator("Character Created!", 30);
+        System.out.println("Name: " + player.getName());
+        System.out.println("Gender: " + player.getGender());
+        System.out.println("Age: " + player.getAge());
+        System.out.println("Health: " + player.getHealth());
+        HelperMethods.anythingToContinue();
+
+        return player;
+    }
+            </code></pre>
+
+              <h5>calling setPlayerName()</h5>
+            </div>
+
+            <!-- Console Output Example -->
+            <h3>Expected Output</h3>
+            <div class="output-example"><pre>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pick a name
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ron
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Is Ron truly your name?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(1) Yes
+(2) No
+ ---> 
+1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is your gender?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(1) Man
+(2) Woman
+--->
+1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You are a Man
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(1) Yes
+(2) No
+ ---> 
+1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Character Created!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name: Ron
+Gender: M
+Age: 10
+Health: 100
+Press Enter to continue</pre></div>
+          </div>
+
+
         </div>
 
         <!-- Practice Section -->
