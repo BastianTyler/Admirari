@@ -1,4 +1,4 @@
-{% extends "base_layout.html" %} {% block title %}About{% endblock %} {% block
+{% extends "base_layout.html" %} {% block title %}Day Two{% endblock %} {% block
 content %}
 <div class="container mt-4">
   <!-- Tutorial Content -->
@@ -10,18 +10,374 @@ content %}
         <p>Learn Java by building a text-based RPG game</p>
       </div>
 
-      <!-- Content Section -->
+      <!-- Top Content Section -->
       <div class="content-container">
-        <h2 class="section-title">Section Title Goes Here</h2>
+        <h2 class="section-title">Setting the days goals</h2>
 
-        <p>
-          Introductory text goes here. Explain the concept you're about to
-          teach.
-        </p>
+        <p>Make the map, add</p>
+        <!-- Key Concept Box -->
+
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Create the GameMap Class:</strong> The main goal is to
+              print out some sort of visual map for the user and move our player
+              based on user input. For this tutorial we will do a 2x2 tile map
+              that is premade in txt files.
+            </li>
+            <li>
+              <strong>Update other classes as needed:</strong> We might need to
+              add some supporting values to our other classes to get the map
+              implemented. Keep in mind what you add and what is coupled to that
+              data.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- One Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">Main Version 3</h2>
+
+        <p>Make the map, add</p>
 
         <!-- Code Sample -->
         <h3>Code Implementation</h3>
-        <pre><code class="language-java">public class Player { /* code will go here */ }</code></pre>
+        <pre><code class="language-java">public class Main {
+
+    public static void main(String[] args) {
+        // Create an instance of GameLogic to manage the game flow
+        GameLogic gameLogic = new GameLogic();
+        String mapPath = "Intro_1.txt";
+
+        Player player = gameLogic.newGame();
+        GameMap activeMap = new GameMap(mapPath, "Test Map",player.getX(), player.getY());
+
+        // Print the player's information to the screen
+        System.out.println("Player Name: " + player.getName());
+        System.out.println("Player Gender: " + (player.getGender() == 'M' ? "Man" : "Woman"));
+
+
+        boolean isRunning = true;
+
+        while(isRunning){
+                activeMap.printMap();
+                activeMap.chooseDirection();
+        }
+    }
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Two Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">GameMap</h2>
+
+        <p>Make the map, add</p>
+
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class GameMap {
+    private int rows;
+    private int cols;
+    private int playerX;
+    private int playerY;
+    private String name;
+    private char[][] mapGrid;
+    private char newPlayerPosSymbol;
+
+    public GameMap(String filePath, String name, int playerX, int playerY){
+        loadMap(filePath);
+        this.playerX = playerX;
+        this.playerY = playerY;
+        this.name = name;
+
+    }
+
+    public void loadMap(String filePath){
+        List<char[]> tempGrid = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            String line;
+            while((line = br.readLine()) != null){
+                tempGrid.add(line.toCharArray());
+            }
+            rows = tempGrid.size();
+            cols = tempGrid.get(0).length;
+            mapGrid = tempGrid.toArray(new char[rows][cols]);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void printMap(){
+        for (char[] row : mapGrid){
+            System.out.println(new String(row));
+        }
+    }
+
+    public boolean isMoveValid(int newX, int newY){
+        try {
+            return (newX >= 0 && newX < cols && newY >= 0 && newY < rows && getTile(newX, newY) != '#');
+        } catch (Exception e) {
+            System.out.println("Invalid coordinate for this map.");
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean checkNorth(){
+        return isMoveValid(playerX, playerY - 1);
+    }
+
+    public boolean checkWest(){
+        return isMoveValid(playerX - 2, playerY);
+    }
+
+    public boolean checkSouth(){
+        return isMoveValid(playerX, playerY + 1);
+    }
+
+    public boolean checkEast(){
+        return isMoveValid(playerX + 2, playerY);
+    }
+
+    public ArrayList<String> getValidDirections(){
+        ArrayList<String> validDirections = new ArrayList<>();
+        if (checkNorth()) validDirections.add("North");
+        if (checkWest()) validDirections.add("West");
+        if (checkSouth()) validDirections.add("South");
+        if (checkEast()) validDirections.add("East");
+        return validDirections;
+    }
+
+    private void printDirectionChoices(ArrayList<String> validDirections) {
+        for (int i = 0; i < validDirections.size(); i++) {
+            System.out.printf("(%d) %s\n", i + 1, validDirections.get(i));
+        }
+    }
+
+    public void updatePlayerTile(){
+        updateTile(playerX, playerY, '.');
+    }
+    private void movePlayer(String direction){
+        switch (direction){
+            case "North" :{
+                updatePlayerTile();
+                playerY = playerY - 1;
+                break;
+            }
+            case "West" :{
+                updatePlayerTile();
+                playerX = playerX - 2;
+                break;
+            }
+            case "South" :{
+                updatePlayerTile();
+                playerY = playerY + 1;
+                break;
+            }
+            case "East" :{
+                updatePlayerTile();
+                playerX = playerX + 2;
+                break;
+            }
+        }
+    }
+
+
+    public void chooseDirection(){
+        HelperMethods.defaultHeaderGenerator("Choose a direction");
+
+        printDirectionChoices(getValidDirections());
+        int direction = HelperMethods.getIntInput("-->", getValidDirections().size());
+        movePlayer(getValidDirections().get(direction - 1));
+        newPlayerPosSymbol = getTile(playerX, playerY);
+        updatePlayerTile();
+        updateTile(playerX, playerY, 'P' );
+    }
+
+    public char getTile(int x, int y){
+        return mapGrid[y][x];
+    }
+
+    public void updateTile(int x, int y, char newSymbol){
+        mapGrid[y][x] = newSymbol;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public char getNewPlayerPosSymbol() {
+        return newPlayerPosSymbol;
+    }
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Three Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">Player Version 2</h2>
+
+        <p>Make the map, add</p>
+
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public class Player {
+    private String name;
+    private char gender;
+    private int age;
+    private int health;
+
+    private int x;
+
+    private int y;
+
+    public Player(String name, char gender, int age, int x, int y){
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
+    this.health = 100;
+    this.x = x;
+    this.y = y;
+ }
+
+    public String getName() {
+            return name;
+        }
+
+    public char getGender() {
+            return gender;
+        }
+
+    public int getAge() {
+            return age;
+        }
+
+     public int getHealth() {
+            return health;
+        }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+}</code></pre>
+
+        <!-- Code Explanation -->
+        <div class="code-explanation">
+          <h4>Code Breakdown</h4>
+          <p>Explanation of the code goes here.</p>
+          <ul>
+            <li><strong>Key point 1:</strong> Explanation</li>
+            <li><strong>Key point 2:</strong> Explanation</li>
+          </ul>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Key Concept: Title</h4>
+          <p>
+            Explanation of an important programming concept related to this
+            section.
+          </p>
+        </div>
+
+        <!-- Console Output Example -->
+        <h3>Expected Output</h3>
+        <div class="output-example">Example console output goes here</div>
+      </div>
+
+      <!-- Four Content Section -->
+      <div class="content-container">
+        <h2 class="section-title">Updating newGame in GameLogic</h2>
+
+        <p>Make the map, add</p>
+
+        <!-- Code Sample -->
+        <h3>Code Implementation</h3>
+        <pre><code class="language-java">public Player newGame() {
+        String playerName = setPlayerName();
+        char playerGender = setPlayerGender();
+        Player player = new Player(playerName, playerGender, 10, 10, 4);  // Setting default age as 10
+
+
+        HelperMethods.headerGenerator("Character Created!", 30);
+        System.out.println("Name: " + player.getName());
+        System.out.println("Gender: " + player.getGender());
+        System.out.println("Age: " + player.getAge());
+        System.out.println("Health: " + player.getHealth());
+        HelperMethods.anythingToContinue();
+
+        return player;
+    }</code></pre>
 
         <!-- Code Explanation -->
         <div class="code-explanation">
