@@ -1,4 +1,4 @@
-{% extends "base_layout.html" %} {% block title %}About{% endblock %} {% block
+{% extends "base_layout.html" %} {% block title %}Day One{% endblock %} {% block
 content %}
 <div class="container mt-4">
   <!-- Tutorial Content -->
@@ -16,9 +16,20 @@ content %}
 
         <p class="section-content">
           We want to get up and running with something basic to start this
-          project off. Our goal for now then is to create a basic player class,
-          a class to handle some of our games logic, and a helper class to deal
+          project off. Our goal for now is to create a basic player class, a
+          class to handle some of our games logic, and a helper class to deal
           with common situations.
+        </p>
+        <p class="section-content">
+          If any code is unfamiliar to you, copy paste it into your search bar.
+          Research it for a bit to get comfortable with it. Ask for an LLM to
+          explain it in detail for you if you can't get a good answer, but
+          always be a little wary of what they spit out.
+        </p>
+        <p class="section-content">
+          And make notes! If you have the time to write them by hand, do that,
+          but at least make notes in some text editor or in the comments. Heck,
+          make a text file and do it in that even.
         </p>
       </div>
 
@@ -27,16 +38,26 @@ content %}
         <h2 class="section-title">Version Control</h2>
 
         <p class="section-content">
-          Your introductory text goes here. Explain the concept you're about to
-          teach.
+          Hopefully you followed the Version Control tutorial at (add link here)
+          or are comfortable with using a Version Control Software like git and
+          its partner for repos, Github. This project isn't very large, but it
+          is a good chance to practice regularly committing changes, merging
+          branches, or even working with a partner remotely out of the same repo
+          if you choose to do approach this project as a team.
+        </p>
+        <p class="section-content">
+          The hope of this project is to get you on your feet developing
+          'something'. From this tutorial for a console based jrpg game I hope
+          you try to use it as a kickstart to make far better things.
         </p>
 
         <!-- Key Concept Box -->
         <div class="key-concept">
-          <h4>Key Concept: Title</h4>
+          <h4>Key Concept: Why bother with a repo in a solo project</h4>
           <p>
-            Explanation of an important programming concept related to this
-            section.
+            When your developing on your own in the wild without a guide you can
+            think of maintaining a good repo as making your own map so when you
+            eventually get lost you can find your way around easier.
           </p>
         </div>
       </div>
@@ -46,8 +67,9 @@ content %}
         <h2 class="section-title">Main Version One</h2>
 
         <p class="section-content">
-          Your introductory text goes here. Explain the concept you're about to
-          teach.
+          This first version of our main is made just to do the basics of what
+          we want: make a Player and print their information. Later on we will
+          remake this using the GameLogic class.
         </p>
         <!-- Code Sample -->
         <h3>Code Implementation</h3>
@@ -148,25 +170,24 @@ content %}
 
         <!-- Key Concept Box -->
         <div class="key-concept">
-          <h4>Key Concept: Title</h4>
+          <h4>Key Concept: Keeping Classes Simple</h4>
           <p>
-            Explanation of an important programming concept related to this
-            section.
+            Keeping your classes simple and small allow for faster development.
+            Our player should be really simple for now as later on we will let
+            the player class inherit from parent classes.
           </p>
         </div>
-
-        <!-- Console Output Example -->
-        <h3>Expected Output</h3>
-        <div class="output-example">Example console output goes here</div>
       </div>
 
       <!-- Helper Section -->
       <div class="content-container">
-        <h2 class="section-title">Intro</h2>
+        <h2 class="section-title">Helper Methods</h2>
 
         <p class="section-content">
-          Your introductory text goes here. Explain the concept you're about to
-          teach.
+          The helper methods class in this project serves to hold static methods
+          that I want to access across the program. The majority of the methods
+          in this implementation print common string formats and handle common
+          text processing tasks.
         </p>
         <!-- Code Sample -->
         <h3>Code Implementation</h3>
@@ -227,6 +248,172 @@ public class HelperMethods {
     }
 }</code></pre>
 
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Into the Method: printDecorations</h4>
+          <p>
+            printDecorations accepts a single int parameter that determines how
+            many 'decorations' you want to print. This is used to separate text
+            into readable sections.
+          </p>
+
+          <div>
+            <pre><code class="language-java">
+public static void printDecorations(int n) {
+  for (int i = 0; i < n; i++) {
+    System.out.print("~");
+  }
+  System.out.println();
+}
+            </code></pre>
+
+            <h5>calling HelperMethods.printDecorations(10)</h5>
+          </div>
+
+          <!-- Console Output Example -->
+          <h3>Expected Output</h3>
+          <div class="output-example">~~~~~~~~~~</div>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Into the Method: defaultHeaderGenerator and headerGenerator</h4>
+          <p>
+            defaultHeaderGenerator accepts a single String parameter that will
+            be surrounded above and below by a common amount of decorations.
+            Again this is used for formatting. The headerGenerator is similar,
+            allowing for a custom amount of decorations. Notice we use the
+            previous printDecorations method in this method.
+          </p>
+
+          <div>
+            <pre><code class="language-java">
+
+public static void defaultHeaderGenerator(String title) {
+        printDecorations(30);
+        System.out.println(title);
+        printDecorations(30);
+ }
+            
+public static void headerGenerator(String title, int decorationCount) {
+        printDecorations(decorationCount);
+        System.out.println(title);
+        printDecorations(decorationCount);
+}
+            </code></pre>
+
+            <h5>
+              calling HelperMethods.defaultHeaderGenerator("Battle Review");
+            </h5>
+          </div>
+
+          <!-- Console Output Example -->
+          <h3>Expected Output</h3>
+          <div class="output-example">
+            <pre>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+            Battle Review
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre
+            >
+          </div>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Into the Method: printTwoChoices</h4>
+          <p>
+            printTwoChoices accepts two String parameters and outputs them as
+            optional choices.
+          </p>
+
+          <div>
+            <pre><code class="language-java">
+public static void printTwoChoices(String choice1, String choice2) {
+        System.out.print("(1) " + choice1 + "\n(2) " + choice2 + "\n");
+}
+            </code></pre>
+
+            <h5>calling HelperMethods.printTwoChoices("Run", "Hide");</h5>
+          </div>
+
+          <!-- Console Output Example -->
+          <h3>Expected Output</h3>
+          <div class="output-example">
+            <pre>
+(1) Run 
+(2) Hide</pre
+            >
+          </div>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Into the Method: getStringInput</h4>
+          <p>
+            getStringInput is a quick method to get the current line of the
+            console using the HelperMethods scanner object.
+          </p>
+
+          <div>
+            <pre><code class="language-java">
+public static String getStringInput() {
+        return scanner.nextLine();
+}
+            </code></pre>
+          </div>
+        </div>
+
+        <!-- Key Concept Box -->
+        <div class="key-concept">
+          <h4>Into the Method: getIntInput</h4>
+          <p>
+            getIntInput is a more complex method with two parameters, a String
+            prompt and and an int userChoices. It will prompt the user for an
+            int from a specific range of choices. It will only accept integers
+            that are within the range given. The method will attempt to parse an
+            integer and if it fails to do so an exception will be thrown and
+            caught. Input is set to -1 to ensure it is outside the range. This
+            will continue until the user enters a proper integer option.
+          </p>
+
+          <div>
+            <pre><code class="language-java">
+public static int getIntInput(String prompt, int userChoices) {
+        int input;
+        do {
+            System.out.println(prompt);
+            try {
+                input = Integer.parseInt(scanner.next());
+            } catch (Exception e) {
+                input = -1;
+                System.out.println("Must enter an integer!");
+            }
+        } while (input < 1 || input > userChoices);
+        return input;
+}
+            </code></pre>
+
+            <h5>
+              calling HelperMethods.printTwoChoices("Run", "Hide");
+              HelperMethods.getIntInput("Choose: ", 2);
+            </h5>
+          </div>
+
+          <!-- Console Output Example -->
+          <h3>Expected Output</h3>
+          <div class="output-example">
+            <pre>
+(1) Run
+(2) Hide
+Choose: 
+1
+
+Process finished with exit code 0
+</pre
+            >
+          </div>
+        </div>
+
         <!-- Code Explanation -->
         <div class="code-explanation">
           <h4>Code Breakdown</h4>
@@ -244,24 +431,36 @@ public class HelperMethods {
             Explanation of an important programming concept related to this
             section.
           </p>
+
+          <div>
+            <pre><code class="language-java">
+public static void printDecorations(int n) {
+  for (int i = 0; i < n; i++) {
+    System.out.print("~");
+  }
+  System.out.println();
+}
+            </code></pre>
+
+            <h5>calling printDecoration(10)</h5>
+          </div>
+
+          <!-- Console Output Example -->
+          <h3>Expected Output</h3>
+          <div class="output-example">~~~~~~~~~~</div>
         </div>
 
-        <!-- Console Output Example -->
-        <h3>Expected Output</h3>
-        <div class="output-example">Example console output goes here</div>
-      </div>
+        <!-- Main Section -->
+        <div class="content-container">
+          <h2 class="section-title">Main</h2>
 
-      <!-- Main Section -->
-      <div class="content-container">
-        <h2 class="section-title">Main</h2>
-
-        <p class="section-content">
-          Your introductory text goes here. Explain the concept you're about to
-          teach.
-        </p>
-        <!-- Code Sample -->
-        <h3>Code Implementation</h3>
-        <pre><code class="language-java">public class Main {
+          <p class="section-content">
+            Your introductory text goes here. Explain the concept you're about
+            to teach.
+          </p>
+          <!-- Code Sample -->
+          <h3>Code Implementation</h3>
+          <pre><code class="language-java">public class Main {
 
     public static void main(String[] args) {
         // Create an instance of GameLogic 
@@ -276,41 +475,41 @@ public class HelperMethods {
     }
 }</code></pre>
 
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Code Breakdown</h4>
-          <p>Explanation of the code goes here.</p>
-          <ul>
-            <li><strong>Key point 1:</strong> Explanation</li>
-            <li><strong>Key point 2:</strong> Explanation</li>
-          </ul>
+          <!-- Code Explanation -->
+          <div class="code-explanation">
+            <h4>Code Breakdown</h4>
+            <p>The</p>
+            <ul>
+              <li><strong>Key point 1:</strong> Explanation</li>
+              <li><strong>Key point 2:</strong> Explanation</li>
+            </ul>
+          </div>
+
+          <!-- Key Concept Box -->
+          <div class="key-concept">
+            <h4>Key Concept: Title</h4>
+            <p>
+              Explanation of an important programming concept related to this
+              section.
+            </p>
+          </div>
+
+          <!-- Console Output Example -->
+          <h3>Expected Output</h3>
+          <div class="output-example">Example console output goes here</div>
         </div>
 
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Concept: Title</h4>
-          <p>
-            Explanation of an important programming concept related to this
-            section.
+        <!-- Game Logic Section -->
+        <div class="content-container">
+          <h2 class="section-title">Intro</h2>
+
+          <p class="section-content">
+            Your introductory text goes here. Explain the concept you're about
+            to teach.
           </p>
-        </div>
-
-        <!-- Console Output Example -->
-        <h3>Expected Output</h3>
-        <div class="output-example">Example console output goes here</div>
-      </div>
-
-      <!-- Game Logic Section -->
-      <div class="content-container">
-        <h2 class="section-title">Intro</h2>
-
-        <p class="section-content">
-          Your introductory text goes here. Explain the concept you're about to
-          teach.
-        </p>
-        <!-- Code Sample -->
-        <h3>Code Implementation</h3>
-        <pre><code class="language-java">public class GameLogic {
+          <!-- Code Sample -->
+          <h3>Code Implementation</h3>
+          <pre><code class="language-java">public class GameLogic {
     private boolean isRunning = true;
 
     public String setPlayerName() {
@@ -374,42 +573,43 @@ public class HelperMethods {
     }
 }</code></pre>
 
-        <!-- Code Explanation -->
-        <div class="code-explanation">
-          <h4>Code Breakdown</h4>
-          <p>Explanation of the code goes here.</p>
+          <!-- Code Explanation -->
+          <div class="code-explanation">
+            <h4>Code Breakdown</h4>
+            <p>Explanation of the code goes here.</p>
+            <ul>
+              <li><strong>Key point 1:</strong> Explanation</li>
+              <li><strong>Key point 2:</strong> Explanation</li>
+            </ul>
+          </div>
+
+          <!-- Key Concept Box -->
+          <div class="key-concept">
+            <h4>Key Concept: Title</h4>
+            <p>
+              Explanation of an important programming concept related to this
+              section.
+            </p>
+          </div>
+
+          <!-- Console Output Example -->
+          <h3>Expected Output</h3>
+          <div class="output-example">Example console output goes here</div>
+        </div>
+
+        <!-- Practice Section -->
+        <div class="practice-section">
+          <h3>Try It Yourself</h3>
+          <p>Instructions for student practice:</p>
           <ul>
-            <li><strong>Key point 1:</strong> Explanation</li>
-            <li><strong>Key point 2:</strong> Explanation</li>
+            <li>Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
           </ul>
         </div>
-
-        <!-- Key Concept Box -->
-        <div class="key-concept">
-          <h4>Key Concept: Title</h4>
-          <p>
-            Explanation of an important programming concept related to this
-            section.
-          </p>
-        </div>
-
-        <!-- Console Output Example -->
-        <h3>Expected Output</h3>
-        <div class="output-example">Example console output goes here</div>
-      </div>
-
-      <!-- Practice Section -->
-      <div class="practice-section">
-        <h3>Try It Yourself</h3>
-        <p>Instructions for student practice:</p>
-        <ul>
-          <li>Task 1</li>
-          <li>Task 2</li>
-          <li>Task 3</li>
-        </ul>
       </div>
     </div>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
+</div>

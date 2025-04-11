@@ -39,7 +39,7 @@
   border-radius: 5px;
   padding: 1.25rem;
   margin: 1.25rem 0;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 .code-explanation {
@@ -55,6 +55,7 @@
   border-radius: 5px;
   padding: 1rem;
   margin: 1rem 0;
+  font-size: 1.2rem;
 }
 
 .key-concept h4 {
@@ -73,15 +74,15 @@
 }
 
 .practice-section {
-  background-color: #fff3cd;
-  border: 1px solid #ffeeba;
+  background-color: #cac9c6;
+  border: 1px solid #cac9c6;
   border-radius: 5px;
   padding: 1rem;
   margin: 1.5rem 0;
 }
 
 .practice-section h3 {
-  color: #856404;
+  color: #302506;
   margin-top: 0;
 }
 
@@ -95,4 +96,3 @@ body:has(.tutorial-header) {
   padding: 0 2rem;
   color: gainsboro;
 }
-
