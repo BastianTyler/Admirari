@@ -18,6 +18,23 @@ def tv_day_one():
 def tv_day_two():
     return render_template('text_venture/tv_day_two.html')
 
+@tv_bp.route('/tv_day_three')
+def tv_day_three():
+    return render_template('text_venture/tv_day_three.html')
+
+@tv_bp.route('/tv_day_four')
+def tv_day_four():
+    return render_template('text_venture/tv_day_four.html')
+
+@tv_bp.route('/tv_day_five')
+def tv_day_five():
+    return render_template('text_venture/tv_day_five.html')
+
+@tv_bp.route('/tv_day_six')
+def tv_day_six():
+    return render_template('text_venture/tv_day_six.html')
+
+
 @tv_bp.route('/github_workshop')
 def github_workshop():
     return render_template('text_venture/github_workshop.html')
